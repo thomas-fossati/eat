@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2020-10-26T17:51:52.725597+00:00",
+  "timestamp": "2020-10-27T18:37:17.058590+00:00",
   "repo": "ietf-rats-wg/eat",
   "labels": [
     {
@@ -2798,6 +2798,58 @@
           "updatedAt": "2020-04-26T08:21:42Z"
         }
       ],
+      "reviews": []
+    },
+    {
+      "number": 66,
+      "id": "MDExOlB1bGxSZXF1ZXN0NTEwMjA1NTQx",
+      "title": "Clarify and simplify way IMEIs are encoded",
+      "url": "https://github.com/ietf-rats-wg/eat/pull/66",
+      "state": "OPEN",
+      "author": "laurencelundblade",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "IMEI is encoded as byte string of 14 bytes eliminating confusion about big/little endian and conversion to/from an integer value. \r\n\r\nDoes make IMEI's encode to 14 bytes instead of 6 so there's a little bit of wasted space due to this.",
+      "createdAt": "2020-10-26T17:53:25Z",
+      "updatedAt": "2020-10-26T17:53:25Z",
+      "baseRepository": "ietf-rats-wg/eat",
+      "baseRefName": "master",
+      "baseRefOid": "ce8393575f5038919f3128f61efecc56c27d4a80",
+      "headRepository": "ietf-rats-wg/eat",
+      "headRefName": "IMEI_Encoding",
+      "headRefOid": "1adb748b82decdb95e88cc9201a383fca93997d8",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 67,
+      "id": "MDExOlB1bGxSZXF1ZXN0NTEwMzA4Nzk5",
+      "title": "submods: UCCS, bstr wrapping, tagging rules",
+      "url": "https://github.com/ietf-rats-wg/eat/pull/67",
+      "state": "OPEN",
+      "author": "laurencelundblade",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Allows UCCS tokens\r\n\r\nRequires nested submodules be bstr wrapped.\r\n\r\nHow to bring a UCCS in as a submodule.\r\n\r\nRules for CBOR tags for CWTs and COSE use in submodules.\r\n\r\nHow to put a JWT submodule in a CWT and vice versa.",
+      "createdAt": "2020-10-26T21:07:48Z",
+      "updatedAt": "2020-10-26T21:07:48Z",
+      "baseRepository": "ietf-rats-wg/eat",
+      "baseRefName": "master",
+      "baseRefOid": "ce8393575f5038919f3128f61efecc56c27d4a80",
+      "headRepository": "ietf-rats-wg/eat",
+      "headRefName": "submod_update",
+      "headRefOid": "6383980515623282017a21bf0460d45288765e40",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
       "reviews": []
     }
   ]
