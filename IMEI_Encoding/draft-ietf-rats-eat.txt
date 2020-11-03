@@ -5,11 +5,11 @@
 RATS Working Group                                            G. Mandyam
 Internet-Draft                                Qualcomm Technologies Inc.
 Intended status: Standards Track                            L. Lundblade
-Expires: 29 April 2021                               Security Theory LLC
+Expires: 7 May 2021                                  Security Theory LLC
                                                           M. Ballesteros
                                                            J. O'Donoghue
                                               Qualcomm Technologies Inc.
-                                                         26 October 2020
+                                                         3 November 2020
 
 
                    The Entity Attestation Token (EAT)
@@ -45,7 +45,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 29 April 2021.
+   This Internet-Draft will expire on 7 May 2021.
 
 
 
@@ -53,9 +53,9 @@ Status of This Memo
 
 
 
-Mandyam, et al.           Expires 29 April 2021                 [Page 1]
+Mandyam, et al.            Expires 7 May 2021                   [Page 1]
 
-Internet-Draft                     EAT                      October 2020
+Internet-Draft                     EAT                     November 2020
 
 
 Copyright Notice
@@ -109,9 +109,9 @@ Table of Contents
 
 
 
-Mandyam, et al.           Expires 29 April 2021                 [Page 2]
+Mandyam, et al.            Expires 7 May 2021                   [Page 2]
 
-Internet-Draft                     EAT                      October 2020
+Internet-Draft                     EAT                     November 2020
 
 
      3.11. The Age Claim (age) . . . . . . . . . . . . . . . . . . .  18
@@ -161,14 +161,16 @@ Internet-Draft                     EAT                      October 2020
      C.3.  From draft-ietf-rats-eat-01 . . . . . . . . . . . . . . .  36
      C.4.  From draft-ietf-rats-eat-02 . . . . . . . . . . . . . . .  36
      C.5.  From draft-ietf-rats-eat-03 . . . . . . . . . . . . . . .  37
-   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  37
+     C.6.  From draft-ietf-rats-eat-04 . . . . . . . . . . . . . . .  37
 
 
 
-Mandyam, et al.           Expires 29 April 2021                 [Page 3]
+Mandyam, et al.            Expires 7 May 2021                   [Page 3]
 
-Internet-Draft                     EAT                      October 2020
+Internet-Draft                     EAT                     November 2020
 
+
+   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  37
 
 1.  Introduction
 
@@ -211,26 +213,19 @@ Internet-Draft                     EAT                      October 2020
    defined in [RFC7519].  This specification defines additional claims
    for entity attestation.
 
-
-
-
-
-
-
-
-
-
-
-Mandyam, et al.           Expires 29 April 2021                 [Page 4]
-
-Internet-Draft                     EAT                      October 2020
-
-
    This specification uses CDDL, [RFC8610], as the primary formalism to
    define each claim.  The implementor then interprets the CDDL to come
    to either the CBOR [RFC7049] or JSON [ECMAScript] representation.  In
    the case of JSON, Appendix E of [RFC8610] is followed.  Additional
    rules are given in Section 4.3.2 of this document where Appendix E is
+
+
+
+Mandyam, et al.            Expires 7 May 2021                   [Page 4]
+
+Internet-Draft                     EAT                     November 2020
+
+
    insufficient.  (Note that this is not to define a general means to
    translate between CBOR and JSON, but only to define enough such that
    the claims defined in this document can be rendered unambiguously in
@@ -273,21 +268,19 @@ Internet-Draft                     EAT                      October 2020
    The Relying Party.  The server, service or company that makes use of
       the information in the EAT about the entity.
 
-
-
-
-
-Mandyam, et al.           Expires 29 April 2021                 [Page 5]
-
-Internet-Draft                     EAT                      October 2020
-
-
    In all operating models, the manufacturer provisions some secret
    attestation key material (AKM) into the entity during manufacturing.
    This might be during the manufacturer of a chip at a fabrication
    facility (fab) or during final assembly of a consumer product or any
    time in between.  This attestation key material is used for signing
    EATs.
+
+
+
+Mandyam, et al.            Expires 7 May 2021                   [Page 5]
+
+Internet-Draft                     EAT                     November 2020
+
 
    In all operating models, hardware and/or software on the entity
    create an EAT of the format described in this document.  The EAT is
@@ -333,9 +326,16 @@ Internet-Draft                     EAT                      October 2020
 
 
 
-Mandyam, et al.           Expires 29 April 2021                 [Page 6]
+
+
+
+
+
+
+
+Mandyam, et al.            Expires 7 May 2021                   [Page 6]
 
-Internet-Draft                     EAT                      October 2020
+Internet-Draft                     EAT                     November 2020
 
 
 1.4.1.  Transmission Protocol
@@ -389,9 +389,9 @@ Internet-Draft                     EAT                      October 2020
 
 
 
-Mandyam, et al.           Expires 29 April 2021                 [Page 7]
+Mandyam, et al.            Expires 7 May 2021                   [Page 7]
 
-Internet-Draft                     EAT                      October 2020
+Internet-Draft                     EAT                     November 2020
 
 
 2.  Terminology
@@ -445,9 +445,9 @@ Internet-Draft                     EAT                      October 2020
 
 
 
-Mandyam, et al.           Expires 29 April 2021                 [Page 8]
+Mandyam, et al.            Expires 7 May 2021                   [Page 8]
 
-Internet-Draft                     EAT                      October 2020
+Internet-Draft                     EAT                     November 2020
 
 
    There are no default values or meanings assigned to absent claims
@@ -501,9 +501,9 @@ Internet-Draft                     EAT                      October 2020
 
 
 
-Mandyam, et al.           Expires 29 April 2021                 [Page 9]
+Mandyam, et al.            Expires 7 May 2021                   [Page 9]
 
-Internet-Draft                     EAT                      October 2020
+Internet-Draft                     EAT                     November 2020
 
 
    nonce-type = [ + bstr .size (8..64) ]
@@ -557,9 +557,9 @@ Internet-Draft                     EAT                      October 2020
 
 
 
-Mandyam, et al.           Expires 29 April 2021                [Page 10]
+Mandyam, et al.            Expires 7 May 2021                  [Page 10]
 
-Internet-Draft                     EAT                      October 2020
+Internet-Draft                     EAT                     November 2020
 
 
     +======+======+===================================================+
@@ -613,9 +613,9 @@ Internet-Draft                     EAT                      October 2020
 
 
 
-Mandyam, et al.           Expires 29 April 2021                [Page 11]
+Mandyam, et al.            Expires 7 May 2021                  [Page 11]
 
-Internet-Draft                     EAT                      October 2020
+Internet-Draft                     EAT                     November 2020
 
 
    The consumer (the relying party) of a UEID MUST treat a UEID as a
@@ -669,9 +669,9 @@ Internet-Draft                     EAT                      October 2020
 
 
 
-Mandyam, et al.           Expires 29 April 2021                [Page 12]
+Mandyam, et al.            Expires 7 May 2021                  [Page 12]
 
-Internet-Draft                     EAT                      October 2020
+Internet-Draft                     EAT                     November 2020
 
 
    TODO: consider a more structure approach where the name and the URI
@@ -725,9 +725,9 @@ Internet-Draft                     EAT                      October 2020
 
 
 
-Mandyam, et al.           Expires 29 April 2021                [Page 13]
+Mandyam, et al.            Expires 7 May 2021                  [Page 13]
 
-Internet-Draft                     EAT                      October 2020
+Internet-Draft                     EAT                     November 2020
 
 
 3.7.  The Security Level Claim (security-level)
@@ -781,9 +781,9 @@ Internet-Draft                     EAT                      October 2020
 
 
 
-Mandyam, et al.           Expires 29 April 2021                [Page 14]
+Mandyam, et al.            Expires 7 May 2021                  [Page 14]
 
-Internet-Draft                     EAT                      October 2020
+Internet-Draft                     EAT                     November 2020
 
 
    security-level-type = &(
@@ -837,9 +837,9 @@ Internet-Draft                     EAT                      October 2020
 
 
 
-Mandyam, et al.           Expires 29 April 2021                [Page 15]
+Mandyam, et al.            Expires 7 May 2021                  [Page 15]
 
-Internet-Draft                     EAT                      October 2020
+Internet-Draft                     EAT                     November 2020
 
 
    The higher levels of debug disabling requires that all debug
@@ -893,9 +893,9 @@ Internet-Draft                     EAT                      October 2020
 
 
 
-Mandyam, et al.           Expires 29 April 2021                [Page 16]
+Mandyam, et al.            Expires 7 May 2021                  [Page 16]
 
-Internet-Draft                     EAT                      October 2020
+Internet-Draft                     EAT                     November 2020
 
 
 3.9.4.  Permanent Disable
@@ -949,9 +949,9 @@ Internet-Draft                     EAT                      October 2020
 
 
 
-Mandyam, et al.           Expires 29 April 2021                [Page 17]
+Mandyam, et al.            Expires 7 May 2021                  [Page 17]
 
-Internet-Draft                     EAT                      October 2020
+Internet-Draft                     EAT                     November 2020
 
 
    location-type = {
@@ -1005,9 +1005,9 @@ Internet-Draft                     EAT                      October 2020
 
 
 
-Mandyam, et al.           Expires 29 April 2021                [Page 18]
+Mandyam, et al.            Expires 7 May 2021                  [Page 18]
 
-Internet-Draft                     EAT                      October 2020
+Internet-Draft                     EAT                     November 2020
 
 
 3.13.  The Submods Part of a Token (submods)
@@ -1061,9 +1061,9 @@ Internet-Draft                     EAT                      October 2020
 
 
 
-Mandyam, et al.           Expires 29 April 2021                [Page 19]
+Mandyam, et al.            Expires 7 May 2021                  [Page 19]
 
-Internet-Draft                     EAT                      October 2020
+Internet-Draft                     EAT                     November 2020
 
 
 3.13.2.  No Inheritance
@@ -1117,9 +1117,9 @@ Internet-Draft                     EAT                      October 2020
 
 
 
-Mandyam, et al.           Expires 29 April 2021                [Page 20]
+Mandyam, et al.            Expires 7 May 2021                  [Page 20]
 
-Internet-Draft                     EAT                      October 2020
+Internet-Draft                     EAT                     November 2020
 
 
 string-or-uri = uri / tstr; See JSON section below for JSON encoding of string-or-uri
@@ -1173,9 +1173,9 @@ string-or-uri = uri / tstr; See JSON section below for JSON encoding of string-o
 
 
 
-Mandyam, et al.           Expires 29 April 2021                [Page 21]
+Mandyam, et al.            Expires 7 May 2021                  [Page 21]
 
-Internet-Draft                     EAT                      October 2020
+Internet-Draft                     EAT                     November 2020
 
 
    ueid = "ueid"
@@ -1229,9 +1229,9 @@ Internet-Draft                     EAT                      October 2020
 
 
 
-Mandyam, et al.           Expires 29 April 2021                [Page 22]
+Mandyam, et al.            Expires 7 May 2021                  [Page 22]
 
-Internet-Draft                     EAT                      October 2020
+Internet-Draft                     EAT                     November 2020
 
 
    ueid = To_be_assigned
@@ -1285,9 +1285,9 @@ Internet-Draft                     EAT                      October 2020
 
 
 
-Mandyam, et al.           Expires 29 April 2021                [Page 23]
+Mandyam, et al.            Expires 7 May 2021                  [Page 23]
 
-Internet-Draft                     EAT                      October 2020
+Internet-Draft                     EAT                     November 2020
 
 
    *  String Encoding (major type 2 and 3) - The entity can use any
@@ -1341,9 +1341,9 @@ Internet-Draft                     EAT                      October 2020
 
 
 
-Mandyam, et al.           Expires 29 April 2021                [Page 24]
+Mandyam, et al.            Expires 7 May 2021                  [Page 24]
 
-Internet-Draft                     EAT                      October 2020
+Internet-Draft                     EAT                     November 2020
 
 
 eat-claims = { ; the top-level payload that is signed using COSE or JOSE
@@ -1397,9 +1397,9 @@ eat-token ; This is a set of eat-claims signed using COSE
 
 
 
-Mandyam, et al.           Expires 29 April 2021                [Page 25]
+Mandyam, et al.            Expires 7 May 2021                  [Page 25]
 
-Internet-Draft                     EAT                      October 2020
+Internet-Draft                     EAT                     November 2020
 
 
    TODO: add the rest of the claims in here
@@ -1453,9 +1453,9 @@ Internet-Draft                     EAT                      October 2020
 
 
 
-Mandyam, et al.           Expires 29 April 2021                [Page 26]
+Mandyam, et al.            Expires 7 May 2021                  [Page 26]
 
-Internet-Draft                     EAT                      October 2020
+Internet-Draft                     EAT                     November 2020
 
 
 7.  Security Considerations
@@ -1509,9 +1509,9 @@ Internet-Draft                     EAT                      October 2020
 
 
 
-Mandyam, et al.           Expires 29 April 2021                [Page 27]
+Mandyam, et al.            Expires 7 May 2021                  [Page 27]
 
-Internet-Draft                     EAT                      October 2020
+Internet-Draft                     EAT                     November 2020
 
 
    Similar considerations apply to the use of EAT as a JWT.  Although
@@ -1565,9 +1565,9 @@ Internet-Draft                     EAT                      October 2020
 
 
 
-Mandyam, et al.           Expires 29 April 2021                [Page 28]
+Mandyam, et al.            Expires 7 May 2021                  [Page 28]
 
-Internet-Draft                     EAT                      October 2020
+Internet-Draft                     EAT                     November 2020
 
 
    [RFC7049]  Bormann, C. and P. Hoffman, "Concise Binary Object
@@ -1621,9 +1621,9 @@ Internet-Draft                     EAT                      October 2020
 
 
 
-Mandyam, et al.           Expires 29 April 2021                [Page 29]
+Mandyam, et al.            Expires 7 May 2021                  [Page 29]
 
-Internet-Draft                     EAT                      October 2020
+Internet-Draft                     EAT                     November 2020
 
 
 8.2.  Informative References
@@ -1677,9 +1677,9 @@ Internet-Draft                     EAT                      October 2020
 
 
 
-Mandyam, et al.           Expires 29 April 2021                [Page 30]
+Mandyam, et al.            Expires 7 May 2021                  [Page 30]
 
-Internet-Draft                     EAT                      October 2020
+Internet-Draft                     EAT                     November 2020
 
 
    [RFC4949]  Shirey, R., "Internet Security Glossary, Version 2",
@@ -1733,9 +1733,9 @@ A.2.  Example with Submodules, Nesting and Security Levels
 
 
 
-Mandyam, et al.           Expires 29 April 2021                [Page 31]
+Mandyam, et al.            Expires 7 May 2021                  [Page 31]
 
-Internet-Draft                     EAT                      October 2020
+Internet-Draft                     EAT                     November 2020
 
 
 {
@@ -1789,9 +1789,9 @@ B.1.  Collision Probability
 
 
 
-Mandyam, et al.           Expires 29 April 2021                [Page 32]
+Mandyam, et al.            Expires 7 May 2021                  [Page 32]
 
-Internet-Draft                     EAT                      October 2020
+Internet-Draft                     EAT                     November 2020
 
 
    The trillion-record database size models an easy-to-imagine reality
@@ -1845,9 +1845,9 @@ Internet-Draft                     EAT                      October 2020
 
 
 
-Mandyam, et al.           Expires 29 April 2021                [Page 33]
+Mandyam, et al.            Expires 7 May 2021                  [Page 33]
 
-Internet-Draft                     EAT                      October 2020
+Internet-Draft                     EAT                     November 2020
 
 
    For this calculation:
@@ -1901,9 +1901,9 @@ Internet-Draft                     EAT                      October 2020
 
 
 
-Mandyam, et al.           Expires 29 April 2021                [Page 34]
+Mandyam, et al.            Expires 7 May 2021                  [Page 34]
 
-Internet-Draft                     EAT                      October 2020
+Internet-Draft                     EAT                     November 2020
 
 
    +=====================+==============+==============+==============+
@@ -1957,9 +1957,9 @@ B.2.  No Use of UUID
 
 
 
-Mandyam, et al.           Expires 29 April 2021                [Page 35]
+Mandyam, et al.            Expires 7 May 2021                  [Page 35]
 
-Internet-Draft                     EAT                      October 2020
+Internet-Draft                     EAT                     November 2020
 
 
    UUIDs seem to have been designed for scenarios where the implementor
@@ -2013,9 +2013,9 @@ C.4.  From draft-ietf-rats-eat-02
 
 
 
-Mandyam, et al.           Expires 29 April 2021                [Page 36]
+Mandyam, et al.            Expires 7 May 2021                  [Page 36]
 
-Internet-Draft                     EAT                      October 2020
+Internet-Draft                     EAT                     November 2020
 
 
    *  Lots of fixes to the CDDL
@@ -2027,6 +2027,10 @@ C.5.  From draft-ietf-rats-eat-03
    *  Split boot_state into secure-boot and debug-disable claims
 
    *  Debug disable is an enumerated type rather than Booleans
+
+C.6.  From draft-ietf-rats-eat-04
+
+   *  Change IMEI-based UEIDs to be encoded as a 14-byte string
 
 Authors' Addresses
 
@@ -2056,6 +2060,20 @@ Authors' Addresses
    Email: mballest@qti.qualcomm.com
 
 
+
+
+
+
+
+
+
+
+
+Mandyam, et al.            Expires 7 May 2021                  [Page 37]
+
+Internet-Draft                     EAT                     November 2020
+
+
    Jeremy O'Donoghue
    Qualcomm Technologies Inc.
    279 Farnborough Road
@@ -2069,4 +2087,42 @@ Authors' Addresses
 
 
 
-Mandyam, et al.           Expires 29 April 2021                [Page 37]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Mandyam, et al.            Expires 7 May 2021                  [Page 38]
