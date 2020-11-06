@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2020-11-04T20:59:36.771360+00:00",
+  "timestamp": "2020-11-06T19:33:59.005432+00:00",
   "repo": "ietf-rats-wg/eat",
   "labels": [
     {
@@ -2686,19 +2686,19 @@
       "labels": [],
       "body": "This is to address the timing diagram from Eric Voit and others. \r\n\r\nTimestamping of measurements is very important, but no measurement is defined in EAT (yet).\r\n",
       "createdAt": "2020-03-27T21:19:41Z",
-      "updatedAt": "2020-03-27T21:19:41Z",
+      "updatedAt": "2020-11-06T19:33:30Z",
+      "baseRepository": "ietf-rats-wg/eat",
+      "baseRefName": "master",
+      "baseRefOid": "6c97e22dbce3e2e5f4e8d573f42167e3aa3401ad",
+      "headRepository": "ietf-rats-wg/eat",
+      "headRefName": "timestamp",
+      "headRefOid": "9d55bd77ac2930bedeb974dcaf5a4d1e3ce7a9df",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
+      "mergeCommit": null,
       "comments": [],
-      "reviews": [],
-      "baseRepository": "ietf-rats-wg/eat",
-      "baseRefName": "master",
-      "baseRefOid": "aac5de214068993208b41066f1717222abde6114",
-      "headRepository": "ietf-rats-wg/eat",
-      "headRefName": "timestamp",
-      "headRefOid": "f740a3aab835ec1f193f970e69faabd242a80c30",
-      "mergeCommit": null
+      "reviews": []
     },
     {
       "number": 60,
@@ -2845,9 +2845,9 @@
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
-      "body": "Allows UCCS tokens\r\n\r\nRequires nested submodules be bstr wrapped.\r\n\r\nHow to bring a UCCS in as a submodule.\r\n\r\nRules for CBOR tags for CWTs and COSE use in submodules.\r\n\r\nHow to put a JWT submodule in a CWT and vice versa.",
+      "body": "Allows UCCS tokens\r\n\r\nIncorporates JWTs, secured and unsecured.\r\n\r\nRequires nested CWT submodules be bstr wrapped.\r\n\r\nHow to bring a UCCS in as a submodule.\r\n\r\nHow to put a JWT submodule in a CWT and vice versa.\r\n\r\nAll the rules for CWT and COSE tag usage.\r\n\r\nTop-level CDDL to handle CWT/COSE, UCCS and JWT",
       "createdAt": "2020-10-26T21:07:48Z",
-      "updatedAt": "2020-11-04T20:58:41Z",
+      "updatedAt": "2020-11-04T21:06:59Z",
       "baseRepository": "ietf-rats-wg/eat",
       "baseRefName": "master",
       "baseRefOid": "6c97e22dbce3e2e5f4e8d573f42167e3aa3401ad",
