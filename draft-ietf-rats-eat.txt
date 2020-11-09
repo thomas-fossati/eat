@@ -5,11 +5,11 @@
 RATS Working Group                                            G. Mandyam
 Internet-Draft                                Qualcomm Technologies Inc.
 Intended status: Standards Track                            L. Lundblade
-Expires: 10 May 2021                                 Security Theory LLC
+Expires: 13 May 2021                                 Security Theory LLC
                                                           M. Ballesteros
                                                            J. O'Donoghue
                                               Qualcomm Technologies Inc.
-                                                         6 November 2020
+                                                         9 November 2020
 
 
                    The Entity Attestation Token (EAT)
@@ -45,7 +45,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 10 May 2021.
+   This Internet-Draft will expire on 13 May 2021.
 
 
 
@@ -53,7 +53,7 @@ Status of This Memo
 
 
 
-Mandyam, et al.            Expires 10 May 2021                  [Page 1]
+Mandyam, et al.            Expires 13 May 2021                  [Page 1]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Mandyam, et al.            Expires 10 May 2021                  [Page 2]
+Mandyam, et al.            Expires 13 May 2021                  [Page 2]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -137,26 +137,26 @@ Internet-Draft                     EAT                     November 2020
      5.1.  Reuse of CBOR Web Token (CWT) Claims Registry . . . . . .  27
        5.1.1.  Claims Registered by This Document  . . . . . . . . .  27
    6.  Privacy Considerations  . . . . . . . . . . . . . . . . . . .  27
-     6.1.  UEID Privacy Considerations . . . . . . . . . . . . . . .  28
+     6.1.  UEID Privacy Considerations . . . . . . . . . . . . . . .  27
    7.  Security Considerations . . . . . . . . . . . . . . . . . . .  28
-     7.1.  Key Provisioning  . . . . . . . . . . . . . . . . . . . .  29
+     7.1.  Key Provisioning  . . . . . . . . . . . . . . . . . . . .  28
        7.1.1.  Transmission of Key Material  . . . . . . . . . . . .  29
      7.2.  Transport Security  . . . . . . . . . . . . . . . . . . .  29
-     7.3.  Multiple EAT Consumers  . . . . . . . . . . . . . . . . .  30
+     7.3.  Multiple EAT Consumers  . . . . . . . . . . . . . . . . .  29
    8.  References  . . . . . . . . . . . . . . . . . . . . . . . . .  30
      8.1.  Normative References  . . . . . . . . . . . . . . . . . .  30
      8.2.  Informative References  . . . . . . . . . . . . . . . . .  31
-   Appendix A.  Examples . . . . . . . . . . . . . . . . . . . . . .  33
-     A.1.  Very Simple EAT . . . . . . . . . . . . . . . . . . . . .  33
+   Appendix A.  Examples . . . . . . . . . . . . . . . . . . . . . .  32
+     A.1.  Very Simple EAT . . . . . . . . . . . . . . . . . . . . .  32
      A.2.  Example with Submodules, Nesting and Security Levels  . .  33
-   Appendix B.  UEID Design Rationale  . . . . . . . . . . . . . . .  34
-     B.1.  Collision Probability . . . . . . . . . . . . . . . . . .  34
+   Appendix B.  UEID Design Rationale  . . . . . . . . . . . . . . .  33
+     B.1.  Collision Probability . . . . . . . . . . . . . . . . . .  33
      B.2.  No Use of UUID  . . . . . . . . . . . . . . . . . . . . .  36
    Appendix C.  Changes from Previous Drafts . . . . . . . . . . . .  37
      C.1.  From draft-rats-eat-01  . . . . . . . . . . . . . . . . .  37
      C.2.  From draft-mandyam-rats-eat-00  . . . . . . . . . . . . .  37
      C.3.  From draft-ietf-rats-eat-01 . . . . . . . . . . . . . . .  37
-     C.4.  From draft-ietf-rats-eat-02 . . . . . . . . . . . . . . .  38
+     C.4.  From draft-ietf-rats-eat-02 . . . . . . . . . . . . . . .  37
      C.5.  From draft-ietf-rats-eat-03 . . . . . . . . . . . . . . .  38
      C.6.  From draft-ietf-rats-eat-04 . . . . . . . . . . . . . . .  38
    Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  38
@@ -165,7 +165,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 10 May 2021                  [Page 3]
+Mandyam, et al.            Expires 13 May 2021                  [Page 3]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -221,7 +221,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 10 May 2021                  [Page 4]
+Mandyam, et al.            Expires 13 May 2021                  [Page 4]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -277,7 +277,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 10 May 2021                  [Page 5]
+Mandyam, et al.            Expires 13 May 2021                  [Page 5]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -333,7 +333,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 10 May 2021                  [Page 6]
+Mandyam, et al.            Expires 13 May 2021                  [Page 6]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -389,7 +389,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 10 May 2021                  [Page 7]
+Mandyam, et al.            Expires 13 May 2021                  [Page 7]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -445,7 +445,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 10 May 2021                  [Page 8]
+Mandyam, et al.            Expires 13 May 2021                  [Page 8]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -501,7 +501,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 10 May 2021                  [Page 9]
+Mandyam, et al.            Expires 13 May 2021                  [Page 9]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -557,7 +557,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 10 May 2021                 [Page 10]
+Mandyam, et al.            Expires 13 May 2021                 [Page 10]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -613,7 +613,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 10 May 2021                 [Page 11]
+Mandyam, et al.            Expires 13 May 2021                 [Page 11]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -669,7 +669,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 10 May 2021                 [Page 12]
+Mandyam, et al.            Expires 13 May 2021                 [Page 12]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -725,7 +725,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 10 May 2021                 [Page 13]
+Mandyam, et al.            Expires 13 May 2021                 [Page 13]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -781,7 +781,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 10 May 2021                 [Page 14]
+Mandyam, et al.            Expires 13 May 2021                 [Page 14]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -837,7 +837,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 10 May 2021                 [Page 15]
+Mandyam, et al.            Expires 13 May 2021                 [Page 15]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -893,7 +893,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 10 May 2021                 [Page 16]
+Mandyam, et al.            Expires 13 May 2021                 [Page 16]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -949,7 +949,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 10 May 2021                 [Page 17]
+Mandyam, et al.            Expires 13 May 2021                 [Page 17]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -1005,7 +1005,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 10 May 2021                 [Page 18]
+Mandyam, et al.            Expires 13 May 2021                 [Page 18]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -1061,7 +1061,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 10 May 2021                 [Page 19]
+Mandyam, et al.            Expires 13 May 2021                 [Page 19]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -1117,7 +1117,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 10 May 2021                 [Page 20]
+Mandyam, et al.            Expires 13 May 2021                 [Page 20]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -1173,7 +1173,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 10 May 2021                 [Page 21]
+Mandyam, et al.            Expires 13 May 2021                 [Page 21]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -1229,7 +1229,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 10 May 2021                 [Page 22]
+Mandyam, et al.            Expires 13 May 2021                 [Page 22]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -1285,7 +1285,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 10 May 2021                 [Page 23]
+Mandyam, et al.            Expires 13 May 2021                 [Page 23]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -1297,23 +1297,19 @@ Internet-Draft                     EAT                     November 2020
 4.5.  Collected CDDL
 
 eat-claims = { ; the top-level payload that is signed using COSE or JOSE
-    * claim
+    ? ueid-claim,
+    ? nonce-claim,
+    ? origination-claim,
+    ? oemid-claim,
+    ? security-level-claim,
+    ? secure-boot-claim,
+    ? debug-disable-claim,
+    ? location-claim,
+    ? uptime-claim,
+    ? submods-part,
+    ? cwt-claim,
+;    ? generic-claim-type,
 }
-
-claim = (
-    ueid-claim //
-    nonce-claim //
-    origination-claim //
-    oemid-claim //
-    security-level-claim //
-    secure-boot-claim //
-    debug-disable-claim //
-    location-claim //
-    uptime-claim //
-    submods-part //
-    cwt-claim //
-;    generic-claim-type //
-)
 
 eat-token = EAT_Tagged ; This is a set of eat-claims signed using COSE
 
@@ -1338,18 +1334,18 @@ time-int = #6.1(int)
 
 rfc8392-claim //= ( issuer => text )
 rfc8392-claim //= ( subject => text )
-
-
-
-Mandyam, et al.            Expires 10 May 2021                 [Page 24]
-
-Internet-Draft                     EAT                     November 2020
-
-
 rfc8392-claim //= ( audience => text )
 rfc8392-claim //= ( expiration => time )
 rfc8392-claim //= ( not-before => time )
 rfc8392-claim //= ( issued-at => time )
+
+
+
+Mandyam, et al.            Expires 13 May 2021                 [Page 24]
+
+Internet-Draft                     EAT                     November 2020
+
+
 rfc8392-claim //= ( cwt-id => bytes )
 
 issuer = 1
@@ -1394,18 +1390,18 @@ altitude-accuracy = 5
 heading = 6
 speed = 7
 timestamp = 8
-
-
-
-Mandyam, et al.            Expires 10 May 2021                 [Page 25]
-
-Internet-Draft                     EAT                     November 2020
-
-
 age = 9
 
 location-claim = (
     location => location-type
+
+
+
+Mandyam, et al.            Expires 13 May 2021                 [Page 25]
+
+Internet-Draft                     EAT                     November 2020
+
+
 )
 
 nonce-type = bstr .size (8..64)
@@ -1451,16 +1447,16 @@ submods-part = (
 
 ueid-type = bstr .size (7..33)
 
-
-
-Mandyam, et al.            Expires 10 May 2021                 [Page 26]
-
-Internet-Draft                     EAT                     November 2020
-
-
 ueid-claim = (
      ueid => ueid-type
 )
+
+
+
+Mandyam, et al.            Expires 13 May 2021                 [Page 26]
+
+Internet-Draft                     EAT                     November 2020
+
 
 uptime-claim = (
     uptime => uint
@@ -1500,20 +1496,6 @@ uptime-claim = (
    Examples would include suppression of location claims for EAT's
    provided to unauthenticated consumers.
 
-
-
-
-
-
-
-
-
-
-Mandyam, et al.            Expires 10 May 2021                 [Page 27]
-
-Internet-Draft                     EAT                     November 2020
-
-
 6.1.  UEID Privacy Considerations
 
    A UEID is usually not privacy-preserving.  Any set of relying parties
@@ -1524,6 +1506,13 @@ Internet-Draft                     EAT                     November 2020
    not be allowed for certain products like browsers that give privacy
    for the end user.  It will often be the case that tokens will not
    have a UEID for these reasons.
+
+
+
+Mandyam, et al.            Expires 13 May 2021                 [Page 27]
+
+Internet-Draft                     EAT                     November 2020
+
 
    There are several strategies that can be used to still be able to put
    UEID's in tokens:
@@ -1557,19 +1546,6 @@ Internet-Draft                     EAT                     November 2020
    respectively.  In addition, implementors should consider the
    following.
 
-
-
-
-
-
-
-
-
-Mandyam, et al.            Expires 10 May 2021                 [Page 28]
-
-Internet-Draft                     EAT                     November 2020
-
-
 7.1.  Key Provisioning
 
    Private key material can be used to sign and/or encrypt the EAT, or
@@ -1585,6 +1561,14 @@ Internet-Draft                     EAT                     November 2020
    an appropriate protocol, and persistence of the private key material
    in some form of secure storage to which (preferably) only the entity
    has access.
+
+
+
+
+Mandyam, et al.            Expires 13 May 2021                 [Page 28]
+
+Internet-Draft                     EAT                     November 2020
+
 
 7.1.1.  Transmission of Key Material
 
@@ -1616,16 +1600,6 @@ Internet-Draft                     EAT                     November 2020
    JSON Web Signature (JWS) specifications, it is still recommended to
    make use of the EAT nonce.
 
-
-
-
-
-
-Mandyam, et al.            Expires 10 May 2021                 [Page 29]
-
-Internet-Draft                     EAT                     November 2020
-
-
 7.3.  Multiple EAT Consumers
 
    In many cases, more than one EAT consumer may be required to fully
@@ -1644,6 +1618,13 @@ Internet-Draft                     EAT                     November 2020
    be removed by the receiving consumer, the communication of claim
    subsets to any downstream consumer should leverage a secure protocol
    (e.g.one that uses transport-layer security, i.e. TLS),
+
+
+
+Mandyam, et al.            Expires 13 May 2021                 [Page 29]
+
+Internet-Draft                     EAT                     November 2020
+
 
    However, assume the EAT of the previous example is hierarchical and
    each claim subset for a downstream consumer is created in the form of
@@ -1673,15 +1654,6 @@ Internet-Draft                     EAT                     November 2020
               Representation (CBOR)", RFC 7049, DOI 10.17487/RFC7049,
               October 2013, <https://www.rfc-editor.org/info/rfc7049>.
 
-
-
-
-
-Mandyam, et al.            Expires 10 May 2021                 [Page 30]
-
-Internet-Draft                     EAT                     November 2020
-
-
    [RFC7519]  Jones, M., Bradley, J., and N. Sakimura, "JSON Web Token
               (JWT)", RFC 7519, DOI 10.17487/RFC7519, May 2015,
               <https://www.rfc-editor.org/info/rfc7519>.
@@ -1702,6 +1674,13 @@ Internet-Draft                     EAT                     November 2020
    [RFC8392]  Jones, M., Wahlstroem, E., Erdtman, S., and H. Tschofenig,
               "CBOR Web Token (CWT)", RFC 8392, DOI 10.17487/RFC8392,
               May 2018, <https://www.rfc-editor.org/info/rfc8392>.
+
+
+
+Mandyam, et al.            Expires 13 May 2021                 [Page 30]
+
+Internet-Draft                     EAT                     November 2020
+
 
    [RFC8610]  Birkholz, H., Vigano, C., and C. Bormann, "Concise Data
               Definition Language (CDDL): A Notational Convention to
@@ -1729,15 +1708,6 @@ Internet-Draft                     EAT                     November 2020
 
 8.2.  Informative References
 
-
-
-
-
-Mandyam, et al.            Expires 10 May 2021                 [Page 31]
-
-Internet-Draft                     EAT                     November 2020
-
-
    [ASN.1]    International Telecommunication Union, "Information
               Technology -- ASN.1 encoding rules: Specification of Basic
               Encoding Rules (BER), Canonical Encoding Rules (CER) and
@@ -1757,6 +1727,16 @@ Internet-Draft                     EAT                     November 2020
    [IDevID]   "IEEE Standard, "IEEE 802.1AR Secure Device Identifier"",
               December 2009, <http://standards.ieee.org/findstds/
               standard/802.1AR-2009.html>.
+
+
+
+
+
+
+Mandyam, et al.            Expires 13 May 2021                 [Page 31]
+
+Internet-Draft                     EAT                     November 2020
+
 
    [IEEE.802-2001]
               "IEEE Standard For Local And Metropolitan Area Networks
@@ -1785,15 +1765,6 @@ Internet-Draft                     EAT                     November 2020
               DOI 10.17487/RFC4122, July 2005,
               <https://www.rfc-editor.org/info/rfc4122>.
 
-
-
-
-
-Mandyam, et al.            Expires 10 May 2021                 [Page 32]
-
-Internet-Draft                     EAT                     November 2020
-
-
    [RFC4949]  Shirey, R., "Internet Security Glossary, Version 2",
               FYI 36, RFC 4949, DOI 10.17487/RFC4949, August 2007,
               <https://www.rfc-editor.org/info/rfc4949>.
@@ -1815,6 +1786,13 @@ A.1.  Very Simple EAT
       / debug-disable /   16: 3, / permanent-disable /
       / timestamp (iat) /  6: 1(1526542894)
   }
+
+
+
+Mandyam, et al.            Expires 13 May 2021                 [Page 32]
+
+Internet-Draft                     EAT                     November 2020
+
 
 A.2.  Example with Submodules, Nesting and Security Levels
 
@@ -1843,13 +1821,6 @@ A.2.  Example with Submodules, Nesting and Security Levels
     }
 }
 
-
-
-Mandyam, et al.            Expires 10 May 2021                 [Page 33]
-
-Internet-Draft                     EAT                     November 2020
-
-
 Appendix B.  UEID Design Rationale
 
 B.1.  Collision Probability
@@ -1866,6 +1837,18 @@ B.1.  Collision Probability
    a mobile phone.  It is assumed that the largest database will have at
    most 10% of the world's population of devices.  Note that databases
    that handle more than a trillion records exist today.
+
+
+
+
+
+
+
+
+Mandyam, et al.            Expires 13 May 2021                 [Page 33]
+
+Internet-Draft                     EAT                     November 2020
+
 
    The trillion-record database size models an easy-to-imagine reality
    over the next decades.  The quadrillion-record database is roughly at
@@ -1895,17 +1878,6 @@ B.1.  Collision Probability
 
                                   Table 3
 
-
-
-
-
-
-
-Mandyam, et al.            Expires 10 May 2021                 [Page 34]
-
-Internet-Draft                     EAT                     November 2020
-
-
    This is conceptually similar to the Birthday Problem where m is the
    number of possible birthdays, always 365, and k is the number of
    people.  It is also conceptually similar to the Birthday Attack where
@@ -1925,6 +1897,14 @@ Internet-Draft                     EAT                     November 2020
    [BirthdayAttack].
 
        p = k^2 / 2n
+
+
+
+
+Mandyam, et al.            Expires 13 May 2021                 [Page 34]
+
+Internet-Draft                     EAT                     November 2020
+
 
    For this calculation:
 
@@ -1952,16 +1932,6 @@ Internet-Draft                     EAT                     November 2020
    per year.  Each of those states has the above calculated probability
    of a collision.
 
-
-
-
-
-
-Mandyam, et al.            Expires 10 May 2021                 [Page 35]
-
-Internet-Draft                     EAT                     November 2020
-
-
    This assumption is a worst-case since it assumes that each state of
    the database is completely independent from the previous state.  In
    reality this is unlikely as state changes will be the addition or
@@ -1976,6 +1946,21 @@ Internet-Draft                     EAT                     November 2020
      t  Time until a collision
      p  Collision probability for UEID size
      k  Database size
+
+
+
+
+
+
+
+
+
+
+
+Mandyam, et al.            Expires 13 May 2021                 [Page 35]
+
+Internet-Draft                     EAT                     November 2020
+
 
    +=====================+==============+==============+==============+
    | Database Size       | 128-bit UEID | 192-bit UEID | 256-bit UEID |
@@ -2010,14 +1995,6 @@ B.2.  No Use of UUID
    Today, cryptographic-quality random numbers are available from common
    CPUs and hardware.  This hardware was introduced between 2010 and
    2015.  Operating systems and cryptographic libraries give access to
-
-
-
-Mandyam, et al.            Expires 10 May 2021                 [Page 36]
-
-Internet-Draft                     EAT                     November 2020
-
-
    this hardware.  Consequently, there is little need for
    implementations to construct such random values from multiple sources
    on their own.
@@ -2027,6 +2004,19 @@ Internet-Draft                     EAT                     November 2020
    and clock values.  This structure is of no value here yet adds
    complexity.  It also slightly reduces the number of actual bits with
    entropy.
+
+
+
+
+
+
+
+
+
+Mandyam, et al.            Expires 13 May 2021                 [Page 36]
+
+Internet-Draft                     EAT                     November 2020
+
 
    UUIDs seem to have been designed for scenarios where the implementor
    does not have full control over the environment and uniqueness has to
@@ -2065,15 +2055,6 @@ C.3.  From draft-ietf-rats-eat-01
 
    *  Add the nonce claim, clarify jti claim
 
-
-
-
-
-Mandyam, et al.            Expires 10 May 2021                 [Page 37]
-
-Internet-Draft                     EAT                     November 2020
-
-
 C.4.  From draft-ietf-rats-eat-02
 
    *  Roll all EUIs back into one UEID type
@@ -2084,6 +2065,14 @@ C.4.  From draft-ietf-rats-eat-02
 
    *  Submods part now includes nested eat tokens so they can be named
       and there can be more tha one of them
+
+
+
+
+Mandyam, et al.            Expires 13 May 2021                 [Page 37]
+
+Internet-Draft                     EAT                     November 2020
+
 
    *  Lots of fixes to the CDDL
 
@@ -2117,19 +2106,6 @@ Authors' Addresses
    Email: lgl@island-resort.com
 
 
-
-
-
-
-
-
-
-
-Mandyam, et al.            Expires 10 May 2021                 [Page 38]
-
-Internet-Draft                     EAT                     November 2020
-
-
    Miguel Ballesteros
    Qualcomm Technologies Inc.
    5775 Morehouse Drive
@@ -2138,6 +2114,20 @@ Internet-Draft                     EAT                     November 2020
 
    Phone: +1 858 651 4299
    Email: mballest@qti.qualcomm.com
+
+
+
+
+
+
+
+
+
+
+
+Mandyam, et al.            Expires 13 May 2021                 [Page 38]
+
+Internet-Draft                     EAT                     November 2020
 
 
    Jeremy O'Donoghue
@@ -2181,4 +2171,14 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 10 May 2021                 [Page 39]
+
+
+
+
+
+
+
+
+
+
+Mandyam, et al.            Expires 13 May 2021                 [Page 39]
