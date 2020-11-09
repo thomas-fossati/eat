@@ -135,33 +135,33 @@ Internet-Draft                     EAT                     November 2020
      4.5.  Collected CDDL  . . . . . . . . . . . . . . . . . . . . .  24
    5.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  27
      5.1.  Reuse of CBOR Web Token (CWT) Claims Registry . . . . . .  27
-       5.1.1.  Claims Registered by This Document  . . . . . . . . .  27
-   6.  Privacy Considerations  . . . . . . . . . . . . . . . . . . .  27
-     6.1.  UEID Privacy Considerations . . . . . . . . . . . . . . .  27
-   7.  Security Considerations . . . . . . . . . . . . . . . . . . .  28
-     7.1.  Key Provisioning  . . . . . . . . . . . . . . . . . . . .  28
-       7.1.1.  Transmission of Key Material  . . . . . . . . . . . .  29
-     7.2.  Transport Security  . . . . . . . . . . . . . . . . . . .  29
-     7.3.  Multiple EAT Consumers  . . . . . . . . . . . . . . . . .  29
-   8.  References  . . . . . . . . . . . . . . . . . . . . . . . . .  30
-     8.1.  Normative References  . . . . . . . . . . . . . . . . . .  30
-     8.2.  Informative References  . . . . . . . . . . . . . . . . .  31
-   Appendix A.  Examples . . . . . . . . . . . . . . . . . . . . . .  32
-     A.1.  Very Simple EAT . . . . . . . . . . . . . . . . . . . . .  32
-     A.2.  Example with Submodules, Nesting and Security Levels  . .  33
-   Appendix B.  UEID Design Rationale  . . . . . . . . . . . . . . .  33
-     B.1.  Collision Probability . . . . . . . . . . . . . . . . . .  33
-     B.2.  No Use of UUID  . . . . . . . . . . . . . . . . . . . . .  36
-   Appendix C.  Changes from Previous Drafts . . . . . . . . . . . .  37
-     C.1.  From draft-rats-eat-01  . . . . . . . . . . . . . . . . .  37
-     C.2.  From draft-mandyam-rats-eat-00  . . . . . . . . . . . . .  37
-     C.3.  From draft-ietf-rats-eat-01 . . . . . . . . . . . . . . .  37
-     C.4.  From draft-ietf-rats-eat-02 . . . . . . . . . . . . . . .  37
-     C.5.  From draft-ietf-rats-eat-03 . . . . . . . . . . . . . . .  38
-     C.6.  From draft-ietf-rats-eat-04 . . . . . . . . . . . . . . .  38
-   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  38
-
-
+     5.2.  Claim Characteristics . . . . . . . . . . . . . . . . . .  27
+       5.2.1.  Interoperability and Relying Party Orientation  . . .  27
+       5.2.2.  Operating System and Technology Neutral . . . . . . .  27
+       5.2.3.  Security Level Neutral  . . . . . . . . . . . . . . .  28
+       5.2.4.  Reuse of Extant Data Formats  . . . . . . . . . . . .  28
+       5.2.5.  Proprietary Claims  . . . . . . . . . . . . . . . . .  28
+     5.3.  Claims Registered by This Document  . . . . . . . . . . .  29
+   6.  Privacy Considerations  . . . . . . . . . . . . . . . . . . .  29
+     6.1.  UEID Privacy Considerations . . . . . . . . . . . . . . .  29
+   7.  Security Considerations . . . . . . . . . . . . . . . . . . .  30
+     7.1.  Key Provisioning  . . . . . . . . . . . . . . . . . . . .  30
+       7.1.1.  Transmission of Key Material  . . . . . . . . . . . .  31
+     7.2.  Transport Security  . . . . . . . . . . . . . . . . . . .  31
+     7.3.  Multiple EAT Consumers  . . . . . . . . . . . . . . . . .  31
+   8.  References  . . . . . . . . . . . . . . . . . . . . . . . . .  32
+     8.1.  Normative References  . . . . . . . . . . . . . . . . . .  32
+     8.2.  Informative References  . . . . . . . . . . . . . . . . .  33
+   Appendix A.  Examples . . . . . . . . . . . . . . . . . . . . . .  34
+     A.1.  Very Simple EAT . . . . . . . . . . . . . . . . . . . . .  34
+     A.2.  Example with Submodules, Nesting and Security Levels  . .  35
+   Appendix B.  UEID Design Rationale  . . . . . . . . . . . . . . .  35
+     B.1.  Collision Probability . . . . . . . . . . . . . . . . . .  35
+     B.2.  No Use of UUID  . . . . . . . . . . . . . . . . . . . . .  38
+   Appendix C.  Changes from Previous Drafts . . . . . . . . . . . .  39
+     C.1.  From draft-rats-eat-01  . . . . . . . . . . . . . . . . .  39
+     C.2.  From draft-mandyam-rats-eat-00  . . . . . . . . . . . . .  39
+     C.3.  From draft-ietf-rats-eat-01 . . . . . . . . . . . . . . .  39
 
 
 
@@ -169,6 +169,11 @@ Mandyam, et al.            Expires 13 May 2021                  [Page 3]
 
 Internet-Draft                     EAT                     November 2020
 
+
+     C.4.  From draft-ietf-rats-eat-02 . . . . . . . . . . . . . . .  39
+     C.5.  From draft-ietf-rats-eat-03 . . . . . . . . . . . . . . .  40
+     C.6.  From draft-ietf-rats-eat-04 . . . . . . . . . . . . . . .  40
+   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  40
 
 1.  Introduction
 
@@ -210,11 +215,6 @@ Internet-Draft                     EAT                     November 2020
    An EAT token is either a CWT as defined in [RFC8392] or a JWT as
    defined in [RFC7519].  This specification defines additional claims
    for entity attestation.
-
-
-
-
-
 
 
 
@@ -1470,7 +1470,111 @@ uptime-claim = (
    Claims Registry is re used.  No new IANA registry is created.  All
    EAT claims should be registered in the CWT and JWT Claims Registries.
 
-5.1.1.  Claims Registered by This Document
+5.2.  Claim Characteristics
+
+   The following is design guidance for creating new EAT claims,
+   particularly those to be registered with IANA.
+
+   Much of this guidance is generic and could also be considered when
+   designing new CWT or JWT claims.
+
+5.2.1.  Interoperability and Relying Party Orientation
+
+   It is a broad goal that EATs can be processed by relying parties in a
+   general way regardless of the type, manufacturer or technology of the
+   device from which they originate.  It is a goal that there be
+   general-purpose verification implementations that can verify tokens
+   for large numbers of use cases with special cases and configurations
+   for different device types.  This is a goal of interoperability of
+   the semantics of claims themselves, not just of the signing, encoding
+   and serialization formats.
+
+   This is a lofty goal and difficult to achieve broadly requiring
+   careful definition of claims in a technology neutral way.  Sometimes
+   it will be difficult to design a claim that can represent the
+   semantics of data from very different device types.  However, the
+   goal remains even when difficult.
+
+5.2.2.  Operating System and Technology Neutral
+
+   Claims should be defined such that they are not specific to an
+   operating system.  They should be applicable to multiple large high-
+   level operating systems from different vendors.  They should also be
+   applicable to multiple small embedded operating systems from multiple
+   vendors and everything in between.
+
+   Claims should not be defined such that they are specific to a SW
+   environment or programming language.
+
+
+
+
+Mandyam, et al.            Expires 13 May 2021                 [Page 27]
+
+Internet-Draft                     EAT                     November 2020
+
+
+   Claims should not be defined such that they are specific to a chip or
+   particular hardware.  For example, they should not just be the
+   contents of some HW status register as it is unlikely that the same
+   HW status register with the same bits exists on a chip of a different
+   manufacturer.
+
+   The boot and debug state claims in this document are an example of a
+   claim that has been defined in this neutral way.
+
+5.2.3.  Security Level Neutral
+
+   Many use cases will have EATs generated by some of the most secure
+   hardware and software that exists.  Secure Elements and smart cards
+   are examples of this.  However, EAT is intended for use in low-
+   security use cases the same as high-security use case.  For example,
+   an app on a mobile device may generate EATs on its own.
+
+   Claims should be defined and registered on the basis of whether they
+   are useful and interoperable, not based on security level.  In
+   particular, there should be no exclusion of claims because they are
+   just used only in low-security environments.
+
+5.2.4.  Reuse of Extant Data Formats
+
+   Where possible, claims should use already standardized data items,
+   identifiers and formats.  This takes advantage of the expertise put
+   into creating those formats and improves interoperability.
+
+   Often extant claims will not be defined in an encoding or
+   serialization format used by EAT.  It is preferred to define a CBOR
+   and JSON format for them so that EAT implementations do not require a
+   plethora of encoders and decoders for serialization formats.
+
+   In some cases, it may be better to use the encoding and serialization
+   as is.  For example, signed X.509 certificates and CRLs can be
+   carried as-is in a byte string.  This retains interoperability with
+   the extensive infrastructure for creating and processing X.509
+   certificates and CRLs.
+
+5.2.5.  Proprietary Claims
+
+   EAT allows the definition and use of proprietary claims.
+
+   For example, a device manufacturer may generate a token with
+   proprietary claims intended only for verification by a service
+   offered by that device manufacturer.  This is a supported use case.
+
+
+
+
+
+Mandyam, et al.            Expires 13 May 2021                 [Page 28]
+
+Internet-Draft                     EAT                     November 2020
+
+
+   In many cases proprietary claims will be the easiest and most obvious
+   way to proceed, however for better interoperability, use of general
+   standardized claims is preferred.
+
+5.3.  Claims Registered by This Document
 
    *  Claim Name: UEID
 
@@ -1507,15 +1611,20 @@ uptime-claim = (
    for the end user.  It will often be the case that tokens will not
    have a UEID for these reasons.
 
+   There are several strategies that can be used to still be able to put
+   UEID's in tokens:
 
 
-Mandyam, et al.            Expires 13 May 2021                 [Page 27]
+
+
+
+
+
+
+Mandyam, et al.            Expires 13 May 2021                 [Page 29]
 
 Internet-Draft                     EAT                     November 2020
 
-
-   There are several strategies that can be used to still be able to put
-   UEID's in tokens:
 
    *  The device obtains explicit permission from the user of the device
       to use the UEID.  This may be through a prompt.  It may also be
@@ -1565,7 +1674,10 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 13 May 2021                 [Page 28]
+
+
+
+Mandyam, et al.            Expires 13 May 2021                 [Page 30]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -1621,7 +1733,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 13 May 2021                 [Page 29]
+Mandyam, et al.            Expires 13 May 2021                 [Page 31]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -1677,7 +1789,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 13 May 2021                 [Page 30]
+Mandyam, et al.            Expires 13 May 2021                 [Page 32]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -1733,7 +1845,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 13 May 2021                 [Page 31]
+Mandyam, et al.            Expires 13 May 2021                 [Page 33]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -1789,7 +1901,7 @@ A.1.  Very Simple EAT
 
 
 
-Mandyam, et al.            Expires 13 May 2021                 [Page 32]
+Mandyam, et al.            Expires 13 May 2021                 [Page 34]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -1845,7 +1957,7 @@ B.1.  Collision Probability
 
 
 
-Mandyam, et al.            Expires 13 May 2021                 [Page 33]
+Mandyam, et al.            Expires 13 May 2021                 [Page 35]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -1901,7 +2013,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 13 May 2021                 [Page 34]
+Mandyam, et al.            Expires 13 May 2021                 [Page 36]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -1957,7 +2069,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 13 May 2021                 [Page 35]
+Mandyam, et al.            Expires 13 May 2021                 [Page 37]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -2013,7 +2125,7 @@ B.2.  No Use of UUID
 
 
 
-Mandyam, et al.            Expires 13 May 2021                 [Page 36]
+Mandyam, et al.            Expires 13 May 2021                 [Page 38]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -2069,7 +2181,7 @@ C.4.  From draft-ietf-rats-eat-02
 
 
 
-Mandyam, et al.            Expires 13 May 2021                 [Page 37]
+Mandyam, et al.            Expires 13 May 2021                 [Page 39]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -2125,7 +2237,7 @@ Authors' Addresses
 
 
 
-Mandyam, et al.            Expires 13 May 2021                 [Page 38]
+Mandyam, et al.            Expires 13 May 2021                 [Page 40]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -2181,4 +2293,4 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 13 May 2021                 [Page 39]
+Mandyam, et al.            Expires 13 May 2021                 [Page 41]
