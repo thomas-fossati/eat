@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2020-11-06T19:33:59.005432+00:00",
+  "timestamp": "2020-11-09T18:57:13.844599+00:00",
   "repo": "ietf-rats-wg/eat",
   "labels": [
     {
@@ -2679,24 +2679,26 @@
       "id": "MDExOlB1bGxSZXF1ZXN0Mzk0OTc0MTkx",
       "title": "clarify iat claim; remove age claim; add timestamp to location",
       "url": "https://github.com/ietf-rats-wg/eat/pull/59",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "laurencelundblade",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "This is to address the timing diagram from Eric Voit and others. \r\n\r\nTimestamping of measurements is very important, but no measurement is defined in EAT (yet).\r\n",
       "createdAt": "2020-03-27T21:19:41Z",
-      "updatedAt": "2020-11-06T19:33:30Z",
+      "updatedAt": "2020-11-06T19:35:51Z",
       "baseRepository": "ietf-rats-wg/eat",
       "baseRefName": "master",
       "baseRefOid": "6c97e22dbce3e2e5f4e8d573f42167e3aa3401ad",
       "headRepository": "ietf-rats-wg/eat",
       "headRefName": "timestamp",
       "headRefOid": "9d55bd77ac2930bedeb974dcaf5a4d1e3ce7a9df",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2020-11-06T19:35:51Z",
+      "mergedAt": "2020-11-06T19:35:51Z",
+      "mergedBy": "laurencelundblade",
+      "mergeCommit": {
+        "oid": "4a3e78b6f37f192a55c1fa7e210b95bc6ffdc36d"
+      },
       "comments": [],
       "reviews": []
     },
@@ -2738,13 +2740,13 @@
       "labels": [],
       "body": "CWT allows floating-point dates, but they are of no value and add an implementation burden, thus EAT is disallowing them.\r\n",
       "createdAt": "2020-04-20T19:48:40Z",
-      "updatedAt": "2020-04-20T19:48:40Z",
+      "updatedAt": "2020-11-06T19:46:15Z",
       "baseRepository": "ietf-rats-wg/eat",
       "baseRefName": "master",
-      "baseRefOid": "aac5de214068993208b41066f1717222abde6114",
+      "baseRefOid": "4a3e78b6f37f192a55c1fa7e210b95bc6ffdc36d",
       "headRepository": "ietf-rats-wg/eat",
       "headRefName": "no-float",
-      "headRefOid": "b4e93a6884d70775e676ec7e93de2b2167102b1b",
+      "headRefOid": "1aa68defb7005ab721fa9770a8f3ed799d1664e5",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
@@ -2921,6 +2923,34 @@
           "updatedAt": "2020-11-04T09:46:45Z"
         }
       ],
+      "reviews": []
+    },
+    {
+      "number": 70,
+      "id": "MDExOlB1bGxSZXF1ZXN0NTE3NzAyNzcy",
+      "title": "Avoid duplicate entries in the EAT map",
+      "url": "https://github.com/ietf-rats-wg/eat/pull/70",
+      "state": "MERGED",
+      "author": "thomas-fossati",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "As per [RATS ML discussion](https://mailarchive.ietf.org/arch/msg/rats/nIJ7GouxIRk1nU5ivu4fK-rInR8/).",
+      "createdAt": "2020-11-09T11:42:54Z",
+      "updatedAt": "2020-11-09T18:56:40Z",
+      "baseRepository": "ietf-rats-wg/eat",
+      "baseRefName": "master",
+      "baseRefOid": "4a3e78b6f37f192a55c1fa7e210b95bc6ffdc36d",
+      "headRepository": "thomas-fossati/eat",
+      "headRefName": "master",
+      "headRefOid": "d5227f6edc18e9b4406e26b0b1918d804f578d72",
+      "closedAt": "2020-11-09T18:56:40Z",
+      "mergedAt": "2020-11-09T18:56:40Z",
+      "mergedBy": "laurencelundblade",
+      "mergeCommit": {
+        "oid": "f1c478441475a867b18e81619e591a73ddcb16bc"
+      },
+      "comments": [],
       "reviews": []
     }
   ]
