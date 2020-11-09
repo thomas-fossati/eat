@@ -5,11 +5,11 @@
 RATS Working Group                                            G. Mandyam
 Internet-Draft                                Qualcomm Technologies Inc.
 Intended status: Standards Track                            L. Lundblade
-Expires: 16 October 2020                             Security Theory LLC
+Expires: 13 May 2021                                 Security Theory LLC
                                                           M. Ballesteros
                                                            J. O'Donoghue
                                               Qualcomm Technologies Inc.
-                                                           14 April 2020
+                                                         9 November 2020
 
 
                    The Entity Attestation Token (EAT)
@@ -45,7 +45,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 16 October 2020.
+   This Internet-Draft will expire on 13 May 2021.
 
 
 
@@ -53,9 +53,9 @@ Status of This Memo
 
 
 
-Mandyam, et al.          Expires 16 October 2020                [Page 1]
+Mandyam, et al.            Expires 13 May 2021                  [Page 1]
 
-Internet-Draft                     EAT                        April 2020
+Internet-Draft                     EAT                     November 2020
 
 
 Copyright Notice
@@ -95,7 +95,7 @@ Table of Contents
        3.6.1.  oemid CDDL  . . . . . . . . . . . . . . . . . . . . .  13
      3.7.  The Security Level Claim (security-level) . . . . . . . .  13
        3.7.1.  security-level CDDL . . . . . . . . . . . . . . . . .  14
-     3.8.  Secure Boot Claim (secure-boot) . . . . . . . . . . . . .  15
+     3.8.  Secure Boot Claim (secure-boot) . . . . . . . . . . . . .  14
        3.8.1.  secure-boot CDDL  . . . . . . . . . . . . . . . . . .  15
      3.9.  Debug Disable Claim (debug-disable) . . . . . . . . . . .  15
        3.9.1.  Not Disabled  . . . . . . . . . . . . . . . . . . . .  16
@@ -109,9 +109,9 @@ Table of Contents
 
 
 
-Mandyam, et al.          Expires 16 October 2020                [Page 2]
+Mandyam, et al.            Expires 13 May 2021                  [Page 2]
 
-Internet-Draft                     EAT                        April 2020
+Internet-Draft                     EAT                     November 2020
 
 
      3.11. The Age Claim (age) . . . . . . . . . . . . . . . . . . .  17
@@ -140,7 +140,7 @@ Internet-Draft                     EAT                        April 2020
      5.1.  Reuse of CBOR Web Token (CWT) Claims Registry . . . . . .  24
      5.2.  Claim Characteristics . . . . . . . . . . . . . . . . . .  24
        5.2.1.  Interoperability and Relying Party Orientation  . . .  24
-       5.2.2.  OS and Technology Neutral . . . . . . . . . . . . . .  25
+       5.2.2.  Operating System and Technology Neutral . . . . . . .  25
        5.2.3.  Security Level Neutral  . . . . . . . . . . . . . . .  25
        5.2.4.  Reuse of Extant Data Formats  . . . . . . . . . . . .  25
        5.2.5.  Proprietary Claims  . . . . . . . . . . . . . . . . .  26
@@ -165,9 +165,9 @@ Internet-Draft                     EAT                        April 2020
 
 
 
-Mandyam, et al.          Expires 16 October 2020                [Page 3]
+Mandyam, et al.            Expires 13 May 2021                  [Page 3]
 
-Internet-Draft                     EAT                        April 2020
+Internet-Draft                     EAT                     November 2020
 
 
      C.1.  From draft-rats-eat-01  . . . . . . . . . . . . . . . . .  37
@@ -221,9 +221,9 @@ Internet-Draft                     EAT                        April 2020
 
 
 
-Mandyam, et al.          Expires 16 October 2020                [Page 4]
+Mandyam, et al.            Expires 13 May 2021                  [Page 4]
 
-Internet-Draft                     EAT                        April 2020
+Internet-Draft                     EAT                     November 2020
 
 
    This specification uses CDDL, [RFC8610], as the primary formalism to
@@ -277,9 +277,9 @@ Internet-Draft                     EAT                        April 2020
 
 
 
-Mandyam, et al.          Expires 16 October 2020                [Page 5]
+Mandyam, et al.            Expires 13 May 2021                  [Page 5]
 
-Internet-Draft                     EAT                        April 2020
+Internet-Draft                     EAT                     November 2020
 
 
    In all operating models, the manufacturer provisions some secret
@@ -333,9 +333,9 @@ Internet-Draft                     EAT                        April 2020
 
 
 
-Mandyam, et al.          Expires 16 October 2020                [Page 6]
+Mandyam, et al.            Expires 13 May 2021                  [Page 6]
 
-Internet-Draft                     EAT                        April 2020
+Internet-Draft                     EAT                     November 2020
 
 
 1.4.1.  Transmission Protocol
@@ -389,9 +389,9 @@ Internet-Draft                     EAT                        April 2020
 
 
 
-Mandyam, et al.          Expires 16 October 2020                [Page 7]
+Mandyam, et al.            Expires 13 May 2021                  [Page 7]
 
-Internet-Draft                     EAT                        April 2020
+Internet-Draft                     EAT                     November 2020
 
 
 2.  Terminology
@@ -439,17 +439,20 @@ Internet-Draft                     EAT                        April 2020
    *  All claims that are not understood by implementations MUST be
       ignored
 
+
+
+
+
+
+
+Mandyam, et al.            Expires 13 May 2021                  [Page 8]
+
+Internet-Draft                     EAT                     November 2020
+
+
    There are no default values or meanings assigned to absent claims
    other than they are not reported.  The reason for a claim's absence
    may be the implementation not supporting the claim, an inability to
-
-
-
-Mandyam, et al.          Expires 16 October 2020                [Page 8]
-
-Internet-Draft                     EAT                        April 2020
-
-
    determine its value, or a preference to report in a different way
    such as a proprietary claim.
 
@@ -498,12 +501,9 @@ Internet-Draft                     EAT                        April 2020
 
 
 
-
-
-
-Mandyam, et al.          Expires 16 October 2020                [Page 9]
+Mandyam, et al.            Expires 13 May 2021                  [Page 9]
 
-Internet-Draft                     EAT                        April 2020
+Internet-Draft                     EAT                     November 2020
 
 
    nonce-type = [ + bstr .size (8..64) ]
@@ -557,12 +557,12 @@ Internet-Draft                     EAT                        April 2020
 
 
 
-Mandyam, et al.          Expires 16 October 2020               [Page 10]
+Mandyam, et al.            Expires 13 May 2021                 [Page 10]
 
-Internet-Draft                     EAT                        April 2020
+Internet-Draft                     EAT                     November 2020
 
 
-    +------+------+---------------------------------------------------+
+    +======+======+===================================================+
     | Type | Type | Specification                                     |
     | Byte | Name |                                                   |
     +======+======+===================================================+
@@ -613,9 +613,9 @@ Internet-Draft                     EAT                        April 2020
 
 
 
-Mandyam, et al.          Expires 16 October 2020               [Page 11]
+Mandyam, et al.            Expires 13 May 2021                 [Page 11]
 
-Internet-Draft                     EAT                        April 2020
+Internet-Draft                     EAT                     November 2020
 
 
    *  New types of UEIDs may be created.  For example, a type 0x07 UEID
@@ -640,7 +640,7 @@ Internet-Draft                     EAT                        April 2020
    creating the EAT.  Often it will be tied back to the device or chip
    manufacturer.  The following table gives some examples:
 
-      +-------------------+-----------------------------------------+
+      +===================+=========================================+
       | Name              | Description                             |
       +===================+=========================================+
       | Acme-TEE          | The EATs are generated in the TEE       |
@@ -669,9 +669,9 @@ Internet-Draft                     EAT                        April 2020
 
 
 
-Mandyam, et al.          Expires 16 October 2020               [Page 12]
+Mandyam, et al.            Expires 13 May 2021                 [Page 12]
 
-Internet-Draft                     EAT                        April 2020
+Internet-Draft                     EAT                     November 2020
 
 
    origination-claim = (
@@ -721,16 +721,15 @@ Internet-Draft                     EAT                        April 2020
    available on the end-entity / client device where the attestation key
    reside and the claims originate.
 
-
-
-
-
-Mandyam, et al.          Expires 16 October 2020               [Page 13]
-
-Internet-Draft                     EAT                        April 2020
-
-
    1 - Unrestricted  There is some expectation that implementor will
+
+
+
+Mandyam, et al.            Expires 13 May 2021                 [Page 13]
+
+Internet-Draft                     EAT                     November 2020
+
+
       protect the attestation signing keys at this level.  Otherwise the
       EAT provides no meaningful security assurances.
 
@@ -771,21 +770,6 @@ Internet-Draft                     EAT                        April 2020
        security-level => security-level-type
    )
 
-
-
-
-
-
-
-
-
-
-
-Mandyam, et al.          Expires 16 October 2020               [Page 14]
-
-Internet-Draft                     EAT                        April 2020
-
-
 3.8.  Secure Boot Claim (secure-boot)
 
    The value of true indicates secure boot is enabled.  Secure boot is
@@ -794,6 +778,13 @@ Internet-Draft                     EAT                        April 2020
    the oemid claimd described in Section 3.6.  This may because the
    software is in ROM or because it is cryptographically authenticated
    or some combination of the two or other.
+
+
+
+Mandyam, et al.            Expires 13 May 2021                 [Page 14]
+
+Internet-Draft                     EAT                     November 2020
+
 
 3.8.1.  secure-boot CDDL
 
@@ -834,14 +825,6 @@ Internet-Draft                     EAT                        April 2020
    guarantee that the target of a superior module encompasses the
    targets of submodules.  Thus, every submodule must explicitly
    describe its own debug state.  The verifier or relying party
-
-
-
-Mandyam, et al.          Expires 16 October 2020               [Page 15]
-
-Internet-Draft                     EAT                        April 2020
-
-
    receiving an EAT cannot assume that debug is turned off in a
    submodule because there is a claim indicating it is turned off in a
    superior module.
@@ -849,6 +832,15 @@ Internet-Draft                     EAT                        April 2020
    An individual target device / submodule may have multiple debug
    facilities.  The use of plural in the description of the states
    refers to that, not to any aggregation or inheritance.
+
+
+
+
+
+Mandyam, et al.            Expires 13 May 2021                 [Page 15]
+
+Internet-Draft                     EAT                     November 2020
+
 
    The architecture of some chips or devices may be such that a debug
    facility operates for the whole chip or device.  If the EAT for such
@@ -893,9 +885,17 @@ Internet-Draft                     EAT                        April 2020
 
 
 
-Mandyam, et al.          Expires 16 October 2020               [Page 16]
+
+
+
+
+
+
+
+
+Mandyam, et al.            Expires 13 May 2021                 [Page 16]
 
-Internet-Draft                     EAT                        April 2020
+Internet-Draft                     EAT                     November 2020
 
 
        debug-disable-type = &(
@@ -949,9 +949,9 @@ Internet-Draft                     EAT                        April 2020
 
 
 
-Mandyam, et al.          Expires 16 October 2020               [Page 17]
+Mandyam, et al.            Expires 13 May 2021                 [Page 17]
 
-Internet-Draft                     EAT                        April 2020
+Internet-Draft                     EAT                     November 2020
 
 
 3.11.1.  age CDDL
@@ -1005,9 +1005,9 @@ Internet-Draft                     EAT                        April 2020
 
 
 
-Mandyam, et al.          Expires 16 October 2020               [Page 18]
+Mandyam, et al.            Expires 13 May 2021                 [Page 18]
 
-Internet-Draft                     EAT                        April 2020
+Internet-Draft                     EAT                     November 2020
 
 
 3.13.1.1.  Non-token Submodules
@@ -1061,9 +1061,9 @@ Internet-Draft                     EAT                        April 2020
 
 
 
-Mandyam, et al.          Expires 16 October 2020               [Page 19]
+Mandyam, et al.            Expires 13 May 2021                 [Page 19]
 
-Internet-Draft                     EAT                        April 2020
+Internet-Draft                     EAT                     November 2020
 
 
    submods-type = { + submodule }
@@ -1085,7 +1085,7 @@ Internet-Draft                     EAT                        April 2020
 
 4.1.  Common CDDL Types
 
-   string-or-uri = uri / tstr; See JSON section below for JSON encoding of string-or-uri
+string-or-uri = uri / tstr; See JSON section below for JSON encoding of string-or-uri
 
 4.2.  CDDL for CWT-defined Claims
 
@@ -1117,9 +1117,9 @@ Internet-Draft                     EAT                        April 2020
 
 
 
-Mandyam, et al.          Expires 16 October 2020               [Page 20]
+Mandyam, et al.            Expires 13 May 2021                 [Page 20]
 
-Internet-Draft                     EAT                        April 2020
+Internet-Draft                     EAT                     November 2020
 
 
 4.3.  JSON
@@ -1173,9 +1173,9 @@ Internet-Draft                     EAT                        April 2020
 
 
 
-Mandyam, et al.          Expires 16 October 2020               [Page 21]
+Mandyam, et al.            Expires 13 May 2021                 [Page 21]
 
-Internet-Draft                     EAT                        April 2020
+Internet-Draft                     EAT                     November 2020
 
 
    ueid = To_be_assigned
@@ -1224,16 +1224,18 @@ Internet-Draft                     EAT                        April 2020
       integer encoding allowed by CBOR.  The server MUST accept all
       integer encodings allowed by CBOR.
 
+
+
+
+
+
+Mandyam, et al.            Expires 13 May 2021                 [Page 22]
+
+Internet-Draft                     EAT                     November 2020
+
+
    *  String Encoding (major type 2 and 3) - The entity can use any
       string encoding allowed by CBOR including indefinite lengths.  It
-
-
-
-Mandyam, et al.          Expires 16 October 2020               [Page 22]
-
-Internet-Draft                     EAT                        April 2020
-
-
       may also encode the lengths of strings in any way allowed by CBOR.
       The server must accept all string encodings.
 
@@ -1283,33 +1285,31 @@ Internet-Draft                     EAT                        April 2020
 
 
 
-
-
-Mandyam, et al.          Expires 16 October 2020               [Page 23]
+Mandyam, et al.            Expires 13 May 2021                 [Page 23]
 
-Internet-Draft                     EAT                        April 2020
+Internet-Draft                     EAT                     November 2020
 
 
-   eat-claims = { ; the top-level payload that is signed using COSE or JOSE
-       * claim
-   }
+eat-claims = { ; the top-level payload that is signed using COSE or JOSE
+    * claim
+}
 
-   claim = (
-       ueid-claim //
-       origination-claim //
-       oemid-claim //
-       security-level-claim //
-       secure-boot-claim //
-       debug-disable-claim //
-       location-claim //
-       age-claim //
-       uptime-claim //
-       submods-part //
-       cwt-claim //
-       generic-claim-type //
-   )
+claim = (
+    ueid-claim //
+    origination-claim //
+    oemid-claim //
+    security-level-claim //
+    secure-boot-claim //
+    debug-disable-claim //
+    location-claim //
+    age-claim //
+    uptime-claim //
+    submods-part //
+    cwt-claim //
+    generic-claim-type //
+)
 
-   eat-token ; This is a set of eat-claims signed using COSE
+eat-token ; This is a set of eat-claims signed using COSE
 
    TODO: copy the rest of the CDDL here (wait until the CDDL is more
    settled so as to avoid copying multiple times)
@@ -1328,49 +1328,48 @@ Internet-Draft                     EAT                        April 2020
    particularly those to be registered with IANA.
 
    Much of this guidance is generic and could also be considered when
-   designing new CWT claims.
+   designing new CWT or JWT claims.
 
 5.2.1.  Interoperability and Relying Party Orientation
 
-   One of the broad goals is that EATs can be processed by relying
-   parties in a general way regardless of the type, manufacturer or
-   technology of the entity from which they originate.  It is a goal
-   that there be some general-purpose verification implementations that
-   can process and verify tokens for large numbers of use cases without
-   having special cases and configurations for different entity and
+   It is a broad goal that EATs can be processed by relying parties in a
+   general way regardless of the type, manufacturer or technology of the
+   device from which they originate.  It is a goal that there be
+   general-purpose verification implementations that can verify tokens
+   for large numbers of use cases with special cases and configurations
+   for different device types.  This is a goal of interoperability of
 
 
 
-Mandyam, et al.          Expires 16 October 2020               [Page 24]
+Mandyam, et al.            Expires 13 May 2021                 [Page 24]
 
-Internet-Draft                     EAT                        April 2020
+Internet-Draft                     EAT                     November 2020
 
 
-   device types.  This is a goal of interoperability of the semantics of
-   claims themselves, not just of the signing format, encoding and
-   serialization format.
+   the semantics of claims themselves, not just of the signing, encoding
+   and serialization formats.
 
-   This is a lofty goal and it will be difficult to achieve broadly as
-   it requires careful definition of claims in a technology neutral way.
-   Sometimes two entity types will each have a way of doing something
-   that is largely irreconcilable with the other.  However, the goal
-   remains, even if it is difficult and long-term goal.
+   This is a lofty goal and difficult to achieve broadly requiring
+   careful definition of claims in a technology neutral way.  Sometimes
+   it will be difficult to design a claim that can represent the
+   semantics of data from very different device types.  However, the
+   goal remains even when difficult.
 
-5.2.2.  OS and Technology Neutral
+5.2.2.  Operating System and Technology Neutral
 
-   Claims should be defined such that they are not specific to any
+   Claims should be defined such that they are not specific to an
    operating system.  They should be applicable to multiple large high-
    level operating systems from different vendors.  They should also be
    applicable to multiple small embedded operating systems from multiple
    vendors and everything in between.
 
-   Claims should not be defined such that they are specific to any SW
+   Claims should not be defined such that they are specific to a SW
    environment or programming language.
 
-   Claims should not be defined such they are not specific to any chip
-   or hardware.  For example, they should not just be the contents of
-   some HW status register as it is unlikely that the same HW status
-   register with the same bits exists on a chip of a different
+   Claims should not be defined such that they are specific to a chip or
+   particular hardware.  For example, they should not just be the
+   contents of some HW status register as it is unlikely that the same
+   HW status register with the same bits exists on a chip of a different
    manufacturer.
 
    The boot and debug state claims in this document are an example of a
@@ -1379,10 +1378,10 @@ Internet-Draft                     EAT                        April 2020
 5.2.3.  Security Level Neutral
 
    Many use cases will have EATs generated by some of the most secure
-   hardware and software that exists.  Secure elements and smart cards
+   hardware and software that exists.  Secure Elements and smart cards
    are examples of this.  However, EAT is intended for use in low-
    security use cases the same as high-security use case.  For example,
-   an app on a mobile device, may generate EATs on its own.
+   an app on a mobile device may generate EATs on its own.
 
    Claims should be defined and registered on the basis of whether they
    are useful and interoperable, not based on security level.  In
@@ -1391,39 +1390,40 @@ Internet-Draft                     EAT                        April 2020
 
 5.2.4.  Reuse of Extant Data Formats
 
-   Where possible, claims should use already-standardized data items,
-   identifiers and data formats.  This takes advantage of the expertise
-   in creating those formats and improves interoperability.
+   Where possible, claims should use already standardized data items,
+   identifiers and formats.  This takes advantage of the expertise put
+   into creating those formats and improves interoperability.
 
 
 
-Mandyam, et al.          Expires 16 October 2020               [Page 25]
+
+Mandyam, et al.            Expires 13 May 2021                 [Page 25]
 
-Internet-Draft                     EAT                        April 2020
+Internet-Draft                     EAT                     November 2020
 
 
    Often extant claims will not be defined in an encoding or
-   serialization format, used by EAT.  In most cases it is best to wrap
-   the data or adapt the encoding to the ones used by EAT so that EAT
-   implementations do not end up with a plethora of encoders and
-   decoders of different serialization formats.
+   serialization format used by EAT.  It is preferred to define a CBOR
+   and JSON format for them so that EAT implementations do not require a
+   plethora of encoders and decoders for serialization formats.
 
-   In some rare cases, it may be better to use the encoding and
-   serialization as is.  For example, signed X.509 certificates and CRLs
-   should be carried as-is and not re-encoded because of the extensive
-   use and support for them and very large interoperability issues with
-   existing infrastructure if they were not used.
+   In some cases, it may be better to use the encoding and serialization
+   as is.  For example, signed X.509 certificates and CRLs can be
+   carried as-is in a byte string.  This retains interoperability with
+   the extensive infrastructure for creating and processing X.509
+   certificates and CRLs.
 
 5.2.5.  Proprietary Claims
 
-   General compliance with EAT allows arbitrary proprietary claims to be
-   added.  In many cases proprietary claims will be the easiest and most
-   obvious way to proceed.
+   EAT allows the definition and use of proprietary claims.
 
-   For example, a device manufacturer may generate a token with a lot of
-   proprietary claims that is intended only for verification by a
-   service offered by that device manufacturer.  This is a supported use
-   case.
+   For example, a device manufacturer may generate a token with
+   proprietary claims intended only for verification by a service
+   offered by that device manufacturer.  This is a supported use case.
+
+   In many cases proprietary claims will be the easiest and most obvious
+   way to proceed, however for better interoperability, use of general
+   standardized claims is preferred.
 
 5.3.  Claims Registered by This Document
 
@@ -1453,9 +1453,9 @@ Internet-Draft                     EAT                        April 2020
 
 
 
-Mandyam, et al.          Expires 16 October 2020               [Page 26]
+Mandyam, et al.            Expires 13 May 2021                 [Page 26]
 
-Internet-Draft                     EAT                        April 2020
+Internet-Draft                     EAT                     November 2020
 
 
 6.1.  UEID Privacy Considerations
@@ -1509,9 +1509,9 @@ Internet-Draft                     EAT                        April 2020
 
 
 
-Mandyam, et al.          Expires 16 October 2020               [Page 27]
+Mandyam, et al.            Expires 13 May 2021                 [Page 27]
 
-Internet-Draft                     EAT                        April 2020
+Internet-Draft                     EAT                     November 2020
 
 
 7.1.  Key Provisioning
@@ -1565,9 +1565,9 @@ Internet-Draft                     EAT                        April 2020
 
 
 
-Mandyam, et al.          Expires 16 October 2020               [Page 28]
+Mandyam, et al.            Expires 13 May 2021                 [Page 28]
 
-Internet-Draft                     EAT                        April 2020
+Internet-Draft                     EAT                     November 2020
 
 
 7.3.  Multiple EAT Consumers
@@ -1621,9 +1621,9 @@ Internet-Draft                     EAT                        April 2020
 
 
 
-Mandyam, et al.          Expires 16 October 2020               [Page 29]
+Mandyam, et al.            Expires 13 May 2021                 [Page 29]
 
-Internet-Draft                     EAT                        April 2020
+Internet-Draft                     EAT                     November 2020
 
 
    [RFC7519]  Jones, M., Bradley, J., and N. Sakimura, "JSON Web Token
@@ -1661,8 +1661,8 @@ Internet-Draft                     EAT                        April 2020
               SpecificationDetails.aspx?specificationId=729>.
 
    [TIME_T]   The Open Group Base Specifications, "Vol. 1: Base
-              Definitions, Issue 7", 2013 Edition, IEEE Std 1003.1,
-              Section 4.15 'Seconds Since the Epoch', 2013,
+              Definitions, Issue 7", Section 4.15 'Seconds Since the
+              Epoch', IEEE Std 1003.1, 2013 Edition, 2013,
               <http://pubs.opengroup.org/onlinepubs/9699919799/basedefs/
               V1_chap04.html#tag_04_15>.
 
@@ -1677,9 +1677,9 @@ Internet-Draft                     EAT                        April 2020
 
 
 
-Mandyam, et al.          Expires 16 October 2020               [Page 30]
+Mandyam, et al.            Expires 13 May 2021                 [Page 30]
 
-Internet-Draft                     EAT                        April 2020
+Internet-Draft                     EAT                     November 2020
 
 
    [ASN.1]    International Telecommunication Union, "Information
@@ -1733,9 +1733,9 @@ Internet-Draft                     EAT                        April 2020
 
 
 
-Mandyam, et al.          Expires 16 October 2020               [Page 31]
+Mandyam, et al.            Expires 13 May 2021                 [Page 31]
 
-Internet-Draft                     EAT                        April 2020
+Internet-Draft                     EAT                     November 2020
 
 
    [RFC4949]  Shirey, R., "Internet Security Glossary, Version 2",
@@ -1752,13 +1752,13 @@ A.1.  Very Simple EAT
    This is shown in CBOR diagnostic form.  Only the payload signed by
    COSE is shown.
 
-   {
-      / nonce /                  9:h'948f8860d13a463e8e',
-      / UEID /                  10:h'0198f50a4ff6c05861c8860d13a638ea4fe2f',
-      / secure-boot /           17:true,
-      / debug-disbale /         12:3,  / permanent-disable  /
-      / time stamp (iat) /       6:1526542894,
-   }
+{
+   / nonce /                  9:h'948f8860d13a463e8e',
+   / UEID /                  10:h'0198f50a4ff6c05861c8860d13a638ea4fe2f',
+   / secure-boot /           17:true,
+   / debug-disbale /         12:3,  / permanent-disable  /
+   / time stamp (iat) /       6:1526542894,
+}
 
 A.2.  Example with Submodules, Nesting and Security Levels
 
@@ -1789,36 +1789,36 @@ A.2.  Example with Submodules, Nesting and Security Levels
 
 
 
-Mandyam, et al.          Expires 16 October 2020               [Page 32]
+Mandyam, et al.            Expires 13 May 2021                 [Page 32]
 
-Internet-Draft                     EAT                        April 2020
+Internet-Draft                     EAT                     November 2020
 
 
-   {
-      / nonce /                  9:h'948f8860d13a463e8e',
-      / UEID /                  10:h'0198f50a4ff6c05861c8860d13a638ea4fe2f',
-      / secure-boot /           17:true,
-      / debug-disbale /         12:3,  / permanent-disable  /
-      / time stamp (iat) /       6:1526542894,
-      / security-level /        11:3, / secure restricted OS /
+{
+   / nonce /                  9:h'948f8860d13a463e8e',
+   / UEID /                  10:h'0198f50a4ff6c05861c8860d13a638ea4fe2f',
+   / secure-boot /           17:true,
+   / debug-disbale /         12:3,  / permanent-disable  /
+   / time stamp (iat) /       6:1526542894,
+   / security-level /        11:3, / secure restricted OS /
 
-      / submods / 17:
-         {
-            / first submod, an Android Application / "Android App Foo" :  {
-               / security-level /      11:1, / unrestricted /
-               / app data /        -70000:'text string'
-            },
-            / 2nd submod, A nested EAT from a secure element / "Secure Element Eat" :
-               / eat /         61( 18(
-                                   / an embedded EAT, bytes of which are not shown /
-                              ))
-            / 3rd submod, information about Linux Android / "Linux Android": {
-               / security-level /        11:1, / unrestricted /
-               / custom - release /  -80000:'8.0.0',
-               / custom - version /  -80001:'4.9.51+'
-            }
+   / submods / 17:
+      {
+         / first submod, an Android Application / "Android App Foo" :  {
+            / security-level /      11:1, / unrestricted /
+            / app data /        -70000:'text string'
+         },
+         / 2nd submod, A nested EAT from a secure element / "Secure Element Eat" :
+            / eat /         61( 18(
+                                / an embedded EAT, bytes of which are not shown /
+                           ))
+         / 3rd submod, information about Linux Android / "Linux Android": {
+            / security-level /        11:1, / unrestricted /
+            / custom - release /  -80000:'8.0.0',
+            / custom - version /  -80001:'4.9.51+'
          }
-   }
+      }
+}
 
 Appendix B.  UEID Design Rationale
 
@@ -1837,19 +1837,23 @@ B.1.  Collision Probability
    most 10% of the world's population of devices.  Note that databases
    that handle more than a trillion records exist today.
 
+
+
+
+
+
+
+
+
+Mandyam, et al.            Expires 13 May 2021                 [Page 33]
+
+Internet-Draft                     EAT                     November 2020
+
+
    The trillion-record database size models an easy-to-imagine reality
    over the next decades.  The quadrillion-record database is roughly at
    the limit of what is imaginable and should probably be accommodated.
    The 100 quadrillion datadbase is highly speculative perhaps involving
-
-
-
-
-Mandyam, et al.          Expires 16 October 2020               [Page 33]
-
-Internet-Draft                     EAT                        April 2020
-
-
    nanorobots for every person, livestock animal and domesticated bird.
    It is included to round out the analysis.
 
@@ -1858,7 +1862,7 @@ Internet-Draft                     EAT                        April 2020
    to internal buses, via serial links, Bluetooth and so on.  This is
    not the same problem as sizing IP addresses.
 
-     +---------+-----------+------------+----------+-----------------+
+     +=========+===========+============+==========+=================+
      | People  | Devices / | Subsystems | Database | Database Size   |
      |         | Person    | / Device   | Portion  |                 |
      +=========+===========+============+==========+=================+
@@ -1894,23 +1898,21 @@ Internet-Draft                     EAT                        April 2020
 
        p = k^2 / 2n
 
-   For this calculation:
 
 
 
-
-
-
-Mandyam, et al.          Expires 16 October 2020               [Page 34]
+Mandyam, et al.            Expires 13 May 2021                 [Page 34]
 
-Internet-Draft                     EAT                        April 2020
+Internet-Draft                     EAT                     November 2020
 
+
+   For this calculation:
 
        p  Collision Probability
        n  Total population based on number of bits in UEID
        k  Population in a database
 
-   +---------------------+--------------+--------------+--------------+
+   +=====================+==============+==============+==============+
    | Database Size       | 128-bit UEID | 192-bit UEID | 256-bit UEID |
    +=====================+==============+==============+==============+
    | trillion (10^12)    | 2 * 10^-15   | 8 * 10^-35   | 5 * 10^-55   |
@@ -1955,14 +1957,12 @@ Internet-Draft                     EAT                        April 2020
 
 
 
-
-
-Mandyam, et al.          Expires 16 October 2020               [Page 35]
+Mandyam, et al.            Expires 13 May 2021                 [Page 35]
 
-Internet-Draft                     EAT                        April 2020
+Internet-Draft                     EAT                     November 2020
 
 
-   +---------------------+--------------+--------------+--------------+
+   +=====================+==============+==============+==============+
    | Database Size       | 128-bit UEID | 192-bit UEID | 256-bit UEID |
    +=====================+==============+==============+==============+
    | trillion (10^12)    | 60,000 years | 10^24 years  | 10^44 years  |
@@ -2005,19 +2005,24 @@ B.2.  No Use of UUID
    complexity.  It also slightly reduces the number of actual bits with
    entropy.
 
+
+
+
+
+
+
+
+
+Mandyam, et al.            Expires 13 May 2021                 [Page 36]
+
+Internet-Draft                     EAT                     November 2020
+
+
    UUIDs seem to have been designed for scenarios where the implementor
    does not have full control over the environment and uniqueness has to
    be constructed from identifiers at hand.  UEID takes the view that
    hardware, software and/or manufacturing process directly implement
    UEID in a simple and direct way.  It takes the view that
-
-
-
-Mandyam, et al.          Expires 16 October 2020               [Page 36]
-
-Internet-Draft                     EAT                        April 2020
-
-
    cryptographic quality random number generators are readily available
    as they are implemented in commonly used CPU hardware.
 
@@ -2061,18 +2066,17 @@ C.4.  From draft-ietf-rats-eat-02
    *  Submods part now includes nested eat tokens so they can be named
       and there can be more tha one of them
 
+
+
+
+Mandyam, et al.            Expires 13 May 2021                 [Page 37]
+
+Internet-Draft                     EAT                     November 2020
+
+
    *  Lots of fixes to the CDDL
 
    *  Added security considerations
-
-
-
-
-
-Mandyam, et al.          Expires 16 October 2020               [Page 37]
-
-Internet-Draft                     EAT                        April 2020
-
 
 C.5.  From draft-ietf-rats-eat-03
 
@@ -2121,8 +2125,4 @@ Authors' Addresses
 
 
 
-
-
-
-
-Mandyam, et al.          Expires 16 October 2020               [Page 38]
+Mandyam, et al.            Expires 13 May 2021                 [Page 38]
