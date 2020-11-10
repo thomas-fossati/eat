@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2020-11-09T18:57:13.844599+00:00",
+  "timestamp": "2020-11-10T20:08:37.419640+00:00",
   "repo": "ietf-rats-wg/eat",
   "labels": [
     {
@@ -798,15 +798,15 @@
       "id": "MDU6SXNzdWU0NzgxOTU1MDI=",
       "title": "The list of claims in 4.5 does not match the list in 4.4.1",
       "url": "https://github.com/ietf-rats-wg/eat/issues/26",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "gmandyam",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "",
       "createdAt": "2019-08-08T00:29:46Z",
-      "updatedAt": "2019-10-04T16:42:48Z",
-      "closedAt": null,
+      "updatedAt": "2020-11-09T21:37:06Z",
+      "closedAt": "2020-11-09T21:37:06Z",
       "comments": [
         {
           "author": "laurencelundblade",
@@ -814,6 +814,13 @@
           "body": "Yes, submods is missing.",
           "createdAt": "2019-10-04T16:42:47Z",
           "updatedAt": "2019-10-04T16:42:47Z"
+        },
+        {
+          "author": "laurencelundblade",
+          "authorAssociation": "COLLABORATOR",
+          "body": "This was fixed with the CDDL build stuff from Thomas",
+          "createdAt": "2020-11-09T21:37:06Z",
+          "updatedAt": "2020-11-09T21:37:06Z"
         }
       ]
     },
@@ -1437,21 +1444,30 @@
       "id": "MDExOlB1bGxSZXF1ZXN0MjcwOTM1NzIy",
       "title": "Added Claims Characteristics section",
       "url": "https://github.com/ietf-rats-wg/eat/pull/7",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "laurencelundblade",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "",
       "createdAt": "2019-04-16T14:28:45Z",
-      "updatedAt": "2020-04-14T19:48:38Z",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
+      "updatedAt": "2020-11-09T21:33:34Z",
+      "baseRepository": "ietf-rats-wg/eat",
+      "baseRefName": "master",
+      "baseRefOid": "aac5de214068993208b41066f1717222abde6114",
+      "headRepository": "ietf-rats-wg/eat",
+      "headRefName": "claim-characteristics",
+      "headRefOid": "0c375694b225d19dcbc193eedace638d364d57f2",
+      "closedAt": "2020-11-09T21:33:28Z",
+      "mergedAt": "2020-11-09T21:33:28Z",
+      "mergedBy": "laurencelundblade",
+      "mergeCommit": {
+        "oid": "f28c8a69c2da08f8db09a5136ca63c5255ce450f"
+      },
       "comments": [
         {
           "author": "henkbirkholz",
-          "authorAssociation": "COLLABORATOR",
+          "authorAssociation": "MEMBER",
           "body": "I would recommend to remove the \"Some examples of profiles that may come to exist:\" content. A specification or even proposed standard is not a good place for listing \"work that may or may not be done\", I think. Other SDO actually forbid this type of content rather strictly. I am not sure what the exact IETF rules are, tbh.",
           "createdAt": "2019-11-27T21:00:04Z",
           "updatedAt": "2019-11-27T21:00:04Z"
@@ -1495,7 +1511,7 @@
               "originalPosition": 36,
               "body": "```suggestion\r\nClaims should not be defined such they are specific to a chip or\r\n```\r\nor\r\n```suggestion\r\nClaims should be defined such they are not specific to any chip or\r\n```",
               "createdAt": "2019-11-07T13:26:23Z",
-              "updatedAt": "2020-04-14T19:48:38Z"
+              "updatedAt": "2020-11-09T21:27:23Z"
             }
           ]
         },
@@ -1528,7 +1544,7 @@
               "originalPosition": 58,
               "body": "Typo:  claims should +use+ already standardized",
               "createdAt": "2019-11-07T15:28:12Z",
-              "updatedAt": "2020-04-14T19:48:38Z"
+              "updatedAt": "2020-11-09T21:27:23Z"
             }
           ]
         },
@@ -1548,7 +1564,7 @@
               "originalPosition": 80,
               "body": "Add comment to the effect that proprietary claims should not be used instead of an equivalent standard claims unless the implementation is significantly different?",
               "createdAt": "2019-11-07T15:31:26Z",
-              "updatedAt": "2020-04-14T19:48:38Z"
+              "updatedAt": "2020-11-09T21:27:23Z"
             }
           ]
         },
@@ -1568,18 +1584,11 @@
               "originalPosition": 36,
               "body": "Shouldn't the language be \"...such THAT they...\"?\r\n\r\nNot sure why the EAT draft should give guidance on what belongs as a claim (or not). Doesn't the existence of the claim in the spec resolve whether or not it should exist?",
               "createdAt": "2020-01-06T22:19:58Z",
-              "updatedAt": "2020-04-14T19:48:38Z"
+              "updatedAt": "2020-11-09T21:27:23Z"
             }
           ]
         }
-      ],
-      "baseRepository": "ietf-rats-wg/eat",
-      "baseRefName": "master",
-      "baseRefOid": "aac5de214068993208b41066f1717222abde6114",
-      "headRepository": "ietf-rats-wg/eat",
-      "headRefName": "claim-characteristics",
-      "headRefOid": "be9adcfd6389a409503729ea7d2c9e3e9a7a470b",
-      "mergeCommit": null
+      ]
     },
     {
       "number": 8,
@@ -2472,17 +2481,24 @@
       "id": "MDExOlB1bGxSZXF1ZXN0MzQ2NDE5NjQ3",
       "title": "first pass on fixing CDDL specification fragments ",
       "url": "https://github.com/ietf-rats-wg/eat/pull/48",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "henkbirkholz",
-      "authorAssociation": "COLLABORATOR",
+      "authorAssociation": "MEMBER",
       "assignees": [],
       "labels": [],
       "body": "According to the new intend of using is as a data model for EAT, initial focus on CWT",
       "createdAt": "2019-11-27T20:46:03Z",
-      "updatedAt": "2019-12-07T00:44:20Z",
-      "closedAt": null,
+      "updatedAt": "2020-11-09T18:58:27Z",
+      "baseRepository": "ietf-rats-wg/eat",
+      "baseRefName": "master",
+      "baseRefOid": "5bfb9df8c6c6043a71bc98c140a100e4a0c278c6",
+      "headRepository": "ietf-rats-wg/eat",
+      "headRefName": "cddl-fixes",
+      "headRefOid": "e144f73d145f42fa63278675353ba1d30292b2c8",
+      "closedAt": "2020-11-09T18:58:27Z",
       "mergedAt": null,
       "mergedBy": null,
+      "mergeCommit": null,
       "comments": [
         {
           "author": "laurencelundblade",
@@ -2490,16 +2506,16 @@
           "body": "Thanks @henkbirkholz for this. It is helpful and I've been using it to update the other PRs. I probably won't merge this, just use parts in the other PRs because it has lots of merge conflicts with the other PRs. I will leave it open until all the CDDL is resolved.\r\n",
           "createdAt": "2019-12-07T00:44:20Z",
           "updatedAt": "2019-12-07T00:44:20Z"
+        },
+        {
+          "author": "laurencelundblade",
+          "authorAssociation": "COLLABORATOR",
+          "body": "This has been overtaken by other fixes.",
+          "createdAt": "2020-11-09T18:58:27Z",
+          "updatedAt": "2020-11-09T18:58:27Z"
         }
       ],
-      "reviews": [],
-      "baseRepository": "ietf-rats-wg/eat",
-      "baseRefName": "master",
-      "baseRefOid": "5bfb9df8c6c6043a71bc98c140a100e4a0c278c6",
-      "headRepository": "ietf-rats-wg/eat",
-      "headRefName": "cddl-fixes",
-      "headRefOid": "e144f73d145f42fa63278675353ba1d30292b2c8",
-      "mergeCommit": null
+      "reviews": []
     },
     {
       "number": 52,
