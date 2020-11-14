@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2020-11-10T20:08:37.419640+00:00",
+  "timestamp": "2020-11-14T17:13:11.809634+00:00",
   "repo": "ietf-rats-wg/eat",
   "labels": [
     {
@@ -1263,9 +1263,17 @@
       "labels": [],
       "body": "",
       "createdAt": "2020-03-18T19:39:58Z",
-      "updatedAt": "2020-03-18T19:39:58Z",
+      "updatedAt": "2020-11-11T11:03:36Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "henkbirkholz",
+          "authorAssociation": "MEMBER",
+          "body": "My assumption that only the creator of the EAT that includes the nested structure can ultimately in charge of assigning a \"security-level\" (I am not super happy with that concept to begin with). There can be claims about the... claimed \"security level\" inside the nested structure itself, of course. But only trust relationships / trust decisions of the EAT creator that embeds these nested structures can provide a basis to convey a notion of trustworthiness here, I think. Thoughts? ",
+          "createdAt": "2020-11-11T11:03:36Z",
+          "updatedAt": "2020-11-11T11:03:36Z"
+        }
+      ]
     },
     {
       "number": 63,
@@ -1279,7 +1287,7 @@
       "labels": [],
       "body": "https://github.com/ietf-rats-wg/architecture/issues/92 topic 3 has some points about EAT.\r\n\r\nTopic 3: EAT. If accurate, I'd like to see a clear acknowledgement that the Verifier may need to act as an Attester for the Relying Party since I'd like to then see specifically how the IETF EAT specification covers this circumstance. In other words, for an EAT that represents an AttestationResult, would the Evidence for the Verifier be embedded or discovered? If embedded, how are submods distinguished for the Verifier's Evidence versus the AttestationResult's embedded claims, including nested EAT's?",
       "createdAt": "2020-06-23T14:15:00Z",
-      "updatedAt": "2020-06-26T16:15:51Z",
+      "updatedAt": "2020-11-11T10:56:54Z",
       "closedAt": null,
       "comments": [
         {
@@ -1288,6 +1296,13 @@
           "body": "@mcr , thanks for opening this issue in EAT based on a portion of an issue I opened against the architecture document.  \r\n\r\nI would title this issue ***\"EAT guidance on how to share the information used to establish trust of Verifier by a Relying Party?\"***\r\n\r\nUsing the nomenclature of the IETF RATS Architecture document, I believe the following is true:\r\n1. EAT defines the claims used as \"Evidence\" or \"Attestation Results\" in the [RATS architecture diagram](https://www.ietf.org/id/draft-ietf-rats-architecture-04.html#name-architectural-overview)\r\n1. The \"Verifier\" in the RATS architecture can be a separate entity from the Relying Party.  Hence, it's necessary that the Verifier be able to provide information to the Relying Party to establish this trust.  The [Trust Model](https://www.ietf.org/id/draft-ietf-rats-architecture-04.html#name-trust-model) section in the RATS Architecture document discusses this requirement.\r\n1. This information may take the form of \"Evidence\" describing the Verifier's execution environment, which is distinct from the \"Evidence\" it analyzes to produce a specific \"Attestation Result\".\r\n\r\nMany (most? all?) \"Verifiers\" will need to share this trust establishing information with Relying Parties.  A Relying Party may work with more than one \"Verifier\".  Is it in scope for EAT to give some guidance on how a Verifier shares this information?  If not EAT, is it (or should it be) in scope for any other standardization process?  Left unaddressed, each Verifier will implement an ad-hoc mechanism, leaving Relying Parties unable to trust EAT tokens without first writing vendor specific logic for each Verifier they work with.\r\n",
           "createdAt": "2020-06-26T16:15:50Z",
           "updatedAt": "2020-06-26T16:15:50Z"
+        },
+        {
+          "author": "henkbirkholz",
+          "authorAssociation": "MEMBER",
+          "body": "I strongly recommend not to mix conceptual messages here. While composite evidence can include attestation results and vice versa, I think that actually makes it even more important to differentiate theses very clearly and consistently. Yes, we need a corresponding definition of Claims for CWT and (CWT Claims Sets maybe) in order to create unified Attestation Results. Alas, if we start to mix many different meanings under the \"catch-all\" concept that is EAT, it will become harder and harder to figure out what an EAT instance is actually intended to represent and facilitate. Trust in understanding the meaning of an EAT is quite vital to RATS.",
+          "createdAt": "2020-11-11T10:56:54Z",
+          "updatedAt": "2020-11-11T10:56:54Z"
         }
       ]
     },
@@ -1341,7 +1356,7 @@
       "labels": [],
       "body": "Right now, the second type of submod, the embedding of a full signed EAT token inside surrounding token is \"direct\".\r\n\r\nI think it needs to be wrapped in a byte string to make it reasonable to implement. When decoding the surrounding token, the nested token will be returned as a byte string that can be easily passed to the COSE/CWT/EAT decoder as these will typically take a byte string as input. \r\n\r\nIf it is not a byte string, then you have to convince the CBOR decoder to return the CWT Tag as a byte string even though it is not a byte string or the same or related instance of the CBOR decoder used to decode the outside EAT must be used to decode the inside EAT.\r\n\r\nNo semantics would change. This is only for a practical consideration of the APIs used for decoding CBOR, COSE, CWT and EAT.",
       "createdAt": "2020-10-19T20:34:05Z",
-      "updatedAt": "2020-10-19T20:34:05Z",
+      "updatedAt": "2020-11-11T10:40:16Z",
       "closedAt": null,
       "comments": []
     }
@@ -2730,19 +2745,34 @@
       "labels": [],
       "body": "See https://github.com/ietf-rats-wg/eat/issues/57",
       "createdAt": "2020-03-28T22:00:06Z",
-      "updatedAt": "2020-03-28T22:00:06Z",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "comments": [],
-      "reviews": [],
+      "updatedAt": "2020-11-11T22:04:05Z",
       "baseRepository": "ietf-rats-wg/eat",
       "baseRefName": "master",
       "baseRefOid": "aac5de214068993208b41066f1717222abde6114",
       "headRepository": "gmandyam/eat",
       "headRefName": "context",
       "headRefOid": "aaec8cd22fb6493903a201117cd64d5909c45ec1",
-      "mergeCommit": null
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [
+        {
+          "author": "laurencelundblade",
+          "authorAssociation": "COLLABORATOR",
+          "body": "This seems more like data that would be sent from the RP/Verifier to the Attester to tell it what to put in the token than a claim that goes in the token.\r\n\r\nIs this related to Intel/FIDO SDO?\r\n\r\nWhen a token is generated with one context type, what is it doing that is different from generating it for a different context type? It seems there has to be a difference. If there was no difference the RP wouldn't care and wouldn't need to know.\r\n",
+          "createdAt": "2020-11-11T18:41:13Z",
+          "updatedAt": "2020-11-11T18:41:13Z"
+        },
+        {
+          "author": "gmandyam",
+          "authorAssociation": "COLLABORATOR",
+          "body": "@laurencelundblade \r\n\r\nIt is not related to FIDO or Intel/SDO.  It is from QWES token:  https://tools.ietf.org/html/draft-mandyam-rats-qwestoken-00#section-3.3.  \r\n\r\nOne use case is \"hardened TLS\", where a TLS client cert is required using a keypair created in a TEE.  The CA may require an attestation along with the CSR.  The context claim in the EAT will indicate to the RP (in this case a CA) that the private key corresponding to the CSR held is within a trusted environment.\r\n\r\n",
+          "createdAt": "2020-11-11T22:04:05Z",
+          "updatedAt": "2020-11-11T22:04:05Z"
+        }
+      ],
+      "reviews": []
     },
     {
       "number": 61,
@@ -2865,7 +2895,7 @@
       "labels": [],
       "body": "Allows UCCS tokens\r\n\r\nIncorporates JWTs, secured and unsecured.\r\n\r\nRequires nested CWT submodules be bstr wrapped.\r\n\r\nHow to bring a UCCS in as a submodule.\r\n\r\nHow to put a JWT submodule in a CWT and vice versa.\r\n\r\nAll the rules for CWT and COSE tag usage.\r\n\r\nTop-level CDDL to handle CWT/COSE, UCCS and JWT",
       "createdAt": "2020-10-26T21:07:48Z",
-      "updatedAt": "2020-11-04T21:06:59Z",
+      "updatedAt": "2020-11-11T19:43:19Z",
       "baseRepository": "ietf-rats-wg/eat",
       "baseRefName": "master",
       "baseRefOid": "6c97e22dbce3e2e5f4e8d573f42167e3aa3401ad",
@@ -2876,7 +2906,22 @@
       "mergedAt": null,
       "mergedBy": null,
       "mergeCommit": null,
-      "comments": [],
+      "comments": [
+        {
+          "author": "henkbirkholz",
+          "authorAssociation": "MEMBER",
+          "body": "I'd like to propose the following contributions that would introduce changes to the current proposal.\r\n\r\n1.) The current root type is named eat-claims. I'd propose to change that to simply eat. eat-claims implies simply a claims set, I think.\r\n2.) If you really want to include JWT, the nested-token type should look like this:\r\n\r\n    nested-token = bstr .cbor eat / b64url\r\n\r\n3.) Change the name \"Non-token Submodules\" to simply \"Claims Sets\" (label: nested-claims-set)\r\n4.) Change the name \"Nested EAT\" to \"Token\" (label: nested-token). The nesting is intrinsic anyways and the term submodule does not really add anything - or maybe I am missing some context here? This also allows to \"nest\" CWT and not only EAT. CWT and EAT can only be differentiated by the composition of their Claims Sets anyways and therefore it is technically possible to use a CWT here already (although not allowed and that has to be checked by the application every time).\r\n5.) In general, I wonder why submod-name is necessary. This way each \"unknown\" label has to assumed to be a nested token or claims set. That is rather complex to parse on the application layer, isn't it? I propose to use distinct and well-defined labels for CWT and CWT Claims Sets (and if we are really going to do this the JSON equivalents for JWT as well - still not convinced here).",
+          "createdAt": "2020-11-11T10:40:04Z",
+          "updatedAt": "2020-11-11T10:41:55Z"
+        },
+        {
+          "author": "laurencelundblade",
+          "authorAssociation": "COLLABORATOR",
+          "body": "1) The most correct CDDL top level definition of an \"eat\" would be a type that is either a CWT, UCCS or JWT. It would reference UCCS and COSE cddl. It would take express the tag rules. However, that runs into quite a mess as there's no way I know of to say a \"COSE with eat-claims as payload\" and would require a COSE implementation inside the cddl tool to validate. (Would CDDL sockets help here? How does the cddl tool handle them?)\r\n\r\n2) I tried that and got into trouble with the cddl validation tool. Also, are you sure JWT is always a complete and proper B64url? I think it has some semantically significant blank lines and there for is not.\r\n\r\n3) I am open to name change, but want to get to common understanding first.\r\n\r\n4) When something is an \"EAT\" its purpose is clearly attestation. When something is a \"CWT\" its purpose may be attestation or something else. Submods should only be tokens whose purpose is attestation.\r\n\r\n5) The intended use of submod name is for things like \"Acme TEE\", \"Qualcomm Hexagon DSP\", \"Infineon Secure Element\". For truly standardized identification of a submod, OEMID, HWVersion and CoSWID should be relied upon by the RP.\r\n\r\n\r\n",
+          "createdAt": "2020-11-11T19:13:19Z",
+          "updatedAt": "2020-11-11T19:43:19Z"
+        }
+      ],
       "reviews": []
     },
     {
@@ -2967,6 +3012,82 @@
         "oid": "f1c478441475a867b18e81619e591a73ddcb16bc"
       },
       "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 71,
+      "id": "MDExOlB1bGxSZXF1ZXN0NTE4NzQzNzkw",
+      "title": "First draft of key inclusion",
+      "url": "https://github.com/ietf-rats-wg/eat/pull/71",
+      "state": "OPEN",
+      "author": "laurencelundblade",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Seems to me there are lots of use cases for key inclusion and they have semantics that vary too much to fit into  one claim. I\u2019ve chosen primarily to write guidelines rather than define claims.\r\n\r\nOne use case is a CSR. However, RFC 8747 doesn\u2019t define a CSR, so referencing it isn\u2019t sufficient.\r\n\r\nAttestations from the Android key store include things like security level and user authentication requirements for use. Going into all that is too much for EAT, but might be good in another document.\r\n\r\nFIDO goes one step beyond Android and binds a relying party/user/device tuple with the key.\r\n\r\nIt is a little tempting to define a security level for the storage and operation of keys since EAT has a security level definition.",
+      "createdAt": "2020-11-10T20:24:26Z",
+      "updatedAt": "2020-11-11T18:33:35Z",
+      "baseRepository": "ietf-rats-wg/eat",
+      "baseRefName": "master",
+      "baseRefOid": "f28c8a69c2da08f8db09a5136ca63c5255ce450f",
+      "headRepository": "ietf-rats-wg/eat",
+      "headRefName": "KeyInclusion",
+      "headRefOid": "f9f3f367d95ee2fbaca9b82ac8231aa444e9832c",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [
+        {
+          "author": "gmandyam",
+          "authorAssociation": "COLLABORATOR",
+          "body": "See https://github.com/ietf-rats-wg/eat/pull/60.  Would recommend tying this concept in specifically for CSR.",
+          "createdAt": "2020-11-10T20:39:09Z",
+          "updatedAt": "2020-11-10T20:39:09Z"
+        },
+        {
+          "author": "laurencelundblade",
+          "authorAssociation": "COLLABORATOR",
+          "body": "My thought is that a CBOR format CSR is of use outside of EAT and thus should be defined by the COSE work group and referenced by RATS.  A CBOR format CSR seems like a good and useful thing to do, but don't think it belongs in EAT. Maybe we hurry up and create it so EAT can reference it?\r\n",
+          "createdAt": "2020-11-10T21:37:06Z",
+          "updatedAt": "2020-11-10T21:37:06Z"
+        },
+        {
+          "author": "gmandyam",
+          "authorAssociation": "COLLABORATOR",
+          "body": ">A CBOR format CSR seems like a good and useful thing to do, but don't think it belongs in EAT. Maybe we hurry up and create it so EAT can reference it?\r\n\r\nI agree that a CBOR-formatted CSR would be a good idea, and I don't think we need to have an EAT dependency on it.  It can be done separately, as you suggested in the COSE WG.\r\n\r\nContext claim, as intended by https://github.com/ietf-rats-wg/eat/pull/60, is not meant to convert or extend an EAT to a CSR object.  It is meant to describe how the attestation is intended to be used - e.g. in the context of a CSR.  I think that is sufficient for key attestation.  If a CBOR CSR object is defined, then it can encapsulate or be appended with an EAT with the appropriate context set.   ",
+          "createdAt": "2020-11-10T21:47:27Z",
+          "updatedAt": "2020-11-10T21:47:27Z"
+        },
+        {
+          "author": "nedmsmith",
+          "authorAssociation": "NONE",
+          "body": "Could someone summarize the use cases for how CSRs are used/useful? I'd like to understand how CSRs of a Evidence / Endorsement / Reference Value claim set fits into the attestation architecture.",
+          "createdAt": "2020-11-10T22:06:08Z",
+          "updatedAt": "2020-11-10T22:06:08Z"
+        },
+        {
+          "author": "henkbirkholz",
+          "authorAssociation": "MEMBER",
+          "body": "I fear that the \"keys\" topic introduces quite some scope creep to the core EAT I-D. I'd recommend to out-source these types of claims and a definition of their purpose to another complementary I-D.\r\n\r\nAdditionally, I think that CSR are not EAT at all. Having said that, it is absolutely fine to create a CBOR/CWT encoding for CSR, but I strongly recommend to do this in a separate I-D (and in a different one than above -> maybe not even in RATS but somewhere else?).",
+          "createdAt": "2020-11-11T10:47:29Z",
+          "updatedAt": "2020-11-11T10:47:29Z"
+        },
+        {
+          "author": "laurencelundblade",
+          "authorAssociation": "COLLABORATOR",
+          "body": "@nedmsmith The use case I know of for including a CSR is IoT device on boarding. When the device first contacts some IoT management system, it includes a CSR. The management system checks out the attestation and maybe checks some other things not related to the attestation and verifies the possession signature in the CSR. If all is OK, the management system records the key in the CSR and uses it with DTLS for further communication with the device.\r\n\r\nThis isn't my design. I just know some folks are interested in this.\r\n\r\nSo it's not really a CSR since no signed certificate is returned. The CSR is being used because it provides proof of possession that just including a bare key does not.\r\n\r\nAt any rate, it seems we're agreed that we will not do any work in EAT to either define a CBOR CSR or to define a claim that allows for their inclusion. (but of course no prohibition against them should some one feel the need)",
+          "createdAt": "2020-11-11T18:30:32Z",
+          "updatedAt": "2020-11-11T18:30:32Z"
+        },
+        {
+          "author": "laurencelundblade",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Now that we agree that CSRs are off the table in EAT, what do you think of the proposed text?\r\n\r\nI noticed that Google/Android prototype codes puts keys in EAT, but not as a COSE_Key.  The text seems like a good hint to not do things like that.",
+          "createdAt": "2020-11-11T18:33:35Z",
+          "updatedAt": "2020-11-11T18:33:35Z"
+        }
+      ],
       "reviews": []
     }
   ]
