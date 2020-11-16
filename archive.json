@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2020-11-14T17:13:11.809634+00:00",
+  "timestamp": "2020-11-16T21:44:19.016193+00:00",
   "repo": "ietf-rats-wg/eat",
   "labels": [
     {
@@ -133,7 +133,7 @@
       "labels": [],
       "body": "See seclevel discussion in mail list archive: https://mailarchive.ietf.org/arch/browse/eat/",
       "createdAt": "2018-06-27T18:04:43Z",
-      "updatedAt": "2019-10-17T21:51:36Z",
+      "updatedAt": "2020-11-14T18:31:58Z",
       "closedAt": null,
       "comments": [
         {
@@ -142,6 +142,27 @@
           "body": "The link to mailarchive doesn't appear to show messages related to this issue. Difficult to get context. My feedback related to levels is there isn't a clear use case or security model for the levels defined here. For example, the Bell-LaPadula security model defines security levels which are meaningful in that context. However, it isn't possible to map the levels defined in EAT because BL levels also have compartments and require a TCB boundary definition. These elements are not defined by EAT. ",
           "createdAt": "2019-10-17T21:51:36Z",
           "updatedAt": "2019-10-17T21:51:36Z"
+        },
+        {
+          "author": "laurencelundblade",
+          "authorAssociation": "COLLABORATOR",
+          "body": "The right link to the previous discussion that seems worth reading.\r\n\r\nhttps://mailarchive.ietf.org/arch/msg/eat/cCalQh6WIePUYgZr_amp6FfOHc4/",
+          "createdAt": "2020-11-14T17:56:11Z",
+          "updatedAt": "2020-11-14T17:56:11Z"
+        },
+        {
+          "author": "laurencelundblade",
+          "authorAssociation": "COLLABORATOR",
+          "body": "This claim is oriented around resistance to attack. There seems to be some consensus around that the discussion in the mail archive. This claim is also in line with other efforts like that in FIDO.\r\n\r\nhttps://mailarchive.ietf.org/arch/msg/eat/cCalQh6WIePUYgZr_amp6FfOHc4/\r\n\r\nBell-LaPadula doesn't seem to be about resistance to attack and doesn't seem useful here.",
+          "createdAt": "2020-11-14T17:59:29Z",
+          "updatedAt": "2020-11-14T17:59:29Z"
+        },
+        {
+          "author": "laurencelundblade",
+          "authorAssociation": "COLLABORATOR",
+          "body": "The proposal for this open issue is to reduce to three security levels from four.\r\n\r\nAlternatively we could go to five by adding a \"system services\" level that is roughly equivalent to root on Linux.",
+          "createdAt": "2020-11-14T18:31:58Z",
+          "updatedAt": "2020-11-14T18:31:58Z"
         }
       ]
     },
@@ -1357,6 +1378,126 @@
       "body": "Right now, the second type of submod, the embedding of a full signed EAT token inside surrounding token is \"direct\".\r\n\r\nI think it needs to be wrapped in a byte string to make it reasonable to implement. When decoding the surrounding token, the nested token will be returned as a byte string that can be easily passed to the COSE/CWT/EAT decoder as these will typically take a byte string as input. \r\n\r\nIf it is not a byte string, then you have to convince the CBOR decoder to return the CWT Tag as a byte string even though it is not a byte string or the same or related instance of the CBOR decoder used to decode the outside EAT must be used to decode the inside EAT.\r\n\r\nNo semantics would change. This is only for a practical consideration of the APIs used for decoding CBOR, COSE, CWT and EAT.",
       "createdAt": "2020-10-19T20:34:05Z",
       "updatedAt": "2020-11-11T10:40:16Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 74,
+      "id": "MDU6SXNzdWU3NDMwNzExMzE=",
+      "title": "Extensibility of claims' semantics",
+      "url": "https://github.com/ietf-rats-wg/eat/issues/74",
+      "state": "OPEN",
+      "author": "thomas-fossati",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "If I wanted to expand the semantics of \"Debug Disable\" or \"Security Level\" with my own local semantics, how would I do that?\r\n\r\nShould I create a new claim?  Or could I extend the claim\u2019s type?  If the latter, how? \r\n\r\nIt\u2019d be useful that the doc explicitly stated the rules of this game.\r\n",
+      "createdAt": "2020-11-14T20:10:56Z",
+      "updatedAt": "2020-11-14T20:20:34Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "thomas-fossati",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "@laurencelundblade  [comment on the mailing list](https://mailarchive.ietf.org/arch/msg/rats/DVCR2E_Dozx0JhHz9Pd5w3RdADU/) :\r\n\r\n\r\nI don\u2019t think these should be extensible. You can\u2019t make up\r\nyour own corporate bond rating category or restaurant hygene\r\nrating category and such. If that is allowed the scheme becomes\r\nmuch less useful. \r\n\r\nI\u2019ve added text for that in this PR #73  . It says that when you can\u2019t live\r\nwith the defined security level schema, omit the claim, make up\r\nyour own claim or do both.\r\n\r\nAlso, see this old but unresolved discussion #4 on security level.\r\nOne thing nice about a very simple three-level scheme is that it\r\nbecomes clear this is a very rough top-level characterization only.\r\n```",
+          "createdAt": "2020-11-14T20:18:08Z",
+          "updatedAt": "2020-11-14T20:20:34Z"
+        }
+      ]
+    },
+    {
+      "number": 75,
+      "id": "MDU6SXNzdWU3NDMwNzExOTk=",
+      "title": "Nonce missing from JSON labels",
+      "url": "https://github.com/ietf-rats-wg/eat/issues/75",
+      "state": "OPEN",
+      "author": "thomas-fossati",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "There\u2019s a typo in Section 4.3.1: the \u201cnonce\u201d label is missing.\r\n",
+      "createdAt": "2020-11-14T20:11:15Z",
+      "updatedAt": "2020-11-14T20:22:10Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "thomas-fossati",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "@laurencelundblade [comment on the mailing list](https://mailarchive.ietf.org/arch/msg/rats/DVCR2E_Dozx0JhHz9Pd5w3RdADU/):\r\n\r\nThe JWT nonce was already in the IANA registry for JWT. I added CDDL for it and note that some of the CDDL in EAT is for things defined elsewhere before there was CDDL.  See this PR #72 .",
+          "createdAt": "2020-11-14T20:22:09Z",
+          "updatedAt": "2020-11-14T20:22:09Z"
+        }
+      ]
+    },
+    {
+      "number": 76,
+      "id": "MDU6SXNzdWU3NDMwNzEzOTY=",
+      "title": "JSON:CBOR equivalency",
+      "url": "https://github.com/ietf-rats-wg/eat/issues/76",
+      "state": "OPEN",
+      "author": "thomas-fossati",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "The JSON story is nearly OK, except for two things:\r\n* the Submods claim where the JSON:CBOR equivalency is broken by allowing unbounded\r\nint keys in CBOR that can't have an equivalent in JSON;\r\n* the StringOrURI type whose semantics can\u2019t be preserved when transcoding.\r\n\r\n(Possibly the former could be addressed by only allowing string labels, the latter by declaring we only deal with strings.)\r\n",
+      "createdAt": "2020-11-14T20:12:28Z",
+      "updatedAt": "2020-11-14T20:23:46Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "thomas-fossati",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "@laurencelundblade [comment on the mailing list](https://mailarchive.ietf.org/arch/msg/rats/DVCR2E_Dozx0JhHz9Pd5w3RdADU/):\r\n\r\nPushed a fix for StringOrURI to master.\r\n\r\nMade submodule names string only as part of this PR #67 . Was thinking that they should only be strings myself. \r\n",
+          "createdAt": "2020-11-14T20:23:45Z",
+          "updatedAt": "2020-11-14T20:23:45Z"
+        }
+      ]
+    },
+    {
+      "number": 77,
+      "id": "MDU6SXNzdWU3NDMwNzE0Njk=",
+      "title": "CWT CDDL needs some adjusting",
+      "url": "https://github.com/ietf-rats-wg/eat/issues/77",
+      "state": "OPEN",
+      "author": "thomas-fossati",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "The CDDL for CWT claims needs some adjusting: it\u2019d allow only one CWT claim at a time in the EAT map.\r\n\r\nScaling up a bit, we should probably have a CDDL socket for EAT extensions in the top-level map - and exercise this extension point starting from CWT claims.",
+      "createdAt": "2020-11-14T20:12:55Z",
+      "updatedAt": "2020-11-14T20:12:55Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 78,
+      "id": "MDU6SXNzdWU3NDMwNzE1Mzg=",
+      "title": "Add normative language to the CBOR interop section",
+      "url": "https://github.com/ietf-rats-wg/eat/issues/78",
+      "state": "OPEN",
+      "author": "thomas-fossati",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "The CBOR interoperability section should have RFC2119/8174 language where needed.  Please also double check that there are no copy-pasted requirements from other documents without an explicit ref -- e.g., the stray \"Duplicate map keys are not allowed.\" should have a ref to 7049.\r\n",
+      "createdAt": "2020-11-14T20:13:19Z",
+      "updatedAt": "2020-11-14T20:13:19Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 79,
+      "id": "MDU6SXNzdWU3NDMwNzE2MjU=",
+      "title": "Debug Disable naming considerations",
+      "url": "https://github.com/ietf-rats-wg/eat/issues/79",
+      "state": "OPEN",
+      "author": "thomas-fossati",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Here are a couple of typographic thoughts about Debug Disable claim.\r\n\r\nThe \"disable\" in \"Debug disable\" looks redundant: it'd be better renaming it as just \"Debug\" or \"Debug status\u201d.\r\n\r\nA bit more consistent wording wouldn\u2019t hurt too. e.g.:\r\n* \"Not disabled\" => \u201cenabled\u201d -- this, combined with the above suggestion, would move us from \"debug disable not disabled\" to a simpler to digest \"debug enabled\" :-)\r\n* \"Permanent disable\" => \"disabled permanently\"\r\n* \"Full permanent disable\" => \"disabled fully and permanently\"\r\n\r\n",
+      "createdAt": "2020-11-14T20:13:47Z",
+      "updatedAt": "2020-11-14T20:13:47Z",
       "closedAt": null,
       "comments": []
     }
@@ -2895,13 +3036,13 @@
       "labels": [],
       "body": "Allows UCCS tokens\r\n\r\nIncorporates JWTs, secured and unsecured.\r\n\r\nRequires nested CWT submodules be bstr wrapped.\r\n\r\nHow to bring a UCCS in as a submodule.\r\n\r\nHow to put a JWT submodule in a CWT and vice versa.\r\n\r\nAll the rules for CWT and COSE tag usage.\r\n\r\nTop-level CDDL to handle CWT/COSE, UCCS and JWT",
       "createdAt": "2020-10-26T21:07:48Z",
-      "updatedAt": "2020-11-11T19:43:19Z",
+      "updatedAt": "2020-11-14T19:04:18Z",
       "baseRepository": "ietf-rats-wg/eat",
       "baseRefName": "master",
       "baseRefOid": "6c97e22dbce3e2e5f4e8d573f42167e3aa3401ad",
       "headRepository": "ietf-rats-wg/eat",
       "headRefName": "submod_update",
-      "headRefOid": "c9c9b3ad653c99c39b8576c483aaaf1f070bf35f",
+      "headRefOid": "3444119b24cd47b605db1070ab763d17d0980bdc",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
@@ -3088,6 +3229,192 @@
           "updatedAt": "2020-11-11T18:33:35Z"
         }
       ],
+      "reviews": []
+    },
+    {
+      "number": 72,
+      "id": "MDExOlB1bGxSZXF1ZXN0NTIxMDQyNjI5",
+      "title": "Add CDDL for JSON nonce label; indicate CDDL from CWT, JWT... is included in EAT",
+      "url": "https://github.com/ietf-rats-wg/eat/pull/72",
+      "state": "OPEN",
+      "author": "laurencelundblade",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2020-11-14T18:25:14Z",
+      "updatedAt": "2020-11-15T21:38:25Z",
+      "baseRepository": "ietf-rats-wg/eat",
+      "baseRefName": "master",
+      "baseRefOid": "f28c8a69c2da08f8db09a5136ca63c5255ce450f",
+      "headRepository": "ietf-rats-wg/eat",
+      "headRefName": "CDDL_for_JWT_CWT",
+      "headRefOid": "14ecfc58030eb6fb15d00d748e2f0b69a8fe9918",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NTMwODMzNjY3",
+          "commit": {
+            "abbreviatedOid": "14ecfc5"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2020-11-15T20:47:01Z",
+          "updatedAt": "2020-11-15T20:47:02Z",
+          "comments": [
+            {
+              "originalPosition": 4,
+              "body": "```suggestion\r\nSome of the CDDL included here is for claims that are defined in CWT {{RFC8392}} or JWT {{RFC7519}} or are in the IANA CWT or JWT registries.\r\n```",
+              "createdAt": "2020-11-15T20:47:01Z",
+              "updatedAt": "2020-11-15T20:47:02Z"
+            }
+          ]
+        },
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NTMwODM1Mjgw",
+          "commit": {
+            "abbreviatedOid": "14ecfc5"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2020-11-15T21:07:20Z",
+          "updatedAt": "2020-11-15T21:07:20Z",
+          "comments": [
+            {
+              "originalPosition": 2,
+              "body": "Laurence, while you are on it:\r\n* `debug-disble` should be `debug-disable`, and\r\n* `nested-eat` should be deleted since it doesn't seem to be used\r\n",
+              "createdAt": "2020-11-15T21:07:20Z",
+              "updatedAt": "2020-11-15T21:07:20Z"
+            }
+          ]
+        },
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NTMwODM3ODY0",
+          "commit": {
+            "abbreviatedOid": "14ecfc5"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2020-11-15T21:38:24Z",
+          "updatedAt": "2020-11-15T21:38:25Z",
+          "comments": [
+            {
+              "originalPosition": 2,
+              "body": "Also, I think now we could uncomment `CDDL_FRAGS += json.cddl` in `cddl/vars.mk`",
+              "createdAt": "2020-11-15T21:38:24Z",
+              "updatedAt": "2020-11-15T21:38:25Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 73,
+      "id": "MDExOlB1bGxSZXF1ZXN0NTIxMDQzMjQ0",
+      "title": "Clarify that the security level claim is NOT extensible",
+      "url": "https://github.com/ietf-rats-wg/eat/pull/73",
+      "state": "OPEN",
+      "author": "laurencelundblade",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "If everyone made up their own security level as they will be wont to do, this claim would be generally useless.\r\n\r\nSee also #4 ",
+      "createdAt": "2020-11-14T18:30:08Z",
+      "updatedAt": "2020-11-15T20:44:41Z",
+      "baseRepository": "ietf-rats-wg/eat",
+      "baseRefName": "master",
+      "baseRefOid": "f28c8a69c2da08f8db09a5136ca63c5255ce450f",
+      "headRepository": "ietf-rats-wg/eat",
+      "headRefName": "SecurityLevelNotExtensible",
+      "headRefOid": "798bcc712d392d970347ca14cf31c541926fa55f",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NTMwODMzNDgz",
+          "commit": {
+            "abbreviatedOid": "798bcc7"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2020-11-15T20:44:40Z",
+          "updatedAt": "2020-11-15T20:44:41Z",
+          "comments": [
+            {
+              "originalPosition": 70,
+              "body": "I would simply say:\r\n_\"If a particular implementation considers this claim to be inadequate, they should omit it and define their own proprietary claim instead.\"_",
+              "createdAt": "2020-11-15T20:44:41Z",
+              "updatedAt": "2020-11-15T20:44:41Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 80,
+      "id": "MDExOlB1bGxSZXF1ZXN0NTIxMjYzNDE1",
+      "title": "Add CDDL group socket to the top-level eat map",
+      "url": "https://github.com/ietf-rats-wg/eat/pull/80",
+      "state": "OPEN",
+      "author": "thomas-fossati",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "The extension mechanism is bootstrapped with the CWT claims set\r\n\r\nFixes #77",
+      "createdAt": "2020-11-15T21:35:11Z",
+      "updatedAt": "2020-11-15T21:35:11Z",
+      "baseRepository": "ietf-rats-wg/eat",
+      "baseRefName": "master",
+      "baseRefOid": "c39f92f49675a27aa67ed3ba65143cbfc002c38f",
+      "headRepository": "thomas-fossati/eat",
+      "headRefName": "cddl-socket",
+      "headRefOid": "c3ed6e89b85d5c17f059ee2a43716d32552ed5a2",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 81,
+      "id": "MDExOlB1bGxSZXF1ZXN0NTIxOTc4MzYw",
+      "title": "First proposal for measurements claim",
+      "url": "https://github.com/ietf-rats-wg/eat/pull/81",
+      "state": "OPEN",
+      "author": "laurencelundblade",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2020-11-16T21:43:43Z",
+      "updatedAt": "2020-11-16T21:43:43Z",
+      "baseRepository": "ietf-rats-wg/eat",
+      "baseRefName": "master",
+      "baseRefOid": "c39f92f49675a27aa67ed3ba65143cbfc002c38f",
+      "headRepository": "ietf-rats-wg/eat",
+      "headRefName": "MeasurementsClaim",
+      "headRefOid": "181abb747f7156ea7d978c8bc00540d3cc8aac81",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
       "reviews": []
     }
   ]
