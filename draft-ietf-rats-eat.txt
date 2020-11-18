@@ -5,11 +5,11 @@
 RATS Working Group                                            G. Mandyam
 Internet-Draft                                Qualcomm Technologies Inc.
 Intended status: Standards Track                            L. Lundblade
-Expires: 18 May 2021                                 Security Theory LLC
+Expires: 22 May 2021                                 Security Theory LLC
                                                           M. Ballesteros
                                                            J. O'Donoghue
                                               Qualcomm Technologies Inc.
-                                                        14 November 2020
+                                                        18 November 2020
 
 
                    The Entity Attestation Token (EAT)
@@ -45,7 +45,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 18 May 2021.
+   This Internet-Draft will expire on 22 May 2021.
 
 
 
@@ -53,7 +53,7 @@ Status of This Memo
 
 
 
-Mandyam, et al.            Expires 18 May 2021                  [Page 1]
+Mandyam, et al.            Expires 22 May 2021                  [Page 1]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Mandyam, et al.            Expires 18 May 2021                  [Page 2]
+Mandyam, et al.            Expires 22 May 2021                  [Page 2]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -165,7 +165,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 18 May 2021                  [Page 3]
+Mandyam, et al.            Expires 22 May 2021                  [Page 3]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -221,7 +221,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 18 May 2021                  [Page 4]
+Mandyam, et al.            Expires 22 May 2021                  [Page 4]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -277,7 +277,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 18 May 2021                  [Page 5]
+Mandyam, et al.            Expires 22 May 2021                  [Page 5]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -333,7 +333,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 18 May 2021                  [Page 6]
+Mandyam, et al.            Expires 22 May 2021                  [Page 6]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -389,7 +389,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 18 May 2021                  [Page 7]
+Mandyam, et al.            Expires 22 May 2021                  [Page 7]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -445,7 +445,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 18 May 2021                  [Page 8]
+Mandyam, et al.            Expires 22 May 2021                  [Page 8]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -501,7 +501,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 18 May 2021                  [Page 9]
+Mandyam, et al.            Expires 22 May 2021                  [Page 9]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -557,7 +557,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 18 May 2021                 [Page 10]
+Mandyam, et al.            Expires 22 May 2021                 [Page 10]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -613,7 +613,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 18 May 2021                 [Page 11]
+Mandyam, et al.            Expires 22 May 2021                 [Page 11]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -669,7 +669,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 18 May 2021                 [Page 12]
+Mandyam, et al.            Expires 22 May 2021                 [Page 12]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -725,7 +725,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 18 May 2021                 [Page 13]
+Mandyam, et al.            Expires 22 May 2021                 [Page 13]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -781,7 +781,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 18 May 2021                 [Page 14]
+Mandyam, et al.            Expires 22 May 2021                 [Page 14]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -837,7 +837,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 18 May 2021                 [Page 15]
+Mandyam, et al.            Expires 22 May 2021                 [Page 15]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -893,7 +893,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 18 May 2021                 [Page 16]
+Mandyam, et al.            Expires 22 May 2021                 [Page 16]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -949,7 +949,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 18 May 2021                 [Page 17]
+Mandyam, et al.            Expires 22 May 2021                 [Page 17]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -1005,7 +1005,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 18 May 2021                 [Page 18]
+Mandyam, et al.            Expires 22 May 2021                 [Page 18]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -1061,7 +1061,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 18 May 2021                 [Page 19]
+Mandyam, et al.            Expires 22 May 2021                 [Page 19]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -1117,7 +1117,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 18 May 2021                 [Page 20]
+Mandyam, et al.            Expires 22 May 2021                 [Page 20]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -1142,13 +1142,15 @@ Internet-Draft                     EAT                     November 2020
    normative as [RFC8392] is the authoritative definition of these
    claims.
 
-   rfc8392-claim //= ( issuer => text )
-   rfc8392-claim //= ( subject => text )
-   rfc8392-claim //= ( audience => text )
-   rfc8392-claim //= ( expiration => time )
-   rfc8392-claim //= ( not-before => time )
-   rfc8392-claim //= ( issued-at => time )
-   rfc8392-claim //= ( cwt-id => bytes )
+   $$eat-extension //= (
+       ? issuer => text,
+       ? subject => text,
+       ? audience => text,
+       ? expiration => time,
+       ? not-before => time,
+       ? issued-at => time,
+       ? cwt-id => bytes,
+   )
 
    issuer = 1
    subject = 2
@@ -1157,8 +1159,6 @@ Internet-Draft                     EAT                     November 2020
    not-before = 5
    issued-at = 6
    cwt-id = 7
-
-   cwt-claim = rfc8392-claim
 
 4.3.  JSON
 
@@ -1173,7 +1173,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 18 May 2021                 [Page 21]
+Mandyam, et al.            Expires 22 May 2021                 [Page 21]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -1229,7 +1229,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 18 May 2021                 [Page 22]
+Mandyam, et al.            Expires 22 May 2021                 [Page 22]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -1285,7 +1285,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 18 May 2021                 [Page 23]
+Mandyam, et al.            Expires 22 May 2021                 [Page 23]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -1307,8 +1307,7 @@ eat-claims = { ; the top-level payload that is signed using COSE or JOSE
     ? location-claim,
     ? uptime-claim,
     ? submods-part,
-    ? cwt-claim,
-;    ? generic-claim-type,
+    * $$eat-extension,
 }
 
 eat-token = EAT_Tagged ; This is a set of eat-claims signed using COSE
@@ -1332,21 +1331,23 @@ string-or-uri = tstr
 
 time-int = #6.1(int)
 
-rfc8392-claim //= ( issuer => text )
-rfc8392-claim //= ( subject => text )
-rfc8392-claim //= ( audience => text )
-rfc8392-claim //= ( expiration => time )
-rfc8392-claim //= ( not-before => time )
-rfc8392-claim //= ( issued-at => time )
+$$eat-extension //= (
+    ? issuer => text,
+    ? subject => text,
+    ? audience => text,
+    ? expiration => time,
+    ? not-before => time,
+    ? issued-at => time,
 
 
 
-Mandyam, et al.            Expires 18 May 2021                 [Page 24]
+Mandyam, et al.            Expires 22 May 2021                 [Page 24]
 
 Internet-Draft                     EAT                     November 2020
 
 
-rfc8392-claim //= ( cwt-id => bytes )
+    ? cwt-id => bytes,
+)
 
 issuer = 1
 subject = 2
@@ -1356,7 +1357,6 @@ not-before = 5
 issued-at = 6
 cwt-id = 7
 
-cwt-claim = rfc8392-claim
 
 debug-disable-type = &(
     not-disabled: 0,
@@ -1397,7 +1397,7 @@ location-claim = (
 
 
 
-Mandyam, et al.            Expires 18 May 2021                 [Page 25]
+Mandyam, et al.            Expires 22 May 2021                 [Page 25]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -1453,7 +1453,7 @@ ueid-claim = (
 
 
 
-Mandyam, et al.            Expires 18 May 2021                 [Page 26]
+Mandyam, et al.            Expires 22 May 2021                 [Page 26]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -1509,7 +1509,7 @@ uptime-claim = (
 
 
 
-Mandyam, et al.            Expires 18 May 2021                 [Page 27]
+Mandyam, et al.            Expires 22 May 2021                 [Page 27]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -1565,7 +1565,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 18 May 2021                 [Page 28]
+Mandyam, et al.            Expires 22 May 2021                 [Page 28]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -1621,7 +1621,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 18 May 2021                 [Page 29]
+Mandyam, et al.            Expires 22 May 2021                 [Page 29]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -1677,7 +1677,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 18 May 2021                 [Page 30]
+Mandyam, et al.            Expires 22 May 2021                 [Page 30]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -1733,7 +1733,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 18 May 2021                 [Page 31]
+Mandyam, et al.            Expires 22 May 2021                 [Page 31]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -1789,7 +1789,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 18 May 2021                 [Page 32]
+Mandyam, et al.            Expires 22 May 2021                 [Page 32]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -1845,7 +1845,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 18 May 2021                 [Page 33]
+Mandyam, et al.            Expires 22 May 2021                 [Page 33]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -1891,20 +1891,29 @@ A.1.  Very Simple EAT
    This is shown in CBOR diagnostic form.  Only the payload signed by
    COSE is shown.
 
+
+
+
+
+
+
+
+
+
+
+Mandyam, et al.            Expires 22 May 2021                 [Page 34]
+
+Internet-Draft                     EAT                     November 2020
+
+
   {
+      / issuer /           1: "joe",
       / nonce /           10: h'948f8860d13a463e8e',
       / UEID /            11: h'0198f50a4ff6c05861c8860d13a638ea4fe2fa',
       / secure-boot /     15: true,
       / debug-disable /   16: 3, / permanent-disable /
       / timestamp (iat) /  6: 1(1526542894)
   }
-
-
-
-Mandyam, et al.            Expires 18 May 2021                 [Page 34]
-
-Internet-Draft                     EAT                     November 2020
-
 
 A.2.  Example with Submodules, Nesting and Security Levels
 
@@ -1945,22 +1954,18 @@ B.1.  Collision Probability
    devices per person roughly models non-personal devices such as
    traffic lights, devices in stores they shop in, facilities they work
    in and so on, even considering individual light bulbs.  A device may
+
+
+
+Mandyam, et al.            Expires 22 May 2021                 [Page 35]
+
+Internet-Draft                     EAT                     November 2020
+
+
    have individually attested subsystems, for example parts of a car or
    a mobile phone.  It is assumed that the largest database will have at
    most 10% of the world's population of devices.  Note that databases
    that handle more than a trillion records exist today.
-
-
-
-
-
-
-
-
-Mandyam, et al.            Expires 18 May 2021                 [Page 35]
-
-Internet-Draft                     EAT                     November 2020
-
 
    The trillion-record database size models an easy-to-imagine reality
    over the next decades.  The quadrillion-record database is roughly at
@@ -2003,20 +2008,22 @@ Internet-Draft                     EAT                     November 2020
       n   Total possible population
       k   Actual population
 
+
+
+
+
+
+Mandyam, et al.            Expires 22 May 2021                 [Page 36]
+
+Internet-Draft                     EAT                     November 2020
+
+
    However, for the very large values involved here, this formula
    requires floating point precision higher than commonly available in
    calculators and SW so this simple approximation is used.  See
    [BirthdayAttack].
 
        p = k^2 / 2n
-
-
-
-
-Mandyam, et al.            Expires 18 May 2021                 [Page 36]
-
-Internet-Draft                     EAT                     November 2020
-
 
    For this calculation:
 
@@ -2062,14 +2069,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-
-
-
-
-
-
-
-Mandyam, et al.            Expires 18 May 2021                 [Page 37]
+Mandyam, et al.            Expires 22 May 2021                 [Page 37]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -2125,7 +2125,7 @@ B.2.  No Use of UUID
 
 
 
-Mandyam, et al.            Expires 18 May 2021                 [Page 38]
+Mandyam, et al.            Expires 22 May 2021                 [Page 38]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -2181,7 +2181,7 @@ C.4.  From draft-ietf-rats-eat-02
 
 
 
-Mandyam, et al.            Expires 18 May 2021                 [Page 39]
+Mandyam, et al.            Expires 22 May 2021                 [Page 39]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -2237,7 +2237,7 @@ Authors' Addresses
 
 
 
-Mandyam, et al.            Expires 18 May 2021                 [Page 40]
+Mandyam, et al.            Expires 22 May 2021                 [Page 40]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -2293,4 +2293,4 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 18 May 2021                 [Page 41]
+Mandyam, et al.            Expires 22 May 2021                 [Page 41]
