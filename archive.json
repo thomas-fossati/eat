@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2020-11-16T21:44:19.016193+00:00",
+  "timestamp": "2020-11-18T19:50:41.614085+00:00",
   "repo": "ietf-rats-wg/eat",
   "labels": [
     {
@@ -1458,15 +1458,15 @@
       "id": "MDU6SXNzdWU3NDMwNzE0Njk=",
       "title": "CWT CDDL needs some adjusting",
       "url": "https://github.com/ietf-rats-wg/eat/issues/77",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "thomas-fossati",
       "authorAssociation": "CONTRIBUTOR",
       "assignees": [],
       "labels": [],
       "body": "The CDDL for CWT claims needs some adjusting: it\u2019d allow only one CWT claim at a time in the EAT map.\r\n\r\nScaling up a bit, we should probably have a CDDL socket for EAT extensions in the top-level map - and exercise this extension point starting from CWT claims.",
       "createdAt": "2020-11-14T20:12:55Z",
-      "updatedAt": "2020-11-14T20:12:55Z",
-      "closedAt": null,
+      "updatedAt": "2020-11-18T19:49:50Z",
+      "closedAt": "2020-11-18T19:49:50Z",
       "comments": []
     },
     {
@@ -2886,7 +2886,7 @@
       "labels": [],
       "body": "See https://github.com/ietf-rats-wg/eat/issues/57",
       "createdAt": "2020-03-28T22:00:06Z",
-      "updatedAt": "2020-11-11T22:04:05Z",
+      "updatedAt": "2020-11-17T19:31:38Z",
       "baseRepository": "ietf-rats-wg/eat",
       "baseRefName": "master",
       "baseRefOid": "aac5de214068993208b41066f1717222abde6114",
@@ -2913,7 +2913,46 @@
           "updatedAt": "2020-11-11T22:04:05Z"
         }
       ],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NTMyNzA0MTcw",
+          "commit": {
+            "abbreviatedOid": "aaec8cd"
+          },
+          "author": "laurencelundblade",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2020-11-17T19:11:02Z",
+          "updatedAt": "2020-11-17T19:31:38Z",
+          "comments": [
+            {
+              "originalPosition": 10,
+              "body": "Seems like this would be better named \"generic\". It's the one you pick when it's none of the others. I don't think it is on-demand because there will be cases when it is not one of the others and the consumer is not demanding the most recent.",
+              "createdAt": "2020-11-17T19:11:03Z",
+              "updatedAt": "2020-11-17T19:31:38Z"
+            },
+            {
+              "originalPosition": 33,
+              "body": "This should say explicitly that it is PoP *of a key* to be more clear.",
+              "createdAt": "2020-11-17T19:12:28Z",
+              "updatedAt": "2020-11-17T19:31:38Z"
+            },
+            {
+              "originalPosition": 5,
+              "body": "What about renaming this to \"Intended Use\" or \"Intended Use Class\" or \"Use Class\"? It definitely seems like a classification scheme so I think of the different values as different *classes*.",
+              "createdAt": "2020-11-17T19:17:30Z",
+              "updatedAt": "2020-11-17T19:31:38Z"
+            },
+            {
+              "originalPosition": 8,
+              "body": "Maybe add \"This claim can be used as a way for an application using EAT to internally distinguish between different ways it uses EAT\". ",
+              "createdAt": "2020-11-17T19:24:24Z",
+              "updatedAt": "2020-11-17T19:31:38Z"
+            }
+          ]
+        }
+      ]
     },
     {
       "number": 61,
@@ -3370,24 +3409,26 @@
       "id": "MDExOlB1bGxSZXF1ZXN0NTIxMjYzNDE1",
       "title": "Add CDDL group socket to the top-level eat map",
       "url": "https://github.com/ietf-rats-wg/eat/pull/80",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "thomas-fossati",
       "authorAssociation": "CONTRIBUTOR",
       "assignees": [],
       "labels": [],
       "body": "The extension mechanism is bootstrapped with the CWT claims set\r\n\r\nFixes #77",
       "createdAt": "2020-11-15T21:35:11Z",
-      "updatedAt": "2020-11-15T21:35:11Z",
+      "updatedAt": "2020-11-18T19:49:50Z",
       "baseRepository": "ietf-rats-wg/eat",
       "baseRefName": "master",
       "baseRefOid": "c39f92f49675a27aa67ed3ba65143cbfc002c38f",
       "headRepository": "thomas-fossati/eat",
       "headRefName": "cddl-socket",
       "headRefOid": "c3ed6e89b85d5c17f059ee2a43716d32552ed5a2",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2020-11-18T19:49:50Z",
+      "mergedAt": "2020-11-18T19:49:50Z",
+      "mergedBy": "laurencelundblade",
+      "mergeCommit": {
+        "oid": "048bf8446e37d4914c96c6a7eb66b3063e149652"
+      },
       "comments": [],
       "reviews": []
     },
@@ -3403,7 +3444,7 @@
       "labels": [],
       "body": "",
       "createdAt": "2020-11-16T21:43:43Z",
-      "updatedAt": "2020-11-16T21:43:43Z",
+      "updatedAt": "2020-11-17T15:22:49Z",
       "baseRepository": "ietf-rats-wg/eat",
       "baseRefName": "master",
       "baseRefOid": "c39f92f49675a27aa67ed3ba65143cbfc002c38f",
@@ -3414,7 +3455,15 @@
       "mergedAt": null,
       "mergedBy": null,
       "mergeCommit": null,
-      "comments": [],
+      "comments": [
+        {
+          "author": "SimonFrost-Arm",
+          "authorAssociation": "NONE",
+          "body": "The use case for this claim seems to be relevant where a large(?) set of measurements are required for a single purpose e.g. Linux IMA as cited.  Where a single measurement accompanies separate metadata for the context of use (e.g. as part of a CoSWID), this structure is not helpful in its current form (too complex for that purpose). It may be better to separate the use cases rather than have a single measurement type. Perhaps therefore this claim should be called 'bulk_measurement' or similar.",
+          "createdAt": "2020-11-17T15:22:49Z",
+          "updatedAt": "2020-11-17T15:22:49Z"
+        }
+      ],
       "reviews": []
     }
   ]
