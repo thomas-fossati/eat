@@ -133,34 +133,34 @@ Internet-Draft                     EAT                     November 2020
        4.3.2.  JSON Interoperability . . . . . . . . . . . . . . . .  24
      4.4.  CBOR  . . . . . . . . . . . . . . . . . . . . . . . . . .  24
        4.4.1.  CBOR Interoperability . . . . . . . . . . . . . . . .  24
-     4.5.  Collected CDDL  . . . . . . . . . . . . . . . . . . . . .  25
-   5.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  30
-     5.1.  Reuse of CBOR Web Token (CWT) Claims Registry . . . . . .  30
-     5.2.  Claim Characteristics . . . . . . . . . . . . . . . . . .  30
+     4.5.  Collected CDDL  . . . . . . . . . . . . . . . . . . . . .  26
+   5.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  31
+     5.1.  Reuse of CBOR Web Token (CWT) Claims Registry . . . . . .  31
+     5.2.  Claim Characteristics . . . . . . . . . . . . . . . . . .  31
        5.2.1.  Interoperability and Relying Party Orientation  . . .  31
        5.2.2.  Operating System and Technology Neutral . . . . . . .  31
-       5.2.3.  Security Level Neutral  . . . . . . . . . . . . . . .  31
+       5.2.3.  Security Level Neutral  . . . . . . . . . . . . . . .  32
        5.2.4.  Reuse of Extant Data Formats  . . . . . . . . . . . .  32
        5.2.5.  Proprietary Claims  . . . . . . . . . . . . . . . . .  32
-     5.3.  Claims Registered by This Document  . . . . . . . . . . .  32
+     5.3.  Claims Registered by This Document  . . . . . . . . . . .  33
    6.  Privacy Considerations  . . . . . . . . . . . . . . . . . . .  33
      6.1.  UEID Privacy Considerations . . . . . . . . . . . . . . .  33
    7.  Security Considerations . . . . . . . . . . . . . . . . . . .  34
      7.1.  Key Provisioning  . . . . . . . . . . . . . . . . . . . .  34
-       7.1.1.  Transmission of Key Material  . . . . . . . . . . . .  34
-     7.2.  Transport Security  . . . . . . . . . . . . . . . . . . .  34
+       7.1.1.  Transmission of Key Material  . . . . . . . . . . . .  35
+     7.2.  Transport Security  . . . . . . . . . . . . . . . . . . .  35
      7.3.  Multiple EAT Consumers  . . . . . . . . . . . . . . . . .  35
-   8.  References  . . . . . . . . . . . . . . . . . . . . . . . . .  35
-     8.1.  Normative References  . . . . . . . . . . . . . . . . . .  35
+   8.  References  . . . . . . . . . . . . . . . . . . . . . . . . .  36
+     8.1.  Normative References  . . . . . . . . . . . . . . . . . .  36
      8.2.  Informative References  . . . . . . . . . . . . . . . . .  37
    Appendix A.  Examples . . . . . . . . . . . . . . . . . . . . . .  38
-     A.1.  Very Simple EAT . . . . . . . . . . . . . . . . . . . . .  38
-     A.2.  Example with Submodules, Nesting and Security Levels  . .  38
+     A.1.  Very Simple EAT . . . . . . . . . . . . . . . . . . . . .  39
+     A.2.  Example with Submodules, Nesting and Security Levels  . .  39
    Appendix B.  UEID Design Rationale  . . . . . . . . . . . . . . .  39
-     B.1.  Collision Probability . . . . . . . . . . . . . . . . . .  39
+     B.1.  Collision Probability . . . . . . . . . . . . . . . . . .  40
      B.2.  No Use of UUID  . . . . . . . . . . . . . . . . . . . . .  42
-   Appendix C.  Changes from Previous Drafts . . . . . . . . . . . .  42
-     C.1.  From draft-rats-eat-01  . . . . . . . . . . . . . . . . .  42
+   Appendix C.  Changes from Previous Drafts . . . . . . . . . . . .  43
+     C.1.  From draft-rats-eat-01  . . . . . . . . . . . . . . . . .  43
      C.2.  From draft-mandyam-rats-eat-00  . . . . . . . . . . . . .  43
 
 
@@ -172,9 +172,9 @@ Internet-Draft                     EAT                     November 2020
 
      C.3.  From draft-ietf-rats-eat-01 . . . . . . . . . . . . . . .  43
      C.4.  From draft-ietf-rats-eat-02 . . . . . . . . . . . . . . .  43
-     C.5.  From draft-ietf-rats-eat-03 . . . . . . . . . . . . . . .  43
-     C.6.  From draft-ietf-rats-eat-04 . . . . . . . . . . . . . . .  43
-   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  43
+     C.5.  From draft-ietf-rats-eat-03 . . . . . . . . . . . . . . .  44
+     C.6.  From draft-ietf-rats-eat-04 . . . . . . . . . . . . . . .  44
+   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  44
 
 1.  Introduction
 
@@ -1215,14 +1215,14 @@ Internet-Draft                     EAT                     November 2020
    This makes use of the types defined in CDDL Appendix D, Standard
    Prelude.
 
+   Some of the CDDL included here is for claims that are defined in CWT
+   [RFC8392] or JWT [RFC7519] or are in the IANA CWT or JWT registries.
+   CDDL was not in use when these claims where defined.
+
 4.1.  Common CDDL Types
 
    time-int is identical to the epoch-based time, but disallows
    floating-point representation.
-
-   string-or-uri = tstr
-
-   time-int = #6.1(int)
 
 
 
@@ -1233,6 +1233,10 @@ Mandyam, et al.            Expires 24 May 2021                 [Page 22]
 
 Internet-Draft                     EAT                     November 2020
 
+
+   string-or-uri = tstr
+
+   time-int = #6.1(int)
 
 4.2.  CDDL for CWT-defined Claims
 
@@ -1262,7 +1266,32 @@ Internet-Draft                     EAT                     November 2020
 
 4.3.1.  JSON Labels
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Mandyam, et al.            Expires 24 May 2021                 [Page 23]
+
+Internet-Draft                     EAT                     November 2020
+
+
    ueid /= "ueid"
+   nonce /= "nonce"
    origination /= "origination"
    oemid /= "oemid"
    security-level /= "security-level"
@@ -1281,14 +1310,6 @@ Internet-Draft                     EAT                     November 2020
    altitude-accuracy /= "alt-accry"
    heading /= "heading"
    speed /= "speed"
-
-
-
-
-Mandyam, et al.            Expires 24 May 2021                 [Page 23]
-
-Internet-Draft                     EAT                     November 2020
-
 
 4.3.2.  JSON Interoperability
 
@@ -1311,6 +1332,19 @@ Internet-Draft                     EAT                     November 2020
    decoding are allowed and suggests that CBOR-based protocols specify
    how this variation is handled.  This section specifies what formats
    MUST be supported in order to achieve interoperability.
+
+
+
+
+
+
+
+
+
+Mandyam, et al.            Expires 24 May 2021                 [Page 24]
+
+Internet-Draft                     EAT                     November 2020
+
 
    The assumption is that the entity is likely to be a constrained
    device and relying party is likely to be a very capable server.  The
@@ -1339,13 +1373,6 @@ Internet-Draft                     EAT                     November 2020
    *  Major type 2, bstr, SHOULD have tag 21 to indicate conversion to
       base64url in case that conversion is performed.
 
-
-
-Mandyam, et al.            Expires 24 May 2021                 [Page 24]
-
-Internet-Draft                     EAT                     November 2020
-
-
    *  Map and Array Encoding (major type 4 and 5) - The entity can use
       any array or map encoding allowed by CBOR including indefinite
       lengths.  Sorting of map keys is not required.  Duplicate map keys
@@ -1365,6 +1392,15 @@ Internet-Draft                     EAT                     November 2020
    *  Floating Point - The entity may use any floating-point encoding.
       The relying party must support decoding of all types of floating-
       point.
+
+
+
+
+
+Mandyam, et al.            Expires 24 May 2021                 [Page 25]
+
+Internet-Draft                     EAT                     November 2020
+
 
    *  Other types - Other types like bignums, regular expressions and
       such, SHOULD NOT be used.  The server MAY support them but is not
@@ -1394,14 +1430,6 @@ EAT_Tagged = #6.61(COSE_Sign1_Tagged) ; CWT tag
 COSE_Sign1_Tagged = #6.18(bstr) ; COSE_Sign1
 
 nonce = 10
-
-
-
-Mandyam, et al.            Expires 24 May 2021                 [Page 25]
-
-Internet-Draft                     EAT                     November 2020
-
-
 ueid = 11
 origination = 12
 oemid = 13
@@ -1421,6 +1449,14 @@ device-version-scheme = 26
 ean-chip-version = 27
 ean-board-version = 28
 ean-device-version = 29
+
+
+
+
+Mandyam, et al.            Expires 24 May 2021                 [Page 26]
+
+Internet-Draft                     EAT                     November 2020
+
 
 string-or-uri = tstr
 
@@ -1450,14 +1486,6 @@ debug-disable-type = &(
     disabled: 1,
     disabled-since-boot: 2,
     permanent-disable: 3,
-
-
-
-Mandyam, et al.            Expires 24 May 2021                 [Page 26]
-
-Internet-Draft                     EAT                     November 2020
-
-
     full-permanent-disable: 4
 )
 
@@ -1478,6 +1506,14 @@ location-type = {
 }
 
 latitude = 1
+
+
+
+Mandyam, et al.            Expires 24 May 2021                 [Page 27]
+
+Internet-Draft                     EAT                     November 2020
+
+
 longitude = 2
 altitude = 3
 accuracy = 4
@@ -1506,14 +1542,6 @@ oemid-claim = (
 
   $version-scheme /= multipartnumeric
   $version-scheme /= multipartnumeric-suffix
-
-
-
-Mandyam, et al.            Expires 24 May 2021                 [Page 27]
-
-Internet-Draft                     EAT                     November 2020
-
-
   $version-scheme /= alphanumeric
   $version-scheme /= decimal
   $version-scheme /= semver
@@ -1534,6 +1562,14 @@ chip-version-scheme-claim = (
 )
 
 board-version-claim = (
+
+
+
+Mandyam, et al.            Expires 24 May 2021                 [Page 28]
+
+Internet-Draft                     EAT                     November 2020
+
+
     board-version => tstr
 )
 
@@ -1562,14 +1598,6 @@ ean-board-version-claim = (
 
 ean-device-version-claim = (
     ean-device-version => ean-type
-
-
-
-Mandyam, et al.            Expires 24 May 2021                 [Page 28]
-
-Internet-Draft                     EAT                     November 2020
-
-
 )
 
 hardware-version-claims = (
@@ -1590,6 +1618,14 @@ origination-claim = (
 )
 
 secure-boot-claim = (
+
+
+
+Mandyam, et al.            Expires 24 May 2021                 [Page 29]
+
+Internet-Draft                     EAT                     November 2020
+
+
     secure-boot => bool
 )
 
@@ -1618,14 +1654,6 @@ submods-part = (
 
 ueid-type = bstr .size (7..33)
 
-
-
-
-Mandyam, et al.            Expires 24 May 2021                 [Page 29]
-
-Internet-Draft                     EAT                     November 2020
-
-
 ueid-claim = (
      ueid => ueid-type
 )
@@ -1635,6 +1663,7 @@ uptime-claim = (
 )
 
 ueid /= "ueid"
+nonce /= "nonce"
 origination /= "origination"
 oemid /= "oemid"
 security-level /= "security-level"
@@ -1645,6 +1674,13 @@ age /= "age"
 uptime /= "uptime"
 submods /= "submods"
 timestamp /= "timestamp"
+
+
+
+Mandyam, et al.            Expires 24 May 2021                 [Page 30]
+
+Internet-Draft                     EAT                     November 2020
+
 
 latitude /= "lat"
 longitude /= "long"
@@ -1669,18 +1705,6 @@ speed /= "speed"
 
    Much of this guidance is generic and could also be considered when
    designing new CWT or JWT claims.
-
-
-
-
-
-
-
-
-Mandyam, et al.            Expires 24 May 2021                 [Page 30]
-
-Internet-Draft                     EAT                     November 2020
-
 
 5.2.1.  Interoperability and Relying Party Orientation
 
@@ -1707,6 +1731,13 @@ Internet-Draft                     EAT                     November 2020
    applicable to multiple small embedded operating systems from multiple
    vendors and everything in between.
 
+
+
+Mandyam, et al.            Expires 24 May 2021                 [Page 31]
+
+Internet-Draft                     EAT                     November 2020
+
+
    Claims should not be defined such that they are specific to a SW
    environment or programming language.
 
@@ -1726,17 +1757,6 @@ Internet-Draft                     EAT                     November 2020
    are examples of this.  However, EAT is intended for use in low-
    security use cases the same as high-security use case.  For example,
    an app on a mobile device may generate EATs on its own.
-
-
-
-
-
-
-
-Mandyam, et al.            Expires 24 May 2021                 [Page 31]
-
-Internet-Draft                     EAT                     November 2020
-
 
    Claims should be defined and registered on the basis of whether they
    are useful and interoperable, not based on security level.  In
@@ -1764,6 +1784,16 @@ Internet-Draft                     EAT                     November 2020
 
    EAT allows the definition and use of proprietary claims.
 
+
+
+
+
+
+Mandyam, et al.            Expires 24 May 2021                 [Page 32]
+
+Internet-Draft                     EAT                     November 2020
+
+
    For example, a device manufacturer may generate a token with
    proprietary claims intended only for verification by a service
    offered by that device manufacturer.  This is a supported use case.
@@ -1785,14 +1815,6 @@ Internet-Draft                     EAT                     November 2020
    *  Claim Value Type(s): byte string
 
    *  Change Controller: IESG
-
-
-
-
-Mandyam, et al.            Expires 24 May 2021                 [Page 32]
-
-Internet-Draft                     EAT                     November 2020
-
 
    *  Specification Document(s): *this document*
 
@@ -1820,6 +1842,14 @@ Internet-Draft                     EAT                     November 2020
    There are several strategies that can be used to still be able to put
    UEID's in tokens:
 
+
+
+
+Mandyam, et al.            Expires 24 May 2021                 [Page 33]
+
+Internet-Draft                     EAT                     November 2020
+
+
    *  The device obtains explicit permission from the user of the device
       to use the UEID.  This may be through a prompt.  It may also be
       through a license agreement.  For example, agreements for some
@@ -1841,14 +1871,6 @@ Internet-Draft                     EAT                     November 2020
    use case or system on the device.  However, from the view of the
    relying party, there is just one UEID and it is still globally
    universal across manufacturers.
-
-
-
-
-Mandyam, et al.            Expires 24 May 2021                 [Page 33]
-
-Internet-Draft                     EAT                     November 2020
-
 
 7.  Security Considerations
 
@@ -1872,6 +1894,17 @@ Internet-Draft                     EAT                     November 2020
    an appropriate protocol, and persistence of the private key material
    in some form of secure storage to which (preferably) only the entity
    has access.
+
+
+
+
+
+
+
+Mandyam, et al.            Expires 24 May 2021                 [Page 34]
+
+Internet-Draft                     EAT                     November 2020
+
 
 7.1.1.  Transmission of Key Material
 
@@ -1898,14 +1931,6 @@ Internet-Draft                     EAT                     November 2020
    leverage the nonce along with COSE mechanisms for encryption and/or
    signing to create the EAT.
 
-
-
-
-Mandyam, et al.            Expires 24 May 2021                 [Page 34]
-
-Internet-Draft                     EAT                     November 2020
-
-
    Similar considerations apply to the use of EAT as a JWT.  Although
    the security of a JWT leverages the JSON Web Encryption (JWE) and
    JSON Web Signature (JWS) specifications, it is still recommended to
@@ -1929,6 +1954,13 @@ Internet-Draft                     EAT                     November 2020
    be removed by the receiving consumer, the communication of claim
    subsets to any downstream consumer should leverage a secure protocol
    (e.g.one that uses transport-layer security, i.e. TLS),
+
+
+
+Mandyam, et al.            Expires 24 May 2021                 [Page 35]
+
+Internet-Draft                     EAT                     November 2020
+
 
    However, assume the EAT of the previous example is hierarchical and
    each claim subset for a downstream consumer is created in the form of
@@ -1955,13 +1987,6 @@ Internet-Draft                     EAT                     November 2020
               IANA, "JSON Web Token (JWT) Claims",
               <https://www.iana.org/assignments/jwt>.
 
-
-
-Mandyam, et al.            Expires 24 May 2021                 [Page 35]
-
-Internet-Draft                     EAT                     November 2020
-
-
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119,
               DOI 10.17487/RFC2119, March 1997,
@@ -1983,6 +2008,15 @@ Internet-Draft                     EAT                     November 2020
    [RFC8152]  Schaad, J., "CBOR Object Signing and Encryption (COSE)",
               RFC 8152, DOI 10.17487/RFC8152, July 2017,
               <https://www.rfc-editor.org/info/rfc8152>.
+
+
+
+
+
+Mandyam, et al.            Expires 24 May 2021                 [Page 36]
+
+Internet-Draft                     EAT                     November 2020
+
 
    [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
               2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
@@ -2011,13 +2045,6 @@ Internet-Draft                     EAT                     November 2020
               <http://pubs.opengroup.org/onlinepubs/9699919799/basedefs/
               V1_chap04.html#tag_04_15>.
 
-
-
-Mandyam, et al.            Expires 24 May 2021                 [Page 36]
-
-Internet-Draft                     EAT                     November 2020
-
-
    [WGS84]    National Imagery and Mapping Agency, "National Imagery and
               Mapping Agency Technical Report 8350.2, Third Edition",
               2000, <http://earth-
@@ -2034,6 +2061,18 @@ Internet-Draft                     EAT                     November 2020
    [BirthdayAttack]
               "Birthday attack",
               <https://en.wikipedia.org/wiki/Birthday_attack.>.
+
+
+
+
+
+
+
+
+Mandyam, et al.            Expires 24 May 2021                 [Page 37]
+
+Internet-Draft                     EAT                     November 2020
+
 
    [ECMAScript]
               "Ecma International, "ECMAScript Language Specification,
@@ -2067,13 +2106,6 @@ Internet-Draft                     EAT                     November 2020
               <https://regauth.standards.ieee.org/standards-ra-web/pub/
               view.html#registries>.
 
-
-
-Mandyam, et al.            Expires 24 May 2021                 [Page 37]
-
-Internet-Draft                     EAT                     November 2020
-
-
    [RFC4122]  Leach, P., Mealling, M., and R. Salz, "A Universally
               Unique IDentifier (UUID) URN Namespace", RFC 4122,
               DOI 10.17487/RFC4122, July 2005,
@@ -2087,6 +2119,16 @@ Internet-Draft                     EAT                     November 2020
               for accessing scoped credentials", 2016.
 
 Appendix A.  Examples
+
+
+
+
+
+
+Mandyam, et al.            Expires 24 May 2021                 [Page 38]
+
+Internet-Draft                     EAT                     November 2020
+
 
 A.1.  Very Simple EAT
 
@@ -2105,30 +2147,6 @@ A.1.  Very Simple EAT
   }
 
 A.2.  Example with Submodules, Nesting and Security Levels
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Mandyam, et al.            Expires 24 May 2021                 [Page 38]
-
-Internet-Draft                     EAT                     November 2020
-
 
 {
     / nonce /                 10: h'948f8860d13a463e8e',
@@ -2157,6 +2175,17 @@ Internet-Draft                     EAT                     November 2020
 
 Appendix B.  UEID Design Rationale
 
+
+
+
+
+
+
+Mandyam, et al.            Expires 24 May 2021                 [Page 39]
+
+Internet-Draft                     EAT                     November 2020
+
+
 B.1.  Collision Probability
 
    This calculation is to determine the probability of a collision of
@@ -2178,13 +2207,6 @@ B.1.  Collision Probability
    The 100 quadrillion datadbase is highly speculative perhaps involving
    nanorobots for every person, livestock animal and domesticated bird.
    It is included to round out the analysis.
-
-
-
-Mandyam, et al.            Expires 24 May 2021                 [Page 39]
-
-Internet-Draft                     EAT                     November 2020
-
 
    Note that the items counted here certainly do not have IP address and
    are not individually connected to the network.  They may be connected
@@ -2212,6 +2234,14 @@ Internet-Draft                     EAT                     November 2020
    people.  It is also conceptually similar to the Birthday Attack where
    collisions of the output of hash functions are considered.
 
+
+
+
+Mandyam, et al.            Expires 24 May 2021                 [Page 40]
+
+Internet-Draft                     EAT                     November 2020
+
+
    The proper formula for the collision calculation is
 
       p = 1 - e^{-k^2/(2n)}
@@ -2232,15 +2262,6 @@ Internet-Draft                     EAT                     November 2020
        p  Collision Probability
        n  Total population based on number of bits in UEID
        k  Population in a database
-
-
-
-
-
-Mandyam, et al.            Expires 24 May 2021                 [Page 40]
-
-Internet-Draft                     EAT                     November 2020
-
 
    +=====================+==============+==============+==============+
    | Database Size       | 128-bit UEID | 192-bit UEID | 256-bit UEID |
@@ -2267,6 +2288,16 @@ Internet-Draft                     EAT                     November 2020
    reality this is unlikely as state changes will be the addition or
    deletion of a few records.
 
+
+
+
+
+
+Mandyam, et al.            Expires 24 May 2021                 [Page 41]
+
+Internet-Draft                     EAT                     November 2020
+
+
    The following tables gives the time interval until there is a
    probability of a collision based on there being one tenth the number
    of states per year as the number of records in the database.
@@ -2289,14 +2320,6 @@ Internet-Draft                     EAT                     November 2020
    +---------------------+--------------+--------------+--------------+
 
                                  Table 5
-
-
-
-
-Mandyam, et al.            Expires 24 May 2021                 [Page 41]
-
-Internet-Draft                     EAT                     November 2020
-
 
    Clearly, 128 bits is enough for the near future thus the requirement
    that UEIDs be a minimum of 128 bits.
@@ -2322,6 +2345,15 @@ B.2.  No Use of UUID
    implementations to construct such random values from multiple sources
    on their own.
 
+
+
+
+
+Mandyam, et al.            Expires 24 May 2021                 [Page 42]
+
+Internet-Draft                     EAT                     November 2020
+
+
    Version 4 UUIDs do allow for use of such cryptographic-quality random
    numbers, but do so by mapping into the overall UUID structure of time
    and clock values.  This structure is of no value here yet adds
@@ -2345,14 +2377,6 @@ Appendix C.  Changes from Previous Drafts
 C.1.  From draft-rats-eat-01
 
    *  Added UEID design rationale appendix
-
-
-
-
-Mandyam, et al.            Expires 24 May 2021                 [Page 42]
-
-Internet-Draft                     EAT                     November 2020
-
 
 C.2.  From draft-mandyam-rats-eat-00
 
@@ -2379,6 +2403,13 @@ C.4.  From draft-ietf-rats-eat-02
 
    *  UEIDs can be one of three lengths, 128, 192 and 256.
 
+
+
+Mandyam, et al.            Expires 24 May 2021                 [Page 43]
+
+Internet-Draft                     EAT                     November 2020
+
+
    *  Added appendix justifying UEID design and size.
 
    *  Submods part now includes nested eat tokens so they can be named
@@ -2400,15 +2431,9 @@ C.6.  From draft-ietf-rats-eat-04
 
    *  Add hardware version claims
 
+   *  Collected CDDL is now filled in.  Other CDDL corrections.
+
 Authors' Addresses
-
-
-
-
-Mandyam, et al.            Expires 24 May 2021                 [Page 43]
-
-Internet-Draft                     EAT                     November 2020
-
 
    Giridhar Mandyam
    Qualcomm Technologies Inc.
@@ -2433,6 +2458,14 @@ Internet-Draft                     EAT                     November 2020
    United States of America
 
    Phone: +1 858 651 4299
+
+
+
+Mandyam, et al.            Expires 24 May 2021                 [Page 44]
+
+Internet-Draft                     EAT                     November 2020
+
+
    Email: mballest@qti.qualcomm.com
 
 
@@ -2461,4 +2494,27 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 24 May 2021                 [Page 44]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Mandyam, et al.            Expires 24 May 2021                 [Page 45]
