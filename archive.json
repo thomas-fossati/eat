@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2020-11-20T18:57:10.450141+00:00",
+  "timestamp": "2020-11-23T21:17:43.552901+00:00",
   "repo": "ietf-rats-wg/eat",
   "labels": [
     {
@@ -952,7 +952,7 @@
       "id": "MDU6SXNzdWU1MDA5NDk0Mjk=",
       "title": "HW Version claim",
       "url": "https://github.com/ietf-rats-wg/eat/issues/33",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "laurencelundblade",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
@@ -961,9 +961,17 @@
       ],
       "body": "https://tools.ietf.org/html/draft-tschofenig-rats-psa-token-02 defines this in terms of EAN-13. This seems like a good thing to do.",
       "createdAt": "2019-10-01T14:49:16Z",
-      "updatedAt": "2019-10-07T13:50:48Z",
-      "closedAt": null,
-      "comments": []
+      "updatedAt": "2020-11-20T19:00:19Z",
+      "closedAt": "2020-11-20T19:00:19Z",
+      "comments": [
+        {
+          "author": "laurencelundblade",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Closed with #68 ",
+          "createdAt": "2020-11-20T19:00:19Z",
+          "updatedAt": "2020-11-20T19:00:19Z"
+        }
+      ]
     },
     {
       "number": 34,
@@ -1080,16 +1088,24 @@
       "id": "MDU6SXNzdWU1MTYxNzgzMTU=",
       "title": "Claims that go from verifier to relying party",
       "url": "https://github.com/ietf-rats-wg/eat/issues/44",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "laurencelundblade",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "EAT is used to convey claims from the entity / device to the verifier, but it can also be used to convey the output of the verifier to the relying party.\r\n\r\nFor example, the input to the verifier may be software measurements. The output of the verifier might be a Boolean that the measurements were correct. \r\n\r\nAlso, some implicit claims might be made explicit. For example, if the verifier knows that the device will never send an attestation is the boot and debug state are not locked down, then the verifier can add those claims.",
       "createdAt": "2019-11-01T15:20:55Z",
-      "updatedAt": "2019-11-01T15:20:55Z",
-      "closedAt": null,
-      "comments": []
+      "updatedAt": "2020-11-20T19:40:19Z",
+      "closedAt": "2020-11-20T19:40:19Z",
+      "comments": [
+        {
+          "author": "laurencelundblade",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Supplanted by #63",
+          "createdAt": "2020-11-20T19:40:18Z",
+          "updatedAt": "2020-11-20T19:40:18Z"
+        }
+      ]
     },
     {
       "number": 45,
@@ -1308,7 +1324,7 @@
       "labels": [],
       "body": "https://github.com/ietf-rats-wg/architecture/issues/92 topic 3 has some points about EAT.\r\n\r\nTopic 3: EAT. If accurate, I'd like to see a clear acknowledgement that the Verifier may need to act as an Attester for the Relying Party since I'd like to then see specifically how the IETF EAT specification covers this circumstance. In other words, for an EAT that represents an AttestationResult, would the Evidence for the Verifier be embedded or discovered? If embedded, how are submods distinguished for the Verifier's Evidence versus the AttestationResult's embedded claims, including nested EAT's?",
       "createdAt": "2020-06-23T14:15:00Z",
-      "updatedAt": "2020-11-11T10:56:54Z",
+      "updatedAt": "2020-11-20T19:39:58Z",
       "closedAt": null,
       "comments": [
         {
@@ -1324,6 +1340,20 @@
           "body": "I strongly recommend not to mix conceptual messages here. While composite evidence can include attestation results and vice versa, I think that actually makes it even more important to differentiate theses very clearly and consistently. Yes, we need a corresponding definition of Claims for CWT and (CWT Claims Sets maybe) in order to create unified Attestation Results. Alas, if we start to mix many different meanings under the \"catch-all\" concept that is EAT, it will become harder and harder to figure out what an EAT instance is actually intended to represent and facilitate. Trust in understanding the meaning of an EAT is quite vital to RATS.",
           "createdAt": "2020-11-11T10:56:54Z",
           "updatedAt": "2020-11-11T10:56:54Z"
+        },
+        {
+          "author": "laurencelundblade",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Very many EAT claims will be passed through the Verifier to the RP. After all the original EAT design didn't distinguish the Verifier from the RP. It would be silly and confusing to redefine each claim for Results when they are already defined for Evidence.\r\n\r\nThere will of course be some claims that don't belong in evidence and vice versa. Maybe some claims will have slightly different semantics as Results than as Evidence, but I can't think of anything obvious so far.\r\n\r\nWe could use Giri's context claim (see #60) to distinguish results from evidence. We'd add a new value to indicate the EAT is Attestation Results. That or we have a new, perhaps mandatory claim, that says whether the EAT (CWT, JWT or UCCS) is Evidence or Results.\r\n",
+          "createdAt": "2020-11-20T19:23:35Z",
+          "updatedAt": "2020-11-20T19:23:35Z"
+        },
+        {
+          "author": "laurencelundblade",
+          "authorAssociation": "COLLABORATOR",
+          "body": "This supplants #44",
+          "createdAt": "2020-11-20T19:39:57Z",
+          "updatedAt": "2020-11-20T19:39:57Z"
         }
       ]
     },
@@ -1410,15 +1440,15 @@
       "id": "MDU6SXNzdWU3NDMwNzExOTk=",
       "title": "Nonce missing from JSON labels",
       "url": "https://github.com/ietf-rats-wg/eat/issues/75",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "thomas-fossati",
       "authorAssociation": "CONTRIBUTOR",
       "assignees": [],
       "labels": [],
       "body": "There\u2019s a typo in Section 4.3.1: the \u201cnonce\u201d label is missing.\r\n",
       "createdAt": "2020-11-14T20:11:15Z",
-      "updatedAt": "2020-11-14T20:22:10Z",
-      "closedAt": null,
+      "updatedAt": "2020-11-20T19:37:27Z",
+      "closedAt": "2020-11-20T19:37:27Z",
       "comments": [
         {
           "author": "thomas-fossati",
@@ -1426,6 +1456,13 @@
           "body": "@laurencelundblade [comment on the mailing list](https://mailarchive.ietf.org/arch/msg/rats/DVCR2E_Dozx0JhHz9Pd5w3RdADU/):\r\n\r\nThe JWT nonce was already in the IANA registry for JWT. I added CDDL for it and note that some of the CDDL in EAT is for things defined elsewhere before there was CDDL.  See this PR #72 .",
           "createdAt": "2020-11-14T20:22:09Z",
           "updatedAt": "2020-11-14T20:22:09Z"
+        },
+        {
+          "author": "laurencelundblade",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Closed with merge of #72 ",
+          "createdAt": "2020-11-20T19:37:27Z",
+          "updatedAt": "2020-11-20T19:37:27Z"
         }
       ]
     },
@@ -1434,15 +1471,15 @@
       "id": "MDU6SXNzdWU3NDMwNzEzOTY=",
       "title": "JSON:CBOR equivalency",
       "url": "https://github.com/ietf-rats-wg/eat/issues/76",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "thomas-fossati",
       "authorAssociation": "CONTRIBUTOR",
       "assignees": [],
       "labels": [],
       "body": "The JSON story is nearly OK, except for two things:\r\n* the Submods claim where the JSON:CBOR equivalency is broken by allowing unbounded\r\nint keys in CBOR that can't have an equivalent in JSON;\r\n* the StringOrURI type whose semantics can\u2019t be preserved when transcoding.\r\n\r\n(Possibly the former could be addressed by only allowing string labels, the latter by declaring we only deal with strings.)\r\n",
       "createdAt": "2020-11-14T20:12:28Z",
-      "updatedAt": "2020-11-14T20:23:46Z",
-      "closedAt": null,
+      "updatedAt": "2020-11-20T19:03:26Z",
+      "closedAt": "2020-11-20T19:03:26Z",
       "comments": [
         {
           "author": "thomas-fossati",
@@ -1450,6 +1487,13 @@
           "body": "@laurencelundblade [comment on the mailing list](https://mailarchive.ietf.org/arch/msg/rats/DVCR2E_Dozx0JhHz9Pd5w3RdADU/):\r\n\r\nPushed a fix for StringOrURI to master.\r\n\r\nMade submodule names string only as part of this PR #67 . Was thinking that they should only be strings myself. \r\n",
           "createdAt": "2020-11-14T20:23:45Z",
           "updatedAt": "2020-11-14T20:23:45Z"
+        },
+        {
+          "author": "laurencelundblade",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Also this fix: https://github.com/ietf-rats-wg/eat/commit/c39f92f49675a27aa67ed3ba65143cbfc002c38f",
+          "createdAt": "2020-11-20T19:03:26Z",
+          "updatedAt": "2020-11-20T19:03:26Z"
         }
       ]
     },
@@ -3109,24 +3153,26 @@
       "id": "MDExOlB1bGxSZXF1ZXN0NTEwOTc0Njk3",
       "title": "Add chip, board and device hardware versions",
       "url": "https://github.com/ietf-rats-wg/eat/pull/68",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "laurencelundblade",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Address #33 \r\n\r\nAllows simple text string versions and EAN-based versions. References version-scheme from CoSWID.\r\n\r\nEAN versions is exactly the same as psa-hardware-version from ARM's PSA token definition.\r\nhttps://tools.ietf.org/id/draft-tschofenig-rats-psa-token-05.html\r\n\r\n",
       "createdAt": "2020-10-27T18:41:09Z",
-      "updatedAt": "2020-11-20T18:56:34Z",
+      "updatedAt": "2020-11-20T18:57:47Z",
       "baseRepository": "ietf-rats-wg/eat",
       "baseRefName": "master",
       "baseRefOid": "048bf8446e37d4914c96c6a7eb66b3063e149652",
       "headRepository": "ietf-rats-wg/eat",
       "headRefName": "ean_version",
       "headRefOid": "d7f2843104fa12dd6cf1940c505c61c9c4fe5ff3",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2020-11-20T18:57:47Z",
+      "mergedAt": "2020-11-20T18:57:47Z",
+      "mergedBy": "laurencelundblade",
+      "mergeCommit": {
+        "oid": "c915a7ab28a5a965e4783834b3232174bc4990ad"
+      },
       "comments": [],
       "reviews": []
     },
@@ -3206,13 +3252,13 @@
       "labels": [],
       "body": "Seems to me there are lots of use cases for key inclusion and they have semantics that vary too much to fit into  one claim. I\u2019ve chosen primarily to write guidelines rather than define claims.\r\n\r\nOne use case is a CSR. However, RFC 8747 doesn\u2019t define a CSR, so referencing it isn\u2019t sufficient.\r\n\r\nAttestations from the Android key store include things like security level and user authentication requirements for use. Going into all that is too much for EAT, but might be good in another document.\r\n\r\nFIDO goes one step beyond Android and binds a relying party/user/device tuple with the key.\r\n\r\nIt is a little tempting to define a security level for the storage and operation of keys since EAT has a security level definition.",
       "createdAt": "2020-11-10T20:24:26Z",
-      "updatedAt": "2020-11-11T18:33:35Z",
+      "updatedAt": "2020-11-23T21:17:00Z",
       "baseRepository": "ietf-rats-wg/eat",
       "baseRefName": "master",
       "baseRefOid": "f28c8a69c2da08f8db09a5136ca63c5255ce450f",
       "headRepository": "ietf-rats-wg/eat",
       "headRefName": "KeyInclusion",
-      "headRefOid": "f9f3f367d95ee2fbaca9b82ac8231aa444e9832c",
+      "headRefOid": "88b9d1eeb3ab812b5a436d173a5a7aacc75c77de",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
@@ -3275,24 +3321,26 @@
       "id": "MDExOlB1bGxSZXF1ZXN0NTIxMDQyNjI5",
       "title": "Add CDDL for JSON nonce label; indicate CDDL from CWT, JWT... is included in EAT",
       "url": "https://github.com/ietf-rats-wg/eat/pull/72",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "laurencelundblade",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "",
       "createdAt": "2020-11-14T18:25:14Z",
-      "updatedAt": "2020-11-15T21:38:25Z",
+      "updatedAt": "2020-11-20T19:36:54Z",
       "baseRepository": "ietf-rats-wg/eat",
       "baseRefName": "master",
-      "baseRefOid": "f28c8a69c2da08f8db09a5136ca63c5255ce450f",
+      "baseRefOid": "bf3af0fbe1a4015c3165f1bbab52a40a0f736ac7",
       "headRepository": "ietf-rats-wg/eat",
       "headRefName": "CDDL_for_JWT_CWT",
-      "headRefOid": "14ecfc58030eb6fb15d00d748e2f0b69a8fe9918",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "headRefOid": "e467bee08ad3b94a533900beb62a5d05457c38e4",
+      "closedAt": "2020-11-20T19:36:54Z",
+      "mergedAt": "2020-11-20T19:36:54Z",
+      "mergedBy": "laurencelundblade",
+      "mergeCommit": {
+        "oid": "d7f685d2f808e1f5214d431c9865850982381009"
+      },
       "comments": [],
       "reviews": [
         {
@@ -3311,7 +3359,7 @@
               "originalPosition": 4,
               "body": "```suggestion\r\nSome of the CDDL included here is for claims that are defined in CWT {{RFC8392}} or JWT {{RFC7519}} or are in the IANA CWT or JWT registries.\r\n```",
               "createdAt": "2020-11-15T20:47:01Z",
-              "updatedAt": "2020-11-15T20:47:02Z"
+              "updatedAt": "2020-11-20T19:34:17Z"
             }
           ]
         },
@@ -3331,7 +3379,7 @@
               "originalPosition": 2,
               "body": "Laurence, while you are on it:\r\n* `debug-disble` should be `debug-disable`, and\r\n* `nested-eat` should be deleted since it doesn't seem to be used\r\n",
               "createdAt": "2020-11-15T21:07:20Z",
-              "updatedAt": "2020-11-15T21:07:20Z"
+              "updatedAt": "2020-11-20T19:34:17Z"
             }
           ]
         },
@@ -3351,7 +3399,7 @@
               "originalPosition": 2,
               "body": "Also, I think now we could uncomment `CDDL_FRAGS += json.cddl` in `cddl/vars.mk`",
               "createdAt": "2020-11-15T21:38:24Z",
-              "updatedAt": "2020-11-15T21:38:25Z"
+              "updatedAt": "2020-11-20T19:34:17Z"
             }
           ]
         }
@@ -3369,13 +3417,13 @@
       "labels": [],
       "body": "If everyone made up their own security level as they will be wont to do, this claim would be generally useless.\r\n\r\nSee also #4 ",
       "createdAt": "2020-11-14T18:30:08Z",
-      "updatedAt": "2020-11-15T20:44:41Z",
+      "updatedAt": "2020-11-20T20:16:27Z",
       "baseRepository": "ietf-rats-wg/eat",
       "baseRefName": "master",
-      "baseRefOid": "f28c8a69c2da08f8db09a5136ca63c5255ce450f",
+      "baseRefOid": "d7f685d2f808e1f5214d431c9865850982381009",
       "headRepository": "ietf-rats-wg/eat",
       "headRefName": "SecurityLevelNotExtensible",
-      "headRefOid": "798bcc712d392d970347ca14cf31c541926fa55f",
+      "headRefOid": "8beee4424b0e5655da1d4246c5ac1b9953b25300",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
@@ -3398,7 +3446,7 @@
               "originalPosition": 70,
               "body": "I would simply say:\r\n_\"If a particular implementation considers this claim to be inadequate, they should omit it and define their own proprietary claim instead.\"_",
               "createdAt": "2020-11-15T20:44:41Z",
-              "updatedAt": "2020-11-15T20:44:41Z"
+              "updatedAt": "2020-11-20T20:16:27Z"
             }
           ]
         }
@@ -3465,6 +3513,53 @@
         }
       ],
       "reviews": []
+    },
+    {
+      "number": 82,
+      "id": "MDExOlB1bGxSZXF1ZXN0NTI0OTM5MzEw",
+      "title": "rename debug-disable to debug-status; mark it as not extensible",
+      "url": "https://github.com/ietf-rats-wg/eat/pull/82",
+      "state": "OPEN",
+      "author": "laurencelundblade",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Address issue #79",
+      "createdAt": "2020-11-20T20:38:58Z",
+      "updatedAt": "2020-11-20T21:35:14Z",
+      "baseRepository": "ietf-rats-wg/eat",
+      "baseRefName": "master",
+      "baseRefOid": "d7f685d2f808e1f5214d431c9865850982381009",
+      "headRepository": "ietf-rats-wg/eat",
+      "headRefName": "DebugUpdate",
+      "headRefOid": "631fc0dc06879f1209995ff33cc38f6e3cf162d9",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NTM1NzkyNDY4",
+          "commit": {
+            "abbreviatedOid": "631fc0d"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "APPROVED",
+          "body": "thanks!",
+          "createdAt": "2020-11-20T21:34:54Z",
+          "updatedAt": "2020-11-20T21:35:14Z",
+          "comments": [
+            {
+              "originalPosition": 25,
+              "body": "typo: Endabled",
+              "createdAt": "2020-11-20T21:34:54Z",
+              "updatedAt": "2020-11-20T21:35:14Z"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
