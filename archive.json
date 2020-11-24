@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2020-11-23T21:17:43.552901+00:00",
+  "timestamp": "2020-11-24T18:42:41.138103+00:00",
   "repo": "ietf-rats-wg/eat",
   "labels": [
     {
@@ -1166,16 +1166,24 @@
       "id": "MDU6SXNzdWU1NjM5ODU4Njg=",
       "title": "Disallow floating point time stamps in EAT?",
       "url": "https://github.com/ietf-rats-wg/eat/issues/49",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "laurencelundblade",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "The nbf, exp and iat claims in CWT are allowed to be floating point. EAT inherits from them.\r\n\r\nFloating point is not universally supported by CPUs, particularly small ones for IoT. Even if the CPU supports it, the compiler and OS might not (I\u2019ve seen this happen once).\r\n\r\nI don\u2019t think fractional seconds are of any value for these claims, so we are forcing EAT decoders to support this for no good reason. I\u2019m not sure why CWT allowed floating point for these claims other than just inheriting from the CBOR epoch time format.\r\n\r\nIt is possible to use SW to decode a float and turn it into an integral value, but that is not fun to write and seems a waste.\r\n\r\nI\u2019d like to specify in EAT that floating point is not allowed for these claims.\r\n\r\n(Separately, we do need floating point for GPS location, but that claim will be used much less frequently and it is a good reason for using floating point).",
       "createdAt": "2020-02-12T13:02:55Z",
-      "updatedAt": "2020-02-12T13:02:55Z",
-      "closedAt": null,
-      "comments": []
+      "updatedAt": "2020-11-23T22:24:36Z",
+      "closedAt": "2020-11-23T22:24:36Z",
+      "comments": [
+        {
+          "author": "laurencelundblade",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Resolved by #61",
+          "createdAt": "2020-11-23T22:24:36Z",
+          "updatedAt": "2020-11-23T22:24:36Z"
+        }
+      ]
     },
     {
       "number": 50,
@@ -3003,25 +3011,35 @@
       "id": "MDExOlB1bGxSZXF1ZXN0NDA2MjY1OTc1",
       "title": "Disallow floating-point dates",
       "url": "https://github.com/ietf-rats-wg/eat/pull/61",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "laurencelundblade",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "CWT allows floating-point dates, but they are of no value and add an implementation burden, thus EAT is disallowing them.\r\n",
       "createdAt": "2020-04-20T19:48:40Z",
-      "updatedAt": "2020-11-06T19:46:15Z",
+      "updatedAt": "2020-11-23T22:24:10Z",
       "baseRepository": "ietf-rats-wg/eat",
       "baseRefName": "master",
-      "baseRefOid": "4a3e78b6f37f192a55c1fa7e210b95bc6ffdc36d",
+      "baseRefOid": "d7f685d2f808e1f5214d431c9865850982381009",
       "headRepository": "ietf-rats-wg/eat",
       "headRefName": "no-float",
-      "headRefOid": "1aa68defb7005ab721fa9770a8f3ed799d1664e5",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
-      "comments": [],
+      "headRefOid": "916b787618c717b1cf71af814d4deba4f701b3c6",
+      "closedAt": "2020-11-23T22:23:52Z",
+      "mergedAt": "2020-11-23T22:23:52Z",
+      "mergedBy": "laurencelundblade",
+      "mergeCommit": {
+        "oid": "91763d2374840cf79a0f53df7bacaa9425fdab91"
+      },
+      "comments": [
+        {
+          "author": "laurencelundblade",
+          "authorAssociation": "COLLABORATOR",
+          "body": "This closes #49",
+          "createdAt": "2020-11-23T22:24:06Z",
+          "updatedAt": "2020-11-23T22:24:06Z"
+        }
+      ],
       "reviews": []
     },
     {
@@ -3252,7 +3270,7 @@
       "labels": [],
       "body": "Seems to me there are lots of use cases for key inclusion and they have semantics that vary too much to fit into  one claim. I\u2019ve chosen primarily to write guidelines rather than define claims.\r\n\r\nOne use case is a CSR. However, RFC 8747 doesn\u2019t define a CSR, so referencing it isn\u2019t sufficient.\r\n\r\nAttestations from the Android key store include things like security level and user authentication requirements for use. Going into all that is too much for EAT, but might be good in another document.\r\n\r\nFIDO goes one step beyond Android and binds a relying party/user/device tuple with the key.\r\n\r\nIt is a little tempting to define a security level for the storage and operation of keys since EAT has a security level definition.",
       "createdAt": "2020-11-10T20:24:26Z",
-      "updatedAt": "2020-11-23T21:17:00Z",
+      "updatedAt": "2020-11-23T21:24:12Z",
       "baseRepository": "ietf-rats-wg/eat",
       "baseRefName": "master",
       "baseRefOid": "f28c8a69c2da08f8db09a5136ca63c5255ce450f",
@@ -3314,7 +3332,28 @@
           "updatedAt": "2020-11-11T18:33:35Z"
         }
       ],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NTM2ODU2Njc2",
+          "commit": {
+            "abbreviatedOid": "88b9d1e"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2020-11-23T21:24:11Z",
+          "updatedAt": "2020-11-23T21:24:12Z",
+          "comments": [
+            {
+              "originalPosition": 5,
+              "body": "```suggestion\r\nFor example, the key may be included as part of an IoT device onboarding protocol.\r\n``",
+              "createdAt": "2020-11-23T21:24:11Z",
+              "updatedAt": "2020-11-23T21:24:12Z"
+            }
+          ]
+        }
+      ]
     },
     {
       "number": 72,
@@ -3417,13 +3456,13 @@
       "labels": [],
       "body": "If everyone made up their own security level as they will be wont to do, this claim would be generally useless.\r\n\r\nSee also #4 ",
       "createdAt": "2020-11-14T18:30:08Z",
-      "updatedAt": "2020-11-20T20:16:27Z",
+      "updatedAt": "2020-11-24T18:41:55Z",
       "baseRepository": "ietf-rats-wg/eat",
       "baseRefName": "master",
       "baseRefOid": "d7f685d2f808e1f5214d431c9865850982381009",
       "headRepository": "ietf-rats-wg/eat",
       "headRefName": "SecurityLevelNotExtensible",
-      "headRefOid": "8beee4424b0e5655da1d4246c5ac1b9953b25300",
+      "headRefOid": "692ef558c90d2da964e3177442a0e2e550f817ab",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
@@ -3446,7 +3485,7 @@
               "originalPosition": 70,
               "body": "I would simply say:\r\n_\"If a particular implementation considers this claim to be inadequate, they should omit it and define their own proprietary claim instead.\"_",
               "createdAt": "2020-11-15T20:44:41Z",
-              "updatedAt": "2020-11-20T20:16:27Z"
+              "updatedAt": "2020-11-24T18:41:55Z"
             }
           ]
         }
