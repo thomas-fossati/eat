@@ -5,11 +5,11 @@
 RATS Working Group                                            G. Mandyam
 Internet-Draft                                Qualcomm Technologies Inc.
 Intended status: Standards Track                            L. Lundblade
-Expires: 28 May 2021                                 Security Theory LLC
+Expires: 29 May 2021                                 Security Theory LLC
                                                           M. Ballesteros
                                                            J. O'Donoghue
                                               Qualcomm Technologies Inc.
-                                                        24 November 2020
+                                                        25 November 2020
 
 
                    The Entity Attestation Token (EAT)
@@ -45,7 +45,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 28 May 2021.
+   This Internet-Draft will expire on 29 May 2021.
 
 
 
@@ -53,7 +53,7 @@ Status of This Memo
 
 
 
-Mandyam, et al.            Expires 28 May 2021                  [Page 1]
+Mandyam, et al.            Expires 29 May 2021                  [Page 1]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -98,18 +98,18 @@ Table of Contents
        3.8.1.  security-level CDDL . . . . . . . . . . . . . . . . .  16
      3.9.  Secure Boot Claim (secure-boot) . . . . . . . . . . . . .  17
        3.9.1.  secure-boot CDDL  . . . . . . . . . . . . . . . . . .  17
-     3.10. Debug Disable Claim (debug-disable) . . . . . . . . . . .  17
-       3.10.1.  Not Disabled . . . . . . . . . . . . . . . . . . . .  18
+     3.10. Debug Status Claim (debug-status) . . . . . . . . . . . .  17
+       3.10.1.  Endabled . . . . . . . . . . . . . . . . . . . . . .  18
        3.10.2.  Disabled . . . . . . . . . . . . . . . . . . . . . .  18
        3.10.3.  Disabled Since Boot  . . . . . . . . . . . . . . . .  18
-       3.10.4.  Permanent Disable  . . . . . . . . . . . . . . . . .  19
-       3.10.5.  Full Permanent Disable . . . . . . . . . . . . . . .  19
-       3.10.6.  debug-disable CDDL . . . . . . . . . . . . . . . . .  19
+       3.10.4.  Disabled Permanently . . . . . . . . . . . . . . . .  19
+       3.10.5.  Disabled Fully and Permanently . . . . . . . . . . .  19
+       3.10.6.  debug-status CDDL  . . . . . . . . . . . . . . . . .  19
      3.11. The Location Claim (location) . . . . . . . . . . . . . .  19
 
 
 
-Mandyam, et al.            Expires 28 May 2021                  [Page 2]
+Mandyam, et al.            Expires 29 May 2021                  [Page 2]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -165,7 +165,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 28 May 2021                  [Page 3]
+Mandyam, et al.            Expires 29 May 2021                  [Page 3]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -221,7 +221,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 28 May 2021                  [Page 4]
+Mandyam, et al.            Expires 29 May 2021                  [Page 4]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -277,7 +277,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 28 May 2021                  [Page 5]
+Mandyam, et al.            Expires 29 May 2021                  [Page 5]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -333,7 +333,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 28 May 2021                  [Page 6]
+Mandyam, et al.            Expires 29 May 2021                  [Page 6]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -389,7 +389,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 28 May 2021                  [Page 7]
+Mandyam, et al.            Expires 29 May 2021                  [Page 7]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -445,7 +445,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 28 May 2021                  [Page 8]
+Mandyam, et al.            Expires 29 May 2021                  [Page 8]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -501,7 +501,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 28 May 2021                  [Page 9]
+Mandyam, et al.            Expires 29 May 2021                  [Page 9]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -557,7 +557,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 28 May 2021                 [Page 10]
+Mandyam, et al.            Expires 29 May 2021                 [Page 10]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -613,7 +613,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 28 May 2021                 [Page 11]
+Mandyam, et al.            Expires 29 May 2021                 [Page 11]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -669,7 +669,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 28 May 2021                 [Page 12]
+Mandyam, et al.            Expires 29 May 2021                 [Page 12]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -725,7 +725,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 28 May 2021                 [Page 13]
+Mandyam, et al.            Expires 29 May 2021                 [Page 13]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -781,7 +781,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 28 May 2021                 [Page 14]
+Mandyam, et al.            Expires 29 May 2021                 [Page 14]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -837,7 +837,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 28 May 2021                 [Page 15]
+Mandyam, et al.            Expires 29 May 2021                 [Page 15]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -893,7 +893,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 28 May 2021                 [Page 16]
+Mandyam, et al.            Expires 29 May 2021                 [Page 16]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -924,7 +924,7 @@ Internet-Draft                     EAT                     November 2020
        secure-boot => bool
    )
 
-3.10.  Debug Disable Claim (debug-disable)
+3.10.  Debug Status Claim (debug-status)
 
    This applies to system-wide or submodule-wide debug facilities of the
    target device / submodule like JTAG and diagnostic hardware built
@@ -949,10 +949,17 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 28 May 2021                 [Page 17]
+Mandyam, et al.            Expires 29 May 2021                 [Page 17]
 
 Internet-Draft                     EAT                     November 2020
 
+
+   This claim is not extensible so as to provide a common interoperable
+   description of debug status to the relying party.  If a particular
+   implementation considers this claim to be inadequate, it can define
+   its own proprietary claim.  It may consider including both this claim
+   as a coarse indication of debug status and its own proprietary claim
+   as a refined indication.
 
    The higher levels of debug disabling requires that all debug
    disabling of the levels below it be in effect.  Since the lowest
@@ -979,7 +986,7 @@ Internet-Draft                     EAT                     November 2020
    This is the only way the relying party can know the debug status of
    the submodules since there is no inheritance.
 
-3.10.1.  Not Disabled
+3.10.1.  Endabled
 
    If any debug facility, even manufacturer hardware diagnostics, is
    currently enabled, then this level must be indicated.
@@ -998,19 +1005,12 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-
-
-
-
-
-
-
-Mandyam, et al.            Expires 28 May 2021                 [Page 18]
+Mandyam, et al.            Expires 29 May 2021                 [Page 18]
 
 Internet-Draft                     EAT                     November 2020
 
 
-3.10.4.  Permanent Disable
+3.10.4.  Disabled Permanently
 
    This level indicates all non-manufacturer facilities are permanently
    disabled such that no end user or developer cannot enable them.  Only
@@ -1018,23 +1018,23 @@ Internet-Draft                     EAT                     November 2020
    also indicates that all debug facilities are currently disabled and
    have been so since boot/start.
 
-3.10.5.  Full Permanent Disable
+3.10.5.  Disabled Fully and Permanently
 
    This level indicates that all debug capabilities for the target
    device/sub-module are permanently disabled.
 
-3.10.6.  debug-disable CDDL
+3.10.6.  debug-status CDDL
 
-   debug-disable-type = &(
-       not-disabled: 0,
+   debug-status-type = &(
+       enabled: 0,
        disabled: 1,
        disabled-since-boot: 2,
-       permanent-disable: 3,
-       full-permanent-disable: 4
+       disabled-permanently: 3,
+       disabled-fully-and-permanently: 4
    )
 
-   debug-disable-claim = (
-       debug-disable => debug-disable-type
+   debug-status-claim = (
+       debug-status => debug-status-type
    )
 
 3.11.  The Location Claim (location)
@@ -1061,7 +1061,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 28 May 2021                 [Page 19]
+Mandyam, et al.            Expires 29 May 2021                 [Page 19]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -1117,7 +1117,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 28 May 2021                 [Page 20]
+Mandyam, et al.            Expires 29 May 2021                 [Page 20]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -1173,7 +1173,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 28 May 2021                 [Page 21]
+Mandyam, et al.            Expires 29 May 2021                 [Page 21]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -1229,7 +1229,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 28 May 2021                 [Page 22]
+Mandyam, et al.            Expires 29 May 2021                 [Page 22]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -1285,7 +1285,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 28 May 2021                 [Page 23]
+Mandyam, et al.            Expires 29 May 2021                 [Page 23]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -1296,7 +1296,7 @@ Internet-Draft                     EAT                     November 2020
    oemid /= "oemid"
    security-level /= "security-level"
    secure-boot /= "secure-boot"
-   debug-disable /= "debug-disable"
+   debug-status /= "debug-status"
    location /= "location"
    age /= "age"
    uptime /= "uptime"
@@ -1341,7 +1341,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 28 May 2021                 [Page 24]
+Mandyam, et al.            Expires 29 May 2021                 [Page 24]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -1397,7 +1397,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 28 May 2021                 [Page 25]
+Mandyam, et al.            Expires 29 May 2021                 [Page 25]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -1416,7 +1416,7 @@ eat-claims = { ; the top-level payload that is signed using COSE or JOSE
     ? hardware-version-claims,
     ? security-level-claim,
     ? secure-boot-claim,
-    ? debug-disable-claim,
+    ? debug-status-claim,
     ? location-claim,
     ? uptime-claim,
     ? submods-part,
@@ -1435,7 +1435,7 @@ origination = 12
 oemid = 13
 security-level = 14
 secure-boot = 15
-debug-disable = 16
+debug-status = 16
 location = 17
 uptime = 19
 submods = 20
@@ -1453,7 +1453,7 @@ ean-device-version = 29
 
 
 
-Mandyam, et al.            Expires 28 May 2021                 [Page 26]
+Mandyam, et al.            Expires 29 May 2021                 [Page 26]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -1481,16 +1481,16 @@ issued-at = 6
 cwt-id = 7
 
 
-debug-disable-type = &(
-    not-disabled: 0,
+debug-status-type = &(
+    enabled: 0,
     disabled: 1,
     disabled-since-boot: 2,
-    permanent-disable: 3,
-    full-permanent-disable: 4
+    disabled-permanently: 3,
+    disabled-fully-and-permanently: 4
 )
 
-debug-disable-claim = (
-    debug-disable => debug-disable-type
+debug-status-claim = (
+    debug-status => debug-status-type
 )
 
 location-type = {
@@ -1509,7 +1509,7 @@ latitude = 1
 
 
 
-Mandyam, et al.            Expires 28 May 2021                 [Page 27]
+Mandyam, et al.            Expires 29 May 2021                 [Page 27]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -1565,7 +1565,7 @@ board-version-claim = (
 
 
 
-Mandyam, et al.            Expires 28 May 2021                 [Page 28]
+Mandyam, et al.            Expires 29 May 2021                 [Page 28]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -1621,7 +1621,7 @@ secure-boot-claim = (
 
 
 
-Mandyam, et al.            Expires 28 May 2021                 [Page 29]
+Mandyam, et al.            Expires 29 May 2021                 [Page 29]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -1668,7 +1668,7 @@ origination /= "origination"
 oemid /= "oemid"
 security-level /= "security-level"
 secure-boot /= "secure-boot"
-debug-disable /= "debug-disable"
+debug-status /= "debug-status"
 location /= "location"
 age /= "age"
 uptime /= "uptime"
@@ -1677,7 +1677,7 @@ timestamp /= "timestamp"
 
 
 
-Mandyam, et al.            Expires 28 May 2021                 [Page 30]
+Mandyam, et al.            Expires 29 May 2021                 [Page 30]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -1733,7 +1733,7 @@ speed /= "speed"
 
 
 
-Mandyam, et al.            Expires 28 May 2021                 [Page 31]
+Mandyam, et al.            Expires 29 May 2021                 [Page 31]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -1789,7 +1789,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 28 May 2021                 [Page 32]
+Mandyam, et al.            Expires 29 May 2021                 [Page 32]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -1845,7 +1845,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 28 May 2021                 [Page 33]
+Mandyam, et al.            Expires 29 May 2021                 [Page 33]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -1901,7 +1901,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 28 May 2021                 [Page 34]
+Mandyam, et al.            Expires 29 May 2021                 [Page 34]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -1957,7 +1957,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 28 May 2021                 [Page 35]
+Mandyam, et al.            Expires 29 May 2021                 [Page 35]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -2013,7 +2013,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 28 May 2021                 [Page 36]
+Mandyam, et al.            Expires 29 May 2021                 [Page 36]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -2069,7 +2069,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 28 May 2021                 [Page 37]
+Mandyam, et al.            Expires 29 May 2021                 [Page 37]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -2125,7 +2125,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 28 May 2021                 [Page 38]
+Mandyam, et al.            Expires 29 May 2021                 [Page 38]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -2181,7 +2181,7 @@ A.2.  Example with Submodules, Nesting and Security Levels
 
 
 
-Mandyam, et al.            Expires 28 May 2021                 [Page 39]
+Mandyam, et al.            Expires 29 May 2021                 [Page 39]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -2237,7 +2237,7 @@ B.1.  Collision Probability
 
 
 
-Mandyam, et al.            Expires 28 May 2021                 [Page 40]
+Mandyam, et al.            Expires 29 May 2021                 [Page 40]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -2293,7 +2293,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 28 May 2021                 [Page 41]
+Mandyam, et al.            Expires 29 May 2021                 [Page 41]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -2349,7 +2349,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 28 May 2021                 [Page 42]
+Mandyam, et al.            Expires 29 May 2021                 [Page 42]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -2405,7 +2405,7 @@ C.1.  From draft-rats-eat-01
 
 
 
-Mandyam, et al.            Expires 28 May 2021                 [Page 43]
+Mandyam, et al.            Expires 29 May 2021                 [Page 43]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -2461,10 +2461,13 @@ C.6.  From draft-ietf-rats-eat-04
 
 
 
-Mandyam, et al.            Expires 28 May 2021                 [Page 44]
+Mandyam, et al.            Expires 29 May 2021                 [Page 44]
 
 Internet-Draft                     EAT                     November 2020
 
+
+   *  Rename debug-disable to debug-status; clarify that it is not
+      extensible
 
    *  Security level claim is not extensible
 
@@ -2514,7 +2517,4 @@ Authors' Addresses
 
 
 
-
-
-
-Mandyam, et al.            Expires 28 May 2021                 [Page 45]
+Mandyam, et al.            Expires 29 May 2021                 [Page 45]
