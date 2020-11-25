@@ -99,7 +99,7 @@ Table of Contents
      3.9.  Secure Boot Claim (secure-boot) . . . . . . . . . . . . .  17
        3.9.1.  secure-boot CDDL  . . . . . . . . . . . . . . . . . .  17
      3.10. Debug Status Claim (debug-status) . . . . . . . . . . . .  17
-       3.10.1.  Endabled . . . . . . . . . . . . . . . . . . . . . .  18
+       3.10.1.  Enabled  . . . . . . . . . . . . . . . . . . . . . .  18
        3.10.2.  Disabled . . . . . . . . . . . . . . . . . . . . . .  18
        3.10.3.  Disabled Since Boot  . . . . . . . . . . . . . . . .  18
        3.10.4.  Disabled Permanently . . . . . . . . . . . . . . . .  19
@@ -986,7 +986,7 @@ Internet-Draft                     EAT                     November 2020
    This is the only way the relying party can know the debug status of
    the submodules since there is no inheritance.
 
-3.10.1.  Endabled
+3.10.1.  Enabled
 
    If any debug facility, even manufacturer hardware diagnostics, is
    currently enabled, then this level must be indicated.
