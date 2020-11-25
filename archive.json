@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2020-11-24T18:42:41.138103+00:00",
+  "timestamp": "2020-11-25T18:21:40.288381+00:00",
   "repo": "ietf-rats-wg/eat",
   "labels": [
     {
@@ -3137,13 +3137,13 @@
       "labels": [],
       "body": "Allows UCCS tokens\r\n\r\nIncorporates JWTs, secured and unsecured.\r\n\r\nRequires nested CWT submodules be bstr wrapped.\r\n\r\nHow to bring a UCCS in as a submodule.\r\n\r\nHow to put a JWT submodule in a CWT and vice versa.\r\n\r\nAll the rules for CWT and COSE tag usage.\r\n\r\nTop-level CDDL to handle CWT/COSE, UCCS and JWT",
       "createdAt": "2020-10-26T21:07:48Z",
-      "updatedAt": "2020-11-14T19:04:18Z",
+      "updatedAt": "2020-11-25T14:07:30Z",
       "baseRepository": "ietf-rats-wg/eat",
       "baseRefName": "master",
-      "baseRefOid": "6c97e22dbce3e2e5f4e8d573f42167e3aa3401ad",
+      "baseRefOid": "029ea4a59f1cbdd3cbe7b2b7535afa5fd3e9c3ba",
       "headRepository": "ietf-rats-wg/eat",
       "headRefName": "submod_update",
-      "headRefOid": "3444119b24cd47b605db1070ab763d17d0980bdc",
+      "headRefOid": "19c2fe5ba035095494cc10c99d403896874ab78e",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
@@ -3164,7 +3164,28 @@
           "updatedAt": "2020-11-11T19:43:19Z"
         }
       ],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NTM4NTI3MDcy",
+          "commit": {
+            "abbreviatedOid": "19c2fe5"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2020-11-25T14:07:30Z",
+          "updatedAt": "2020-11-25T14:07:30Z",
+          "comments": [
+            {
+              "originalPosition": 158,
+              "body": "spurious line",
+              "createdAt": "2020-11-25T14:07:30Z",
+              "updatedAt": "2020-11-25T14:07:30Z"
+            }
+          ]
+        }
+      ]
     },
     {
       "number": 68,
@@ -3270,13 +3291,13 @@
       "labels": [],
       "body": "Seems to me there are lots of use cases for key inclusion and they have semantics that vary too much to fit into  one claim. I\u2019ve chosen primarily to write guidelines rather than define claims.\r\n\r\nOne use case is a CSR. However, RFC 8747 doesn\u2019t define a CSR, so referencing it isn\u2019t sufficient.\r\n\r\nAttestations from the Android key store include things like security level and user authentication requirements for use. Going into all that is too much for EAT, but might be good in another document.\r\n\r\nFIDO goes one step beyond Android and binds a relying party/user/device tuple with the key.\r\n\r\nIt is a little tempting to define a security level for the storage and operation of keys since EAT has a security level definition.",
       "createdAt": "2020-11-10T20:24:26Z",
-      "updatedAt": "2020-11-23T21:24:12Z",
+      "updatedAt": "2020-11-24T18:47:48Z",
       "baseRepository": "ietf-rats-wg/eat",
       "baseRefName": "master",
-      "baseRefOid": "f28c8a69c2da08f8db09a5136ca63c5255ce450f",
+      "baseRefOid": "d7f685d2f808e1f5214d431c9865850982381009",
       "headRepository": "ietf-rats-wg/eat",
       "headRefName": "KeyInclusion",
-      "headRefOid": "88b9d1eeb3ab812b5a436d173a5a7aacc75c77de",
+      "headRefOid": "04e5d341f18508037c87ab26a734f468b9c99c9b",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
@@ -3349,7 +3370,7 @@
               "originalPosition": 5,
               "body": "```suggestion\r\nFor example, the key may be included as part of an IoT device onboarding protocol.\r\n``",
               "createdAt": "2020-11-23T21:24:11Z",
-              "updatedAt": "2020-11-23T21:24:12Z"
+              "updatedAt": "2020-11-24T18:47:48Z"
             }
           ]
         }
@@ -3449,25 +3470,35 @@
       "id": "MDExOlB1bGxSZXF1ZXN0NTIxMDQzMjQ0",
       "title": "Clarify that the security level claim is NOT extensible",
       "url": "https://github.com/ietf-rats-wg/eat/pull/73",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "laurencelundblade",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "If everyone made up their own security level as they will be wont to do, this claim would be generally useless.\r\n\r\nSee also #4 ",
       "createdAt": "2020-11-14T18:30:08Z",
-      "updatedAt": "2020-11-24T18:41:55Z",
+      "updatedAt": "2020-11-24T18:43:50Z",
       "baseRepository": "ietf-rats-wg/eat",
       "baseRefName": "master",
       "baseRefOid": "d7f685d2f808e1f5214d431c9865850982381009",
       "headRepository": "ietf-rats-wg/eat",
       "headRefName": "SecurityLevelNotExtensible",
       "headRefOid": "692ef558c90d2da964e3177442a0e2e550f817ab",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
-      "comments": [],
+      "closedAt": "2020-11-24T18:43:28Z",
+      "mergedAt": "2020-11-24T18:43:28Z",
+      "mergedBy": "laurencelundblade",
+      "mergeCommit": {
+        "oid": "029ea4a59f1cbdd3cbe7b2b7535afa5fd3e9c3ba"
+      },
+      "comments": [
+        {
+          "author": "laurencelundblade",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Part address #74",
+          "createdAt": "2020-11-24T18:43:49Z",
+          "updatedAt": "2020-11-24T18:43:49Z"
+        }
+      ],
       "reviews": [
         {
           "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NTMwODMzNDgz",
@@ -3558,24 +3589,26 @@
       "id": "MDExOlB1bGxSZXF1ZXN0NTI0OTM5MzEw",
       "title": "rename debug-disable to debug-status; mark it as not extensible",
       "url": "https://github.com/ietf-rats-wg/eat/pull/82",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "laurencelundblade",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Address issue #79",
       "createdAt": "2020-11-20T20:38:58Z",
-      "updatedAt": "2020-11-20T21:35:14Z",
+      "updatedAt": "2020-11-25T18:20:39Z",
       "baseRepository": "ietf-rats-wg/eat",
       "baseRefName": "master",
-      "baseRefOid": "d7f685d2f808e1f5214d431c9865850982381009",
+      "baseRefOid": "029ea4a59f1cbdd3cbe7b2b7535afa5fd3e9c3ba",
       "headRepository": "ietf-rats-wg/eat",
       "headRefName": "DebugUpdate",
-      "headRefOid": "631fc0dc06879f1209995ff33cc38f6e3cf162d9",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "headRefOid": "764e9f1962a3d01996f6d9a0688a82dec678de77",
+      "closedAt": "2020-11-25T18:20:35Z",
+      "mergedAt": "2020-11-25T18:20:35Z",
+      "mergedBy": "laurencelundblade",
+      "mergeCommit": {
+        "oid": "98c87484eab8f30e3ab14cda0a52c6d8cb865caf"
+      },
       "comments": [],
       "reviews": [
         {
@@ -3594,7 +3627,7 @@
               "originalPosition": 25,
               "body": "typo: Endabled",
               "createdAt": "2020-11-20T21:34:54Z",
-              "updatedAt": "2020-11-20T21:35:14Z"
+              "updatedAt": "2020-11-24T18:52:00Z"
             }
           ]
         }
