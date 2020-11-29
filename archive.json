@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2020-11-27T18:39:45.863918+00:00",
+  "timestamp": "2020-11-29T05:42:15.499478+00:00",
   "repo": "ietf-rats-wg/eat",
   "labels": [
     {
@@ -1229,32 +1229,48 @@
       "id": "MDU6SXNzdWU1NjQ2OTk0NzU=",
       "title": "Sort out CWT and COSE tag usage",
       "url": "https://github.com/ietf-rats-wg/eat/issues/53",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "laurencelundblade",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "When should the CWT and COSE tags be used with an EAT?",
       "createdAt": "2020-02-13T13:56:06Z",
-      "updatedAt": "2020-02-13T13:56:06Z",
-      "closedAt": null,
-      "comments": []
+      "updatedAt": "2020-11-27T18:42:27Z",
+      "closedAt": "2020-11-27T18:42:27Z",
+      "comments": [
+        {
+          "author": "laurencelundblade",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Fixed with #67 ",
+          "createdAt": "2020-11-27T18:42:27Z",
+          "updatedAt": "2020-11-27T18:42:27Z"
+        }
+      ]
     },
     {
       "number": 54,
       "id": "MDU6SXNzdWU1NjY4OTk3Mzc=",
       "title": "Accommodate \"GP unendorsed\" tokens",
       "url": "https://github.com/ietf-rats-wg/eat/issues/54",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "laurencelundblade",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Consider making an EAT a \"CWT Claims Set\" as defined in CWT (and JWT) to accommodate GP's desired for unsigned tokens.",
       "createdAt": "2020-02-18T13:39:54Z",
-      "updatedAt": "2020-02-18T13:39:54Z",
-      "closedAt": null,
-      "comments": []
+      "updatedAt": "2020-11-27T18:42:08Z",
+      "closedAt": "2020-11-27T18:42:08Z",
+      "comments": [
+        {
+          "author": "laurencelundblade",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Fixed with #67 and the eventual publication of Henk's UCCS draft.",
+          "createdAt": "2020-11-27T18:42:08Z",
+          "updatedAt": "2020-11-27T18:42:08Z"
+        }
+      ]
     },
     {
       "number": 55,
@@ -1415,16 +1431,24 @@
       "id": "MDU6SXNzdWU3MjQ5NTUxNjg=",
       "title": "nested token submods should be byte-string wrapped",
       "url": "https://github.com/ietf-rats-wg/eat/issues/65",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "laurencelundblade",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Right now, the second type of submod, the embedding of a full signed EAT token inside surrounding token is \"direct\".\r\n\r\nI think it needs to be wrapped in a byte string to make it reasonable to implement. When decoding the surrounding token, the nested token will be returned as a byte string that can be easily passed to the COSE/CWT/EAT decoder as these will typically take a byte string as input. \r\n\r\nIf it is not a byte string, then you have to convince the CBOR decoder to return the CWT Tag as a byte string even though it is not a byte string or the same or related instance of the CBOR decoder used to decode the outside EAT must be used to decode the inside EAT.\r\n\r\nNo semantics would change. This is only for a practical consideration of the APIs used for decoding CBOR, COSE, CWT and EAT.",
       "createdAt": "2020-10-19T20:34:05Z",
-      "updatedAt": "2020-11-11T10:40:16Z",
-      "closedAt": null,
-      "comments": []
+      "updatedAt": "2020-11-27T18:43:41Z",
+      "closedAt": "2020-11-27T18:43:41Z",
+      "comments": [
+        {
+          "author": "laurencelundblade",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Fixed with #67 ",
+          "createdAt": "2020-11-27T18:43:41Z",
+          "updatedAt": "2020-11-27T18:43:41Z"
+        }
+      ]
     },
     {
       "number": 74,
@@ -1578,7 +1602,7 @@
     {
       "number": 83,
       "id": "MDU6SXNzdWU3NTEwODM2MzQ=",
-      "title": "location claim doesn't fully specify altitude and speed",
+      "title": "location claim doesn't fully specify heading and speed",
       "url": "https://github.com/ietf-rats-wg/eat/issues/83",
       "state": "OPEN",
       "author": "laurencelundblade",
@@ -1587,7 +1611,7 @@
       "labels": [],
       "body": "WGS84 seems only to cover latitude and longitude\r\n",
       "createdAt": "2020-11-25T19:58:27Z",
-      "updatedAt": "2020-11-25T21:34:10Z",
+      "updatedAt": "2020-11-28T19:27:45Z",
       "closedAt": null,
       "comments": [
         {
@@ -1596,6 +1620,20 @@
           "body": "Current text states \"The location coordinate claims are consistent with the WGS84 coordinate system\", which is in line with comparable standards such as https://www.w3.org/TR/geolocation-API/#coordinates_interface.  This does not mean that WGS84 defines exactly how implementations derive speed or altitude (WGS84 actually defines both geodetic and orthometric height).\r\n\r\nNote also that different implementations may leverage WGS84 coordinates, but allow for runtime configuration for how altitude calculation is performed.  See https://docs.microsoft.com/en-us/uwp/api/windows.devices.geolocation.altitudereferencesystem?view=winrt-19041 as an example.\r\n\r\nI would recommend that the EAT spec not be overly prescriptive in defining how derived values such as altitude and speed are actually calculated.",
           "createdAt": "2020-11-25T21:34:10Z",
           "updatedAt": "2020-11-25T21:34:10Z"
+        },
+        {
+          "author": "laurencelundblade",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Corrected the title to say heading and speed, not altitude and speed, are the problem. There is no specification for heading and speed and no specification at all is a problem.\r\n\r\nI think this should just use tag 103 which seems to be a good simple WGS84-based specification of lat, long, altitude and accuracy. \r\n\r\nHeading and speed aren't really location. They should be in a different claim called \"travel\" or such.\r\n\r\nHeading and speed were included because Qualcomm's location API included them. They can still be included in a token, but as part of different claim.\r\n",
+          "createdAt": "2020-11-27T20:22:00Z",
+          "updatedAt": "2020-11-27T20:22:00Z"
+        },
+        {
+          "author": "gmandyam",
+          "authorAssociation": "COLLABORATOR",
+          "body": ">Heading and speed were included because Qualcomm's location API included them. They can still be included in a token, but as part of different claim\r\n\r\nActually that was not my intention when I wrote this section - these attributes were included to maintain compatibility with W3C geoloc API coordinates I/F (https://www.w3.org/TR/geolocation-API/#coordinates_interface), which dates back to 2008.  Maintaining compatibility with this interface has the additional benefit of allowing browsers to leverage existing geoloc. API permissions framework to suppress all geoloc-related information in the attestation if so required by the end user - see https://www.w3.org/TR/webauthn/#browser-permissions-framework-extensions for a description of a comparable example, the location extension in WebAuthn API.  \r\n\r\nNote also that the W3C Geoloc API has been defined at a level of abstraction beyond platform-specific location enablers (for better or worse).  If we go back to 2008, this meant that the positions I/F was meant to be compatible with BREW IPosdet (maybe this is what you were referring to as the \"Qualcomm location API\"?) and JSR 179.   The compatibility is still maintained with more recent enablers such as Android Location Manager.  So keeping compatibility with the W3C coordinates I/F should allow for maximum leverage across platforms.\r\n\r\nI would not recommend bifurcating this claim.",
+          "createdAt": "2020-11-28T19:27:45Z",
+          "updatedAt": "2020-11-28T19:27:45Z"
         }
       ]
     }
@@ -3176,24 +3214,26 @@
       "id": "MDExOlB1bGxSZXF1ZXN0NTEwMzA4Nzk5",
       "title": "submods: UCCS, bstr wrapping, tagging rules",
       "url": "https://github.com/ietf-rats-wg/eat/pull/67",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "laurencelundblade",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Allows UCCS tokens\r\n\r\nIncorporates JWTs, secured and unsecured.\r\n\r\nRequires nested CWT submodules be bstr wrapped.\r\n\r\nHow to bring a UCCS in as a submodule.\r\n\r\nHow to put a JWT submodule in a CWT and vice versa.\r\n\r\nAll the rules for CWT and COSE tag usage.\r\n\r\nTop-level CDDL to handle CWT/COSE, UCCS and JWT",
       "createdAt": "2020-10-26T21:07:48Z",
-      "updatedAt": "2020-11-27T18:39:19Z",
+      "updatedAt": "2020-11-27T18:40:48Z",
       "baseRepository": "ietf-rats-wg/eat",
       "baseRefName": "master",
       "baseRefOid": "8e6faefcc49715ab9ee8ac99d0fbf5bbe41bc8a3",
       "headRepository": "ietf-rats-wg/eat",
       "headRefName": "submod_update",
       "headRefOid": "12f3947aacca223a07b7958723eda211561896c5",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2020-11-27T18:40:43Z",
+      "mergedAt": "2020-11-27T18:40:43Z",
+      "mergedBy": "laurencelundblade",
+      "mergeCommit": {
+        "oid": "700315fa9ee5b95f125969d81870051e03ff1363"
+      },
       "comments": [
         {
           "author": "henkbirkholz",
@@ -3680,6 +3720,34 @@
           ]
         }
       ]
+    },
+    {
+      "number": 84,
+      "id": "MDExOlB1bGxSZXF1ZXN0NTI4NzQ1MDQ1",
+      "title": "Indicate major work required with TODO:",
+      "url": "https://github.com/ietf-rats-wg/eat/pull/84",
+      "state": "MERGED",
+      "author": "laurencelundblade",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2020-11-27T18:39:57Z",
+      "updatedAt": "2020-11-29T05:41:47Z",
+      "baseRepository": "ietf-rats-wg/eat",
+      "baseRefName": "master",
+      "baseRefOid": "700315fa9ee5b95f125969d81870051e03ff1363",
+      "headRepository": "ietf-rats-wg/eat",
+      "headRefName": "TODO",
+      "headRefOid": "5517813f5ab304dbef631f4d2a3be5aef71d94f8",
+      "closedAt": "2020-11-29T05:41:41Z",
+      "mergedAt": "2020-11-29T05:41:41Z",
+      "mergedBy": "laurencelundblade",
+      "mergeCommit": {
+        "oid": "fc1332ea343f2790f7a204150368c4b6925aaa3e"
+      },
+      "comments": [],
+      "reviews": []
     }
   ]
 }
