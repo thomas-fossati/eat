@@ -117,22 +117,22 @@ Internet-Draft                     EAT                     November 2020
        3.11.6.  debug-status CDDL  . . . . . . . . . . . . . . . . .  20
      3.12. Including Keys  . . . . . . . . . . . . . . . . . . . . .  20
      3.13. The Location Claim (location) . . . . . . . . . . . . . .  21
-       3.13.1.  location CDDL  . . . . . . . . . . . . . . . . . . .  21
+       3.13.1.  location CDDL  . . . . . . . . . . . . . . . . . . .  22
      3.14. The Uptime Claim (uptime) . . . . . . . . . . . . . . . .  22
        3.14.1.  uptime CDDL  . . . . . . . . . . . . . . . . . . . .  22
-     3.15. The Intended Use Claim (intended-use) . . . . . . . . . .  22
+     3.15. The Intended Use Claim (intended-use) . . . . . . . . . .  23
        3.15.1.  intended-use CDDL  . . . . . . . . . . . . . . . . .  23
-     3.16. The Submodules Part of a Token (submods)  . . . . . . . .  23
+     3.16. The Submodules Part of a Token (submods)  . . . . . . . .  24
        3.16.1.  Two Types of Submodules  . . . . . . . . . . . . . .  24
          3.16.1.1.  Non-token Submodules . . . . . . . . . . . . . .  24
-         3.16.1.2.  Nested EATs  . . . . . . . . . . . . . . . . . .  24
-         3.16.1.3.  Unsecured JWTs and UCCS Tokens as Submodules . .  25
+         3.16.1.2.  Nested EATs  . . . . . . . . . . . . . . . . . .  25
+         3.16.1.3.  Unsecured JWTs and UCCS Tokens as Submodules . .  26
        3.16.2.  No Inheritance . . . . . . . . . . . . . . . . . . .  26
        3.16.3.  Security Levels  . . . . . . . . . . . . . . . . . .  26
-       3.16.4.  Submodule Names  . . . . . . . . . . . . . . . . . .  26
-       3.16.5.  submods CDDL . . . . . . . . . . . . . . . . . . . .  26
+       3.16.4.  Submodule Names  . . . . . . . . . . . . . . . . . .  27
+       3.16.5.  submods CDDL . . . . . . . . . . . . . . . . . . . .  27
    4.  Endorsements and Verification Keys  . . . . . . . . . . . . .  27
-   5.  Encoding  . . . . . . . . . . . . . . . . . . . . . . . . . .  27
+   5.  Encoding  . . . . . . . . . . . . . . . . . . . . . . . . . .  28
      5.1.  Common CDDL Types . . . . . . . . . . . . . . . . . . . .  28
      5.2.  CDDL for CWT-defined Claims . . . . . . . . . . . . . . .  28
      5.3.  JSON  . . . . . . . . . . . . . . . . . . . . . . . . . .  28
@@ -152,7 +152,8 @@ Internet-Draft                     EAT                     November 2020
      6.3.  Claims Registered by This Document  . . . . . . . . . . .  39
    7.  Privacy Considerations  . . . . . . . . . . . . . . . . . . .  39
      7.1.  UEID Privacy Considerations . . . . . . . . . . . . . . .  40
-   8.  Security Considerations . . . . . . . . . . . . . . . . . . .  40
+     7.2.  Location Privacy Considerations . . . . . . . . . . . . .  40
+   8.  Security Considerations . . . . . . . . . . . . . . . . . . .  41
      8.1.  Key Provisioning  . . . . . . . . . . . . . . . . . . . .  41
        8.1.1.  Transmission of Key Material  . . . . . . . . . . . .  41
      8.2.  Transport Security  . . . . . . . . . . . . . . . . . . .  41
@@ -161,7 +162,6 @@ Internet-Draft                     EAT                     November 2020
      9.1.  Normative References  . . . . . . . . . . . . . . . . . .  42
      9.2.  Informative References  . . . . . . . . . . . . . . . . .  44
    Appendix A.  Examples . . . . . . . . . . . . . . . . . . . . . .  46
-     A.1.  Very Simple EAT . . . . . . . . . . . . . . . . . . . . .  46
 
 
 
@@ -170,6 +170,7 @@ Mandyam, et al.            Expires 3 June 2021                  [Page 3]
 Internet-Draft                     EAT                     November 2020
 
 
+     A.1.  Very Simple EAT . . . . . . . . . . . . . . . . . . . . .  46
      A.2.  Example with Submodules, Nesting and Security Levels  . .  46
    Appendix B.  UEID Design Rationale  . . . . . . . . . . . . . . .  47
      B.1.  Collision Probability . . . . . . . . . . . . . . . . . .  47
@@ -217,7 +218,6 @@ Internet-Draft                     EAT                     November 2020
 
    *  Environmental characteristics of the device such as its GPS
       location
-
 
 
 
@@ -1145,27 +1145,27 @@ Internet-Draft                     EAT                     November 2020
 
 3.13.  The Location Claim (location)
 
-   The location claim is a CBOR-formatted object that describes the
-   location of the device entity from which the attestation originates.
-   It is comprised of a map of additional sub claims that represent the
-   actual location coordinates (latitude, longitude and altitude).  The
-   location coordinate claims are consistent with the WGS84 coordinate
-   system [WGS84].  In addition, a sub claim providing the estimated
-   accuracy of the location measurement is defined.
+   The location claim gives the location of the device entity from which
+   the attestation originates.  It is derived from the W3C Geolocation
+   API [W3C.GeoLoc].  The latitude, longitude, altitude and accuracy
+   must conform to [WGS84].  The altitude is in meters above the [WGS84]
+   ellipsoid.  The two accuracy values are positive numbers in meters.
+   The heading is in degrees relative to true north.  If the device is
+   stationary, the heading is NaN (floating-point not-a-number).  The
+   speed is the horizontal component of the device velocity in meters
+   per second.
+
+   When encoding floating-point numbers half-precision should not be
+   used.  It usually does not provide enough precision for a geographic
+   location.  It is not a requirement that the receiver of an EAT
+   implement half-precision, so the receiver may not be able to decode
+   the location.
 
    The location may have been cached for a period of time before token
    creation.  For example, it might have been minutes or hours or more
    since the last contact with a GPS satellite.  Either the timestamp or
    age data item can be used to quantify the cached period.  The
    timestamp data item is preferred as it a non-relative time.
-
-   The age data item can be used when the entity doesn't know what time
-   it is either because it doesn't have a clock or it isn't set.  The
-   entity must still have a "ticker" that can measure a time interval.
-   The age is the interval between acquisition of the location data and
-   token creation.
-
-3.13.1.  location CDDL
 
 
 
@@ -1177,6 +1177,16 @@ Mandyam, et al.            Expires 3 June 2021                 [Page 21]
 
 Internet-Draft                     EAT                     November 2020
 
+
+   The age data item can be used when the entity doesn't know what time
+   it is either because it doesn't have a clock or it isn't set.  The
+   entity must still have a "ticker" that can measure a time interval.
+   The age is the interval between acquisition of the location data and
+   token creation.
+
+   See {#locationprivacyconsiderations} below.
+
+3.13.1.  location CDDL
 
    location-type = {
        latitude => number,
@@ -1215,16 +1225,6 @@ Internet-Draft                     EAT                     November 2020
        uptime => uint
    )
 
-3.15.  The Intended Use Claim (intended-use)
-
-   EAT's may be used in the context of several different applications.
-   The intended-use claim provides an indication to an EAT consumer
-   about the intended usage of the token.  This claim can be used as a
-   way for an application using EAT to internally distinguish between
-   different ways it uses EAT.
-
-   1 - Generic  Generic attestation describes an application where the
-
 
 
 
@@ -1234,6 +1234,15 @@ Mandyam, et al.            Expires 3 June 2021                 [Page 22]
 Internet-Draft                     EAT                     November 2020
 
 
+3.15.  The Intended Use Claim (intended-use)
+
+   EAT's may be used in the context of several different applications.
+   The intended-use claim provides an indication to an EAT consumer
+   about the intended usage of the token.  This claim can be used as a
+   way for an application using EAT to internally distinguish between
+   different ways it uses EAT.
+
+   1 - Generic  Generic attestation describes an application where the
       EAT consumer requres the most up-to-date security assessment of
       the attesting entity.  It is expected that this is the most
       commonly-used application of EAT.
@@ -1271,6 +1280,16 @@ Internet-Draft                     EAT                     November 2020
        pop:  5
    )
 
+
+
+
+
+
+Mandyam, et al.            Expires 3 June 2021                 [Page 23]
+
+Internet-Draft                     EAT                     November 2020
+
+
 3.16.  The Submodules Part of a Token (submods)
 
    Some devices are complex, having many subsystems or submodules.  A
@@ -1281,14 +1300,6 @@ Internet-Draft                     EAT                     November 2020
    Element.
 
    The claims for each these can be grouped together in a submodule.
-
-
-
-
-Mandyam, et al.            Expires 3 June 2021                 [Page 23]
-
-Internet-Draft                     EAT                     November 2020
-
 
    The submods part of a token are in a single map/object with many
    entries, one per submodule.  There is only one submods map in a
@@ -1325,6 +1336,16 @@ Internet-Draft                     EAT                     November 2020
    submodules must be CBOR format.  If a token in in JSON format (a
    JWT), all non-token submodules must be in JSON format.
 
+
+
+
+
+
+Mandyam, et al.            Expires 3 June 2021                 [Page 24]
+
+Internet-Draft                     EAT                     November 2020
+
+
    When decoding, this type of submodule is recognized from the other
    type by being a data item of type map for CBOR or type object for
    JSON.
@@ -1337,14 +1358,6 @@ Internet-Draft                     EAT                     November 2020
    usually by an independent Attester.  When the surrounding EAT is a
    CWT or secured JWT, the nested token becomes securely bound with the
    other claims in the surrounding token.
-
-
-
-
-Mandyam, et al.            Expires 3 June 2021                 [Page 24]
-
-Internet-Draft                     EAT                     November 2020
-
 
    It is allowed to have a CWT as a submodule in a JWT and vice versa,
    but this SHOULD be avoided unless necessary.
@@ -1380,6 +1393,15 @@ Internet-Draft                     EAT                     November 2020
    format tokens.  It may be a CWT CBOR tag or a CWT Protocol Message
    and COSE_Tagged_Message MUST be used at all COSE layers.
 
+
+
+
+
+Mandyam, et al.            Expires 3 June 2021                 [Page 25]
+
+Internet-Draft                     EAT                     November 2020
+
+
 3.16.1.3.  Unsecured JWTs and UCCS Tokens as Submodules
 
    To incorporate a UCCS token as a submodule, it MUST be as a non-token
@@ -1393,14 +1415,6 @@ Internet-Draft                     EAT                     November 2020
    that is secured (signed) by an Attester.  Since UCCS tokens are
    unsecured, they do not fulfill this definition and must be non-token
    submodules.
-
-
-
-
-Mandyam, et al.            Expires 3 June 2021                 [Page 25]
-
-Internet-Draft                     EAT                     November 2020
-
 
    To incorporate an Unsecured JWT as a submodule, the null-security
    JOSE wrapping should be removed.  The resulting claims set should be
@@ -1434,20 +1448,6 @@ Internet-Draft                     EAT                     November 2020
    their own more secure key material.  An example of this is an
    embedded secure element.
 
-3.16.4.  Submodule Names
-
-   The label or name for each submodule in the submods map is a text
-   string naming the submodule.  No submodules may have the same name.
-
-3.16.5.  submods CDDL
-
-
-
-
-
-
-
-
 
 
 
@@ -1457,6 +1457,13 @@ Mandyam, et al.            Expires 3 June 2021                 [Page 26]
 
 Internet-Draft                     EAT                     November 2020
 
+
+3.16.4.  Submodule Names
+
+   The label or name for each submodule in the submods map is a text
+   string naming the submodule.  No submodules may have the same name.
+
+3.16.5.  submods CDDL
 
    ; The part of a token that contains all the submodules.  It is a peer
    ; with the claims in the token, but not a claim, only a map/object to
@@ -1496,14 +1503,7 @@ Internet-Draft                     EAT                     November 2020
    the signature.  This will NOT discuss the contents of an Endorsement,
    just and ID/locator.
 
-5.  Encoding
 
-   This makes use of the types defined in CDDL Appendix D, Standard
-   Prelude.
-
-   Some of the CDDL included here is for claims that are defined in CWT
-   [RFC8392] or JWT [RFC7519] or are in the IANA CWT or JWT registries.
-   CDDL was not in use when these claims where defined.
 
 
 
@@ -1513,6 +1513,15 @@ Mandyam, et al.            Expires 3 June 2021                 [Page 27]
 
 Internet-Draft                     EAT                     November 2020
 
+
+5.  Encoding
+
+   This makes use of the types defined in CDDL Appendix D, Standard
+   Prelude.
+
+   Some of the CDDL included here is for claims that are defined in CWT
+   [RFC8392] or JWT [RFC7519] or are in the IANA CWT or JWT registries.
+   CDDL was not in use when these claims where defined.
 
 5.1.  Common CDDL Types
 
@@ -1550,15 +1559,6 @@ Internet-Draft                     EAT                     November 2020
 5.3.  JSON
 
 5.3.1.  JSON Labels
-
-
-
-
-
-
-
-
-
 
 
 
@@ -2222,15 +2222,15 @@ Internet-Draft                     EAT                     November 2020
    relying party, there is just one UEID and it is still globally
    universal across manufacturers.
 
-8.  Security Considerations
+7.2.  Location Privacy Considerations
 
-   The security considerations provided in Section 8 of [RFC8392] and
-   Section 11 of [RFC7519] apply to EAT in its CWT and JWT form,
-   respectively.  In addition, implementors should consider the
-   following.
-
-
-
+   Geographic location is most always considered personally identifiable
+   information.  Implementers should consider laws and regulations
+   governing the transmission of location data from end user devices to
+   servers and services.  Implementers should consider using location
+   management facilities offered by the operating system on the device
+   generating the attestation.  For example, many mobile phones prompt
+   the user for permission when before sending location data.
 
 
 
@@ -2241,6 +2241,13 @@ Mandyam, et al.            Expires 3 June 2021                 [Page 40]
 
 Internet-Draft                     EAT                     November 2020
 
+
+8.  Security Considerations
+
+   The security considerations provided in Section 8 of [RFC8392] and
+   Section 11 of [RFC7519] apply to EAT in its CWT and JWT form,
+   respectively.  In addition, implementors should consider the
+   following.
 
 8.1.  Key Provisioning
 
@@ -2283,13 +2290,6 @@ Internet-Draft                     EAT                     November 2020
    leverage the nonce along with COSE mechanisms for encryption and/or
    signing to create the EAT.
 
-   Similar considerations apply to the use of EAT as a JWT.  Although
-   the security of a JWT leverages the JSON Web Encryption (JWE) and
-   JSON Web Signature (JWS) specifications, it is still recommended to
-   make use of the EAT nonce.
-
-
-
 
 
 
@@ -2297,6 +2297,11 @@ Mandyam, et al.            Expires 3 June 2021                 [Page 41]
 
 Internet-Draft                     EAT                     November 2020
 
+
+   Similar considerations apply to the use of EAT as a JWT.  Although
+   the security of a JWT leverages the JSON Web Encryption (JWE) and
+   JSON Web Signature (JWS) specifications, it is still recommended to
+   make use of the EAT nonce.
 
 8.3.  Multiple EAT Consumers
 
@@ -2340,11 +2345,6 @@ Internet-Draft                     EAT                     November 2020
               <https://fidoalliance.org/specs/fido-uaf-v1.0-fd-20191115/
               fido-allowed-AROE-v1.0-fd-20191115.html>.
 
-   [IANA.CWT.Claims]
-              IANA, "CBOR Web Token (CWT) Claims",
-              <http://www.iana.org/assignments/cwt>.
-
-
 
 
 
@@ -2353,6 +2353,10 @@ Mandyam, et al.            Expires 3 June 2021                 [Page 42]
 
 Internet-Draft                     EAT                     November 2020
 
+
+   [IANA.CWT.Claims]
+              IANA, "CBOR Web Token (CWT) Claims",
+              <http://www.iana.org/assignments/cwt>.
 
    [IANA.JWT.Claims]
               IANA, "JSON Web Token (JWT) Claims",
@@ -2397,11 +2401,7 @@ Internet-Draft                     EAT                     November 2020
               "CBOR Web Token (CWT)", RFC 8392, DOI 10.17487/RFC8392,
               May 2018, <https://www.rfc-editor.org/info/rfc8392>.
 
-   [RFC8610]  Birkholz, H., Vigano, C., and C. Bormann, "Concise Data
-              Definition Language (CDDL): A Notational Convention to
-              Express Concise Binary Object Representation (CBOR) and
-              JSON Data Structures", RFC 8610, DOI 10.17487/RFC8610,
-              June 2019, <https://www.rfc-editor.org/info/rfc8610>.
+
 
 
 
@@ -2409,6 +2409,12 @@ Mandyam, et al.            Expires 3 June 2021                 [Page 43]
 
 Internet-Draft                     EAT                     November 2020
 
+
+   [RFC8610]  Birkholz, H., Vigano, C., and C. Bormann, "Concise Data
+              Definition Language (CDDL): A Notational Convention to
+              Express Concise Binary Object Representation (CBOR) and
+              JSON Data Structures", RFC 8610, DOI 10.17487/RFC8610,
+              June 2019, <https://www.rfc-editor.org/info/rfc8610>.
 
    [RFC8747]  Jones, M., Seitz, L., Selander, G., Erdtman, S., and H.
               Tschofenig, "Proof-of-Possession Key Semantics for CBOR
@@ -2450,12 +2456,6 @@ Internet-Draft                     EAT                     November 2020
               "Birthday attack",
               <https://en.wikipedia.org/wiki/Birthday_attack.>.
 
-   [Common.Criteria]
-              "Common Criteria for Information Technology Security
-              Evaluation", April 2017,
-              <https://www.commoncriteriaportal.org/cc/>.
-
-
 
 
 
@@ -2465,6 +2465,11 @@ Mandyam, et al.            Expires 3 June 2021                 [Page 44]
 
 Internet-Draft                     EAT                     November 2020
 
+
+   [Common.Criteria]
+              "Common Criteria for Information Technology Security
+              Evaluation", April 2017,
+              <https://www.commoncriteriaportal.org/cc/>.
 
    [ECMAScript]
               "Ecma International, "ECMAScript Language Specification,
@@ -2508,11 +2513,6 @@ Internet-Draft                     EAT                     November 2020
               <https://regauth.standards.ieee.org/standards-ra-web/pub/
               view.html#registries>.
 
-   [RFC4122]  Leach, P., Mealling, M., and R. Salz, "A Universally
-              Unique IDentifier (UUID) URN Namespace", RFC 4122,
-              DOI 10.17487/RFC4122, July 2005,
-              <https://www.rfc-editor.org/info/rfc4122>.
-
 
 
 
@@ -2522,9 +2522,19 @@ Mandyam, et al.            Expires 3 June 2021                 [Page 45]
 Internet-Draft                     EAT                     November 2020
 
 
+   [RFC4122]  Leach, P., Mealling, M., and R. Salz, "A Universally
+              Unique IDentifier (UUID) URN Namespace", RFC 4122,
+              DOI 10.17487/RFC4122, July 2005,
+              <https://www.rfc-editor.org/info/rfc4122>.
+
    [RFC4949]  Shirey, R., "Internet Security Glossary, Version 2",
               FYI 36, RFC 4949, DOI 10.17487/RFC4949, August 2007,
               <https://www.rfc-editor.org/info/rfc4949>.
+
+   [W3C.GeoLoc]
+              Worldwide Web Consortium, "Geolocation API Specification
+              2nd Edition", January 2018, <https://www.w3.org/TR/
+              geolocation-API/#coordinates_interface>.
 
    [Webauthn] Worldwide Web Consortium, "Web Authentication: A Web API
               for accessing scoped credentials", 2016.
@@ -2548,16 +2558,6 @@ A.1.  Very Simple EAT
   }
 
 A.2.  Example with Submodules, Nesting and Security Levels
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -2877,6 +2877,9 @@ Internet-Draft                     EAT                     November 2020
 
    *  Security level claim is not extensible
 
+   *  Improve specification of location claim and added a location
+      privacy section
+
    *  Add intended use claim
 
 Authors' Addresses
@@ -2903,15 +2906,16 @@ Authors' Addresses
    San Diego, California
    United States of America
 
-   Phone: +1 858 651 4299
-   Email: mballest@qti.qualcomm.com
-
 
 
 
 Mandyam, et al.            Expires 3 June 2021                 [Page 52]
 
 Internet-Draft                     EAT                     November 2020
+
+
+   Phone: +1 858 651 4299
+   Email: mballest@qti.qualcomm.com
 
 
    Jeremy O'Donoghue
@@ -2923,10 +2927,6 @@ Internet-Draft                     EAT                     November 2020
 
    Phone: +44 1252 363189
    Email: jodonogh@qti.qualcomm.com
-
-
-
-
 
 
 
