@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2020-11-29T05:42:15.499478+00:00",
+  "timestamp": "2020-11-30T19:30:28.980969+00:00",
   "repo": "ietf-rats-wg/eat",
   "labels": [
     {
@@ -1197,16 +1197,24 @@
       "id": "MDU6SXNzdWU1NjQ2NTUwNjY=",
       "title": "Are latitude and longitude optional in location claim?",
       "url": "https://github.com/ietf-rats-wg/eat/issues/50",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "laurencelundblade",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Clearly most part of the location claim are optional. For example you don't have to specify speed.  Should latitude and longitude also be optional? Can you just specify altitude if you want to?\r\n",
       "createdAt": "2020-02-13T12:37:39Z",
-      "updatedAt": "2020-02-13T12:37:39Z",
-      "closedAt": null,
-      "comments": []
+      "updatedAt": "2020-11-30T19:30:22Z",
+      "closedAt": "2020-11-30T19:30:22Z",
+      "comments": [
+        {
+          "author": "laurencelundblade",
+          "authorAssociation": "COLLABORATOR",
+          "body": "No. They should not. They are not optional for CBOR tag 103, nor for the W3C Geolocation API.",
+          "createdAt": "2020-11-30T19:30:22Z",
+          "updatedAt": "2020-11-30T19:30:22Z"
+        }
+      ]
     },
     {
       "number": 51,
@@ -3022,13 +3030,13 @@
       "labels": [],
       "body": "See https://github.com/ietf-rats-wg/eat/issues/57",
       "createdAt": "2020-03-28T22:00:06Z",
-      "updatedAt": "2020-11-17T19:31:38Z",
+      "updatedAt": "2020-11-29T21:02:29Z",
       "baseRepository": "ietf-rats-wg/eat",
       "baseRefName": "master",
       "baseRefOid": "aac5de214068993208b41066f1717222abde6114",
       "headRepository": "gmandyam/eat",
       "headRefName": "context",
-      "headRefOid": "aaec8cd22fb6493903a201117cd64d5909c45ec1",
+      "headRefOid": "8fc4c70d908e896ae93e96aa32eb7f84f6425c63",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
@@ -3066,25 +3074,105 @@
               "originalPosition": 10,
               "body": "Seems like this would be better named \"generic\". It's the one you pick when it's none of the others. I don't think it is on-demand because there will be cases when it is not one of the others and the consumer is not demanding the most recent.",
               "createdAt": "2020-11-17T19:11:03Z",
-              "updatedAt": "2020-11-17T19:31:38Z"
+              "updatedAt": "2020-11-29T21:01:49Z"
             },
             {
               "originalPosition": 33,
               "body": "This should say explicitly that it is PoP *of a key* to be more clear.",
               "createdAt": "2020-11-17T19:12:28Z",
-              "updatedAt": "2020-11-17T19:31:38Z"
+              "updatedAt": "2020-11-29T21:01:49Z"
             },
             {
               "originalPosition": 5,
               "body": "What about renaming this to \"Intended Use\" or \"Intended Use Class\" or \"Use Class\"? It definitely seems like a classification scheme so I think of the different values as different *classes*.",
               "createdAt": "2020-11-17T19:17:30Z",
-              "updatedAt": "2020-11-17T19:31:38Z"
+              "updatedAt": "2020-11-29T21:01:49Z"
             },
             {
               "originalPosition": 8,
               "body": "Maybe add \"This claim can be used as a way for an application using EAT to internally distinguish between different ways it uses EAT\". ",
               "createdAt": "2020-11-17T19:24:24Z",
-              "updatedAt": "2020-11-17T19:31:38Z"
+              "updatedAt": "2020-11-29T21:01:49Z"
+            }
+          ]
+        },
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NTQwNTE2MTE3",
+          "commit": {
+            "abbreviatedOid": "2f98e3a"
+          },
+          "author": "gmandyam",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2020-11-29T20:59:46Z",
+          "updatedAt": "2020-11-29T20:59:46Z",
+          "comments": [
+            {
+              "originalPosition": 10,
+              "body": "Updated draft to change to 'on-demand' to 'generic'",
+              "createdAt": "2020-11-29T20:59:46Z",
+              "updatedAt": "2020-11-29T21:01:49Z"
+            }
+          ]
+        },
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NTQwNTE2MTQ2",
+          "commit": {
+            "abbreviatedOid": "2f98e3a"
+          },
+          "author": "gmandyam",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2020-11-29T21:00:07Z",
+          "updatedAt": "2020-11-29T21:00:07Z",
+          "comments": [
+            {
+              "originalPosition": 33,
+              "body": "Updated draft to include a more specific description of PoP",
+              "createdAt": "2020-11-29T21:00:07Z",
+              "updatedAt": "2020-11-29T21:01:49Z"
+            }
+          ]
+        },
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NTQwNTE2MTgy",
+          "commit": {
+            "abbreviatedOid": "2f98e3a"
+          },
+          "author": "gmandyam",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2020-11-29T21:00:31Z",
+          "updatedAt": "2020-11-29T21:00:32Z",
+          "comments": [
+            {
+              "originalPosition": 5,
+              "body": "Changed name from 'context' to 'intended-use'",
+              "createdAt": "2020-11-29T21:00:31Z",
+              "updatedAt": "2020-11-29T21:01:49Z"
+            }
+          ]
+        },
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NTQwNTE2MzM3",
+          "commit": {
+            "abbreviatedOid": "8fc4c70"
+          },
+          "author": "gmandyam",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2020-11-29T21:02:29Z",
+          "updatedAt": "2020-11-29T21:02:29Z",
+          "comments": [
+            {
+              "originalPosition": 8,
+              "body": "Added statement.  Please check.",
+              "createdAt": "2020-11-29T21:02:29Z",
+              "updatedAt": "2020-11-29T21:02:29Z"
             }
           ]
         }
@@ -3746,6 +3834,32 @@
       "mergeCommit": {
         "oid": "fc1332ea343f2790f7a204150368c4b6925aaa3e"
       },
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 85,
+      "id": "MDExOlB1bGxSZXF1ZXN0NTI5NzYwODA3",
+      "title": "fill in specification for location speed, heading...; location privacy",
+      "url": "https://github.com/ietf-rats-wg/eat/pull/85",
+      "state": "OPEN",
+      "author": "laurencelundblade",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Addresses #83 and #13.",
+      "createdAt": "2020-11-30T19:27:01Z",
+      "updatedAt": "2020-11-30T19:29:21Z",
+      "baseRepository": "ietf-rats-wg/eat",
+      "baseRefName": "master",
+      "baseRefOid": "fc1332ea343f2790f7a204150368c4b6925aaa3e",
+      "headRepository": "ietf-rats-wg/eat",
+      "headRefName": "LocFix",
+      "headRefOid": "43856e94e9f424fb0b560ceda366c2fd92837ef2",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
       "comments": [],
       "reviews": []
     }
