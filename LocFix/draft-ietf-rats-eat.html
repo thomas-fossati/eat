@@ -2183,17 +2183,20 @@ The two accuracy values are positive numbers in meters.
 The heading is in degrees relative to true north.
 If the device is stationary, the heading is NaN (floating-point not-a-number).
 The speed is the horizontal component of the device velocity in meters per second.<a href="#section-3.13-1" class="pilcrow">¶</a></p>
-<p id="section-3.13-2">The location may have been cached for a period of time before token
+<p id="section-3.13-2">When encoding floating-point numbers half-precision should not be used.
+It usually does not provide enough precision for a geographic location.
+It is not a requirement that the receiver of an EAT implement half-precision, so the receiver may not be able to decode the location.<a href="#section-3.13-2" class="pilcrow">¶</a></p>
+<p id="section-3.13-3">The location may have been cached for a period of time before token
 creation. For example, it might have been minutes or hours or more
 since the last contact with a GPS satellite. Either the timestamp or
 age data item can be used to quantify the cached period.  The timestamp
-data item is preferred as it a non-relative time.<a href="#section-3.13-2" class="pilcrow">¶</a></p>
-<p id="section-3.13-3">The age data item can be used when the entity doesn't know what time
+data item is preferred as it a non-relative time.<a href="#section-3.13-3" class="pilcrow">¶</a></p>
+<p id="section-3.13-4">The age data item can be used when the entity doesn't know what time
 it is either because it doesn't have a clock or it isn't set. The
 entity must still have a "ticker" that can measure a time
 interval. The age is the interval between acquisition of the location
-data and token creation.<a href="#section-3.13-3" class="pilcrow">¶</a></p>
-<p id="section-3.13-4">See {#locationprivacyconsiderations} below.<a href="#section-3.13-4" class="pilcrow">¶</a></p>
+data and token creation.<a href="#section-3.13-4" class="pilcrow">¶</a></p>
+<p id="section-3.13-5">See {#locationprivacyconsiderations} below.<a href="#section-3.13-5" class="pilcrow">¶</a></p>
 <div id="location-cddl">
 <section id="section-3.13.1">
           <h4 id="name-location-cddl">
