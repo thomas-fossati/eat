@@ -120,48 +120,48 @@ Internet-Draft                     EAT                     November 2020
        3.13.1.  location CDDL  . . . . . . . . . . . . . . . . . . .  22
      3.14. The Uptime Claim (uptime) . . . . . . . . . . . . . . . .  22
        3.14.1.  uptime CDDL  . . . . . . . . . . . . . . . . . . . .  22
-     3.15. The Submodules Part of a Token (submods)  . . . . . . . .  23
-       3.15.1.  Two Types of Submodules  . . . . . . . . . . . . . .  23
-         3.15.1.1.  Non-token Submodules . . . . . . . . . . . . . .  23
-         3.15.1.2.  Nested EATs  . . . . . . . . . . . . . . . . . .  24
-         3.15.1.3.  Unsecured JWTs and UCCS Tokens as Submodules . .  25
-       3.15.2.  No Inheritance . . . . . . . . . . . . . . . . . . .  25
-       3.15.3.  Security Levels  . . . . . . . . . . . . . . . . . .  25
-       3.15.4.  Submodule Names  . . . . . . . . . . . . . . . . . .  26
-       3.15.5.  submods CDDL . . . . . . . . . . . . . . . . . . . .  26
-   4.  Endorsements and Verification Keys  . . . . . . . . . . . . .  26
-   5.  Encoding  . . . . . . . . . . . . . . . . . . . . . . . . . .  27
-     5.1.  Common CDDL Types . . . . . . . . . . . . . . . . . . . .  27
-     5.2.  CDDL for CWT-defined Claims . . . . . . . . . . . . . . .  27
-     5.3.  JSON  . . . . . . . . . . . . . . . . . . . . . . . . . .  27
-       5.3.1.  JSON Labels . . . . . . . . . . . . . . . . . . . . .  27
-       5.3.2.  JSON Interoperability . . . . . . . . . . . . . . . .  28
-     5.4.  CBOR  . . . . . . . . . . . . . . . . . . . . . . . . . .  28
-       5.4.1.  CBOR Interoperability . . . . . . . . . . . . . . . .  28
-     5.5.  Collected CDDL  . . . . . . . . . . . . . . . . . . . . .  30
-   6.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  36
-     6.1.  Reuse of CBOR Web Token (CWT) Claims Registry . . . . . .  36
-     6.2.  Claim Characteristics . . . . . . . . . . . . . . . . . .  36
-       6.2.1.  Interoperability and Relying Party Orientation  . . .  36
-       6.2.2.  Operating System and Technology Neutral . . . . . . .  37
-       6.2.3.  Security Level Neutral  . . . . . . . . . . . . . . .  37
-       6.2.4.  Reuse of Extant Data Formats  . . . . . . . . . . . .  37
-       6.2.5.  Proprietary Claims  . . . . . . . . . . . . . . . . .  38
-     6.3.  Claims Registered by This Document  . . . . . . . . . . .  38
-   7.  Privacy Considerations  . . . . . . . . . . . . . . . . . . .  38
-     7.1.  UEID Privacy Considerations . . . . . . . . . . . . . . .  39
-     7.2.  Location Privacy Considerations . . . . . . . . . . . . .  39
-   8.  Security Considerations . . . . . . . . . . . . . . . . . . .  40
-     8.1.  Key Provisioning  . . . . . . . . . . . . . . . . . . . .  40
-       8.1.1.  Transmission of Key Material  . . . . . . . . . . . .  40
-     8.2.  Transport Security  . . . . . . . . . . . . . . . . . . .  40
-     8.3.  Multiple EAT Consumers  . . . . . . . . . . . . . . . . .  41
-   9.  References  . . . . . . . . . . . . . . . . . . . . . . . . .  41
-     9.1.  Normative References  . . . . . . . . . . . . . . . . . .  41
-     9.2.  Informative References  . . . . . . . . . . . . . . . . .  43
-   Appendix A.  Examples . . . . . . . . . . . . . . . . . . . . . .  45
-     A.1.  Very Simple EAT . . . . . . . . . . . . . . . . . . . . .  45
-     A.2.  Example with Submodules, Nesting and Security Levels  . .  45
+     3.15. The Intended Use Claim (intended-use) . . . . . . . . . .  23
+       3.15.1.  intended-use CDDL  . . . . . . . . . . . . . . . . .  23
+     3.16. The Submodules Part of a Token (submods)  . . . . . . . .  24
+       3.16.1.  Two Types of Submodules  . . . . . . . . . . . . . .  24
+         3.16.1.1.  Non-token Submodules . . . . . . . . . . . . . .  24
+         3.16.1.2.  Nested EATs  . . . . . . . . . . . . . . . . . .  25
+         3.16.1.3.  Unsecured JWTs and UCCS Tokens as Submodules . .  26
+       3.16.2.  No Inheritance . . . . . . . . . . . . . . . . . . .  26
+       3.16.3.  Security Levels  . . . . . . . . . . . . . . . . . .  26
+       3.16.4.  Submodule Names  . . . . . . . . . . . . . . . . . .  27
+       3.16.5.  submods CDDL . . . . . . . . . . . . . . . . . . . .  27
+   4.  Endorsements and Verification Keys  . . . . . . . . . . . . .  27
+   5.  Encoding  . . . . . . . . . . . . . . . . . . . . . . . . . .  28
+     5.1.  Common CDDL Types . . . . . . . . . . . . . . . . . . . .  28
+     5.2.  CDDL for CWT-defined Claims . . . . . . . . . . . . . . .  28
+     5.3.  JSON  . . . . . . . . . . . . . . . . . . . . . . . . . .  28
+       5.3.1.  JSON Labels . . . . . . . . . . . . . . . . . . . . .  28
+       5.3.2.  JSON Interoperability . . . . . . . . . . . . . . . .  29
+     5.4.  CBOR  . . . . . . . . . . . . . . . . . . . . . . . . . .  29
+       5.4.1.  CBOR Interoperability . . . . . . . . . . . . . . . .  29
+     5.5.  Collected CDDL  . . . . . . . . . . . . . . . . . . . . .  31
+   6.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  37
+     6.1.  Reuse of CBOR Web Token (CWT) Claims Registry . . . . . .  37
+     6.2.  Claim Characteristics . . . . . . . . . . . . . . . . . .  37
+       6.2.1.  Interoperability and Relying Party Orientation  . . .  37
+       6.2.2.  Operating System and Technology Neutral . . . . . . .  38
+       6.2.3.  Security Level Neutral  . . . . . . . . . . . . . . .  38
+       6.2.4.  Reuse of Extant Data Formats  . . . . . . . . . . . .  38
+       6.2.5.  Proprietary Claims  . . . . . . . . . . . . . . . . .  39
+     6.3.  Claims Registered by This Document  . . . . . . . . . . .  39
+   7.  Privacy Considerations  . . . . . . . . . . . . . . . . . . .  39
+     7.1.  UEID Privacy Considerations . . . . . . . . . . . . . . .  40
+     7.2.  Location Privacy Considerations . . . . . . . . . . . . .  40
+   8.  Security Considerations . . . . . . . . . . . . . . . . . . .  41
+     8.1.  Key Provisioning  . . . . . . . . . . . . . . . . . . . .  41
+       8.1.1.  Transmission of Key Material  . . . . . . . . . . . .  41
+     8.2.  Transport Security  . . . . . . . . . . . . . . . . . . .  41
+     8.3.  Multiple EAT Consumers  . . . . . . . . . . . . . . . . .  42
+   9.  References  . . . . . . . . . . . . . . . . . . . . . . . . .  42
+     9.1.  Normative References  . . . . . . . . . . . . . . . . . .  42
+     9.2.  Informative References  . . . . . . . . . . . . . . . . .  44
+   Appendix A.  Examples . . . . . . . . . . . . . . . . . . . . . .  46
 
 
 
@@ -170,17 +170,19 @@ Mandyam, et al.            Expires 3 June 2021                  [Page 3]
 Internet-Draft                     EAT                     November 2020
 
 
-   Appendix B.  UEID Design Rationale  . . . . . . . . . . . . . . .  46
-     B.1.  Collision Probability . . . . . . . . . . . . . . . . . .  46
-     B.2.  No Use of UUID  . . . . . . . . . . . . . . . . . . . . .  49
-   Appendix C.  Changes from Previous Drafts . . . . . . . . . . . .  49
-     C.1.  From draft-rats-eat-01  . . . . . . . . . . . . . . . . .  49
-     C.2.  From draft-mandyam-rats-eat-00  . . . . . . . . . . . . .  50
-     C.3.  From draft-ietf-rats-eat-01 . . . . . . . . . . . . . . .  50
-     C.4.  From draft-ietf-rats-eat-02 . . . . . . . . . . . . . . .  50
-     C.5.  From draft-ietf-rats-eat-03 . . . . . . . . . . . . . . .  50
-     C.6.  From draft-ietf-rats-eat-04 . . . . . . . . . . . . . . .  50
-   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  51
+     A.1.  Very Simple EAT . . . . . . . . . . . . . . . . . . . . .  46
+     A.2.  Example with Submodules, Nesting and Security Levels  . .  46
+   Appendix B.  UEID Design Rationale  . . . . . . . . . . . . . . .  47
+     B.1.  Collision Probability . . . . . . . . . . . . . . . . . .  47
+     B.2.  No Use of UUID  . . . . . . . . . . . . . . . . . . . . .  50
+   Appendix C.  Changes from Previous Drafts . . . . . . . . . . . .  50
+     C.1.  From draft-rats-eat-01  . . . . . . . . . . . . . . . . .  50
+     C.2.  From draft-mandyam-rats-eat-00  . . . . . . . . . . . . .  51
+     C.3.  From draft-ietf-rats-eat-01 . . . . . . . . . . . . . . .  51
+     C.4.  From draft-ietf-rats-eat-02 . . . . . . . . . . . . . . .  51
+     C.5.  From draft-ietf-rats-eat-03 . . . . . . . . . . . . . . .  51
+     C.6.  From draft-ietf-rats-eat-04 . . . . . . . . . . . . . . .  51
+   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  52
 
 1.  Introduction
 
@@ -217,14 +219,14 @@ Internet-Draft                     EAT                     November 2020
    *  Environmental characteristics of the device such as its GPS
       location
 
-   TODO: mention use for Attestation Evidence and Results.
-
 
 
 Mandyam, et al.            Expires 3 June 2021                  [Page 4]
 
 Internet-Draft                     EAT                     November 2020
 
+
+   TODO: mention use for Attestation Evidence and Results.
 
 1.1.  CWT, JWT and UCCS
 
@@ -272,8 +274,6 @@ Internet-Draft                     EAT                     November 2020
    environments operating with different security levels.  For example,
    it is common for a mobile phone to have an "apps" environment that
    runs an operating system (OS) that hosts a plethora of downloadable
-   apps.  It may also have a TEE (Trusted Execution Environment) that is
-   distinct, isolated, and hosts security-oriented functionality like
 
 
 
@@ -282,6 +282,8 @@ Mandyam, et al.            Expires 3 June 2021                  [Page 5]
 Internet-Draft                     EAT                     November 2020
 
 
+   apps.  It may also have a TEE (Trusted Execution Environment) that is
+   distinct, isolated, and hosts security-oriented functionality like
    biometric authentication.  Additionally, it may have an eSE (embedded
    Secure Element) - a high security chip with defenses against HW
    attacks that can serve as a RoT.  This device attestation format
@@ -327,8 +329,6 @@ Internet-Draft                     EAT                     November 2020
    *  The EAT is transmitted to the relying party.  The relying party
       gets corresponding key material (e.g. a root certificate) from the
       manufacturer.  The relying party performs the verification.
-
-
 
 
 
@@ -1234,7 +1234,63 @@ Mandyam, et al.            Expires 3 June 2021                 [Page 22]
 Internet-Draft                     EAT                     November 2020
 
 
-3.15.  The Submodules Part of a Token (submods)
+3.15.  The Intended Use Claim (intended-use)
+
+   EAT's may be used in the context of several different applications.
+   The intended-use claim provides an indication to an EAT consumer
+   about the intended usage of the token.  This claim can be used as a
+   way for an application using EAT to internally distinguish between
+   different ways it uses EAT.
+
+   1 - Generic  Generic attestation describes an application where the
+      EAT consumer requres the most up-to-date security assessment of
+      the attesting entity.  It is expected that this is the most
+      commonly-used application of EAT.
+
+   2- Registration  Entities that are registering for a new service may
+      be expected to provide an attestation as part of the registration
+      process.  This intended-use setting indicates that the attestation
+      is not intended for any use but registration.
+
+   3 - Provisioning  Entities may be provisioned with different values
+      or settings by an EAT consumer.  Examples include key material or
+      device management trees.  The consumer may require an EAT to
+      assess device security state of the entity prior to provisioning.
+
+   4 - Certificate Issuance (Certificate Signing Request)  Certifying
+      authorities (CA's) may require attestations prior to the issuance
+      of certificates related to keypairs hosted at the entity.  An EAT
+      may be used as part of the certificate signing request (CSR).
+
+   5 - Proof-of-Possession  An EAT consumer may require an attestation
+      as part of an accompanying proof-of-possession (PoP) appication.
+      More precisely, a PoP transaction is intended to provide to the
+      recipient cryptographically-verifiable proof that the sender has
+      posession of a key.  This kind of attestation may be neceesary to
+      verify the security state of the entity storing the private key
+      used in a PoP application.
+
+3.15.1.  intended-use CDDL
+
+   intended-use = &(
+       generic: 1,
+       registration: 2,
+       provisioning: 3,
+       csr: 4,
+       pop:  5
+   )
+
+
+
+
+
+
+Mandyam, et al.            Expires 3 June 2021                 [Page 23]
+
+Internet-Draft                     EAT                     November 2020
+
+
+3.16.  The Submodules Part of a Token (submods)
 
    Some devices are complex, having many subsystems or submodules.  A
    mobile phone is a good example.  It may have several connectivity
@@ -1253,7 +1309,7 @@ Internet-Draft                     EAT                     November 2020
    of a token allows what might be called recursion.  It allows claim
    sets inside of claim sets inside of claims sets...
 
-3.15.1.  Two Types of Submodules
+3.16.1.  Two Types of Submodules
 
    Each entry in the submod map is one of two types:
 
@@ -1263,7 +1319,7 @@ Internet-Draft                     EAT                     November 2020
    *  A nested EAT that is a fully formed, independently signed EAT
       token
 
-3.15.1.1.  Non-token Submodules
+3.16.1.1.  Non-token Submodules
 
    This is simply a map or object containing claims about the submodule.
 
@@ -1285,7 +1341,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 3 June 2021                 [Page 23]
+Mandyam, et al.            Expires 3 June 2021                 [Page 24]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -1294,7 +1350,7 @@ Internet-Draft                     EAT                     November 2020
    type by being a data item of type map for CBOR or type object for
    JSON.
 
-3.15.1.2.  Nested EATs
+3.16.1.2.  Nested EATs
 
    This type of submodule is a fully formed secured EAT as defined in
    this document except that it MUST NOT be a UCCS or an unsecured JWT.
@@ -1306,7 +1362,7 @@ Internet-Draft                     EAT                     November 2020
    It is allowed to have a CWT as a submodule in a JWT and vice versa,
    but this SHOULD be avoided unless necessary.
 
-3.15.1.2.1.  Surrounding EAT is CBOR format
+3.16.1.2.1.  Surrounding EAT is CBOR format
 
    They type of an EAT nested in a CWT is determined by whether the CBOR
    type is a text string or a byte string.  If a text string, then it is
@@ -1322,7 +1378,7 @@ Internet-Draft                     EAT                     November 2020
    COSE, for example one that is both encrypted and signed, a
    COSE_Tagged_message must be used at every level.
 
-3.15.1.2.2.  Surrounding EAT is JSON format
+3.16.1.2.2.  Surrounding EAT is JSON format
 
    When a CWT is nested in a JWT, it must be as a 55799 tag in order to
    distinguish it from a nested JWT.
@@ -1341,12 +1397,12 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 3 June 2021                 [Page 24]
+Mandyam, et al.            Expires 3 June 2021                 [Page 25]
 
 Internet-Draft                     EAT                     November 2020
 
 
-3.15.1.3.  Unsecured JWTs and UCCS Tokens as Submodules
+3.16.1.3.  Unsecured JWTs and UCCS Tokens as Submodules
 
    To incorporate a UCCS token as a submodule, it MUST be as a non-token
    submodule.  This can be accomplished inserting the content of the
@@ -1370,7 +1426,7 @@ Internet-Draft                     EAT                     November 2020
    security JOSE should be removed and the claims translated from JSON
    to CBOR.
 
-3.15.2.  No Inheritance
+3.16.2.  No Inheritance
 
    The subordinate modules do not inherit anything from the containing
    token.  The subordinate modules must explicitly include all of their
@@ -1379,7 +1435,7 @@ Internet-Draft                     EAT                     November 2020
    This rule is in place for simplicity.  It avoids complex inheritance
    rules that might vary from one type of claim to another.
 
-3.15.3.  Security Levels
+3.16.3.  Security Levels
 
    The security level of the non-token subordinate modules should always
    be less than or equal to that of the containing modules in the case
@@ -1397,17 +1453,17 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 3 June 2021                 [Page 25]
+Mandyam, et al.            Expires 3 June 2021                 [Page 26]
 
 Internet-Draft                     EAT                     November 2020
 
 
-3.15.4.  Submodule Names
+3.16.4.  Submodule Names
 
    The label or name for each submodule in the submods map is a text
    string naming the submodule.  No submodules may have the same name.
 
-3.15.5.  submods CDDL
+3.16.5.  submods CDDL
 
    ; The part of a token that contains all the submodules.  It is a peer
    ; with the claims in the token, but not a claim, only a map/object to
@@ -1453,7 +1509,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 3 June 2021                 [Page 26]
+Mandyam, et al.            Expires 3 June 2021                 [Page 27]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -1509,7 +1565,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 3 June 2021                 [Page 27]
+Mandyam, et al.            Expires 3 June 2021                 [Page 28]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -1565,7 +1621,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 3 June 2021                 [Page 28]
+Mandyam, et al.            Expires 3 June 2021                 [Page 29]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -1621,7 +1677,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 3 June 2021                 [Page 29]
+Mandyam, et al.            Expires 3 June 2021                 [Page 30]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -1677,7 +1733,7 @@ EAT_Untagged_Message = COSE_Tagged_Message / COSE_Untagged_Message / UCCS_Untagg
 
 
 
-Mandyam, et al.            Expires 3 June 2021                 [Page 30]
+Mandyam, et al.            Expires 3 June 2021                 [Page 31]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -1733,7 +1789,7 @@ subject = 2
 
 
 
-Mandyam, et al.            Expires 3 June 2021                 [Page 31]
+Mandyam, et al.            Expires 3 June 2021                 [Page 32]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -1789,7 +1845,7 @@ nonce-claim = (
 
 
 
-Mandyam, et al.            Expires 3 June 2021                 [Page 32]
+Mandyam, et al.            Expires 3 June 2021                 [Page 33]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -1845,7 +1901,7 @@ device-version-scheme-claim = (
 
 
 
-Mandyam, et al.            Expires 3 June 2021                 [Page 33]
+Mandyam, et al.            Expires 3 June 2021                 [Page 34]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -1901,7 +1957,7 @@ security-level-claim = (
 
 
 
-Mandyam, et al.            Expires 3 June 2021                 [Page 34]
+Mandyam, et al.            Expires 3 June 2021                 [Page 35]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -1957,7 +2013,7 @@ debug-status /= "debug-status"
 
 
 
-Mandyam, et al.            Expires 3 June 2021                 [Page 35]
+Mandyam, et al.            Expires 3 June 2021                 [Page 36]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -2013,7 +2069,7 @@ speed /= "speed"
 
 
 
-Mandyam, et al.            Expires 3 June 2021                 [Page 36]
+Mandyam, et al.            Expires 3 June 2021                 [Page 37]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -2069,7 +2125,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 3 June 2021                 [Page 37]
+Mandyam, et al.            Expires 3 June 2021                 [Page 38]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -2125,7 +2181,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 3 June 2021                 [Page 38]
+Mandyam, et al.            Expires 3 June 2021                 [Page 39]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -2181,7 +2237,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 3 June 2021                 [Page 39]
+Mandyam, et al.            Expires 3 June 2021                 [Page 40]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -2237,7 +2293,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 3 June 2021                 [Page 40]
+Mandyam, et al.            Expires 3 June 2021                 [Page 41]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -2293,7 +2349,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 3 June 2021                 [Page 41]
+Mandyam, et al.            Expires 3 June 2021                 [Page 42]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -2349,7 +2405,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 3 June 2021                 [Page 42]
+Mandyam, et al.            Expires 3 June 2021                 [Page 43]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -2405,7 +2461,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 3 June 2021                 [Page 43]
+Mandyam, et al.            Expires 3 June 2021                 [Page 44]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -2461,7 +2517,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 3 June 2021                 [Page 44]
+Mandyam, et al.            Expires 3 June 2021                 [Page 45]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -2517,7 +2573,7 @@ A.2.  Example with Submodules, Nesting and Security Levels
 
 
 
-Mandyam, et al.            Expires 3 June 2021                 [Page 45]
+Mandyam, et al.            Expires 3 June 2021                 [Page 46]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -2573,7 +2629,7 @@ B.1.  Collision Probability
 
 
 
-Mandyam, et al.            Expires 3 June 2021                 [Page 46]
+Mandyam, et al.            Expires 3 June 2021                 [Page 47]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -2629,7 +2685,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 3 June 2021                 [Page 47]
+Mandyam, et al.            Expires 3 June 2021                 [Page 48]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -2685,7 +2741,7 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-Mandyam, et al.            Expires 3 June 2021                 [Page 48]
+Mandyam, et al.            Expires 3 June 2021                 [Page 49]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -2741,7 +2797,7 @@ C.1.  From draft-rats-eat-01
 
 
 
-Mandyam, et al.            Expires 3 June 2021                 [Page 49]
+Mandyam, et al.            Expires 3 June 2021                 [Page 50]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -2797,7 +2853,7 @@ C.6.  From draft-ietf-rats-eat-04
 
 
 
-Mandyam, et al.            Expires 3 June 2021                 [Page 50]
+Mandyam, et al.            Expires 3 June 2021                 [Page 51]
 
 Internet-Draft                     EAT                     November 2020
 
@@ -2824,6 +2880,8 @@ Internet-Draft                     EAT                     November 2020
    *  Improve specification of location claim and added a location
       privacy section
 
+   *  Add intended use claim
+
 Authors' Addresses
 
    Giridhar Mandyam
@@ -2848,14 +2906,16 @@ Authors' Addresses
    San Diego, California
    United States of America
 
-   Phone: +1 858 651 4299
-   Email: mballest@qti.qualcomm.com
 
 
 
-Mandyam, et al.            Expires 3 June 2021                 [Page 51]
+Mandyam, et al.            Expires 3 June 2021                 [Page 52]
 
 Internet-Draft                     EAT                     November 2020
+
+
+   Phone: +1 858 651 4299
+   Email: mballest@qti.qualcomm.com
 
 
    Jeremy O'Donoghue
@@ -2905,8 +2965,4 @@ Internet-Draft                     EAT                     November 2020
 
 
 
-
-
-
-
-Mandyam, et al.            Expires 3 June 2021                 [Page 52]
+Mandyam, et al.            Expires 3 June 2021                 [Page 53]
